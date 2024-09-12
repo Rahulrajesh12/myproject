@@ -98,6 +98,7 @@ function Footer() {
                                 width={700}
                                 height={700}
                                 className='lg:w-36 lg:h-28 w-16 h-14 bottom-[1.1rem] relative lg:bottom-[2.25rem]'
+                                alt="car rental"
                             >
                             </Image>
                             <Image
@@ -105,6 +106,7 @@ function Footer() {
                                 width={700}
                                 height={700}
                                 className='lg:w-32 lg:h-28 w-14 h-14'
+                                alt="car rental"
                             >
                             </Image>
                         </div>

@@ -139,7 +139,7 @@ function CarProducts({ data, place }) {
                   }}>
                     {
                       <Link href={`/${(("car-rental/" + item.maker_model).toLowerCase()).replace(/ /g, '-')}`}>
-                        <Image className='lg:h-[505px] h-[598px] rounded-md ' width={1000} height={1000} src={replaceText(item?.car_image_car_left_view)}></Image>
+                        <Image className='lg:h-[505px] h-[598px] rounded-md ' width={1000} height={1000} alt="cars" src={replaceText(item?.car_image_car_left_view)}></Image>
                       </Link>}
                   </div>
                   <div onClick={() => {
