@@ -9,7 +9,8 @@ import { TbPointFilled } from "react-icons/tb";
 import Marquee from 'react-fast-marquee';
 import { SiLinkedin } from "react-icons/si";
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({locname}) => {
+  
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
@@ -37,7 +38,7 @@ const HamburgerMenu = () => {
   }, [isOpen]);
 
   return (
-    <div className='fixed lg:relative top-0 left-0 right-0 z-50 bg-white text-black shadow-md'>
+    <div className='fixed lg:relative top-0 left-0 right-0 z-50 bg-white text-black shadow-md '>
       <div className='flex justify-between items-center lg:px-14'>
         <Marquee speed={75}>
           <div className={'flex p-1 text-xs gap-24 lg:text-lg '}>
@@ -49,10 +50,17 @@ const HamburgerMenu = () => {
             <p className='flex items-center gap-1 justify-center'><TbPointFilled /><span>Choose Your Own Hours 36hr, 50hr</span></p>
             <p className='flex items-center gap-1 justify-center'><TbPointFilled /><span>Car Starts ₹1488/day, min 24hrs</span></p>
             <p className='flex items-center gap-1 justify-center lg:pr-20'><TbPointFilled /><span>Any Problem 24/7 Service</span></p>
+            <p className='flex items-center gap-1 justify-center lg:pr-20'><TbPointFilled /><span> Lowest Price Challenge
+            </span></p>
+            <p className='flex items-center gap-1 justify-center lg:pr-20'><TbPointFilled /><span>Baleno, Dzire 1776 per day
+            </span></p>
+            <p className='flex items-center gap-1 justify-center lg:pr-20'><TbPointFilled /><span>Just pay 10% Advance & book
+
+            </span></p>
           </div>
         </Marquee>
         <div className='border-l-2 border-l-black'>
-          <ul className='flex justify-end lg:gap-5 xs:gap-2 px-2'>
+          <ul className='flex justify-end lg:gap-5 gap-2 px-2'>
             <li><Link href={'https://www.facebook.com/selfdrivecarsbylongdrivecars/'} target='_blank'>
               <FaFacebook className='hover:text-blue-500 cursor-pointer lg:size-6' />
             </Link></li>
@@ -68,23 +76,31 @@ const HamburgerMenu = () => {
           </ul>
         </div>
       </div>
-
+      <div className="flex bg-gray-800 justify-between text-white text-base py-2 px-3 lg:px-14">
+        <h2 className='lg:text-2xl lg:font-bold'>For Booking Help</h2>
+        <div className="flex items-center gap-1">
+          <LuPhoneCall size={20} />
+          <h2 className='lg:text-2xl lg:font-bold'>
+            <Link href="tel:9000478478" target='_blank'>9000-478-478</Link>
+          </h2>
+        </div>
+      </div>
       <div className="flex lg:justify-between items-center z-50 fixed lg:relative bg-white lg:py-14 lg:pr-14 border-8 border-blue-100 lg:h-20 w-full">
         <div className="flex">
-          {/* <Link href={'/'}> */}
+         
           <div className='rounded-md flex cursor-pointer items-center lg:pl-14 pl-4'>
             <div className='flex items-center lg:gap-6 gap-3'>
-              <Link href={'/'} className='flex items-center lg:gap-6 gap-3'>
+              <Link href={`${(locname?.length && locname=='bangalore')?'/bangalore':'/'}`} className='flex items-center lg:gap-6 gap-3'>
                 <Image
                   className="lg:w-32 w-10"
                   src={logo2}
                   alt="carrr"
                   width={192}
                   height={192}
-                  priority
+                  // priority
                 // placeholder="blur"
                 />
-              <p className='font-semibold text-[#0456e8] text-sm lg:text-4xl lg:w-[444px] w-48'>Long Drive Cars</p>
+              <p className='font-semibold text-[#0456e8] text-sm lg:text-4xl lg:w-[444px] w-48 popins-text'>Long Drive Cars</p>
               </Link>
             </div>
             <div className='w-full text-black lg:mt-2 xl:pl-60 lg:pl-20'>
@@ -93,7 +109,7 @@ const HamburgerMenu = () => {
                   <li><Link className='hover:text-blue-400 hover:underline' href={'/'}>Home</Link></li>
                   <li><Link className='hover:text-blue-400 hover:underline' href={'/'}>Blog</Link></li>
                   <li><Link className='hover:text-blue-400 hover:underline' href={'/'}>About Us</Link></li>
-                  <li><Link className='hover:text-blue-400 hover:underline' href={'/'}>Contact Us</Link></li>
+                  <li><Link className='hover:text-blue-400 hover:underline' href={'/contact.html'}>Contact Us</Link></li>
                 </ul>
               </div>
             </div>
@@ -104,7 +120,7 @@ const HamburgerMenu = () => {
         <div className='lg:hidden block'>
           <button
             ref={buttonRef}
-            className="fixed top-[2.6rem] right-5 z-40 text-[#0456e8] flex items-center"
+            className="fixed top-[5rem] right-5 z-40 text-[#0456e8] flex items-center"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >

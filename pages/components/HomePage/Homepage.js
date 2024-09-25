@@ -1,20 +1,11 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
-import Image from 'next/image';
-import Link from 'next/link';
+
 import CarProducts from '../CarProducts';
-import inv from '../../changeimg/innova.webp'
-
-import swift from '../../changeimg/swift.webp'
-import ertiga from '../../changeimg/ERTIGA_RED.webp'
-import creta from '../../changeimg/creta-thumbnail-pc.png'
-import baleno from '../../changeimg/baleno.webp'
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import DynWhyChooseUs from '../WhyChooseUs/WhyChooseUs'
+import SelfDrivePlaces from '../SelfDrivePlaces/SelfDrivePlaces';
 
-
+const DynHeader = dynamic(() => import('../Hamburger/HamburgerMenu'));
 const DynCallBackForm = dynamic(() => import('../CallBackForm/CallBackForm'));
 const DynNearYou = dynamic(() => import('../NearYou/NearYou'));
 const DynImageChange = dynamic(() => import('../ImageChange/ImageChange'));
@@ -25,11 +16,10 @@ const DynamicFaqComponent = dynamic(() => import('../FaqAccordian/FaqAccordian')
 const DynamicPriceList = dynamic(() => import('../PriceList/PriceList'));
 
 export default function Homepage({ data }) {
-
   const data2 = data;
-
   return (
     <div className="min-h-screen">
+      {/* <DynHeader/> */}
       <DynImageChange />
       <div>
         <DynNearByApi />
@@ -44,7 +34,9 @@ export default function Homepage({ data }) {
         <DynamicFaqComponent />
       </div>
       <GetInTouch />
-      <DynamicPriceList />
+      <DynamicPriceList city={'hyd'}/>
+      
+      
     </div>
   );
 }
