@@ -77,7 +77,7 @@ const HamburgerMenuBng = ({locname}) => {
         </div>
       </div>
       <div className="flex bg-gray-800 justify-between text-white text-base py-2 px-3 lg:px-14">
-        <h2 className='lg:text-2xl lg:font-bold'>For Booking Help Bng</h2>
+        <h2 className='lg:text-2xl lg:font-bold'>For Booking Help</h2>
         <div className="flex items-center gap-1">
           <LuPhoneCall size={20} />
           <h2 className='lg:text-2xl lg:font-bold'>
