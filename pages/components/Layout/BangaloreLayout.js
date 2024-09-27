@@ -7,7 +7,7 @@ const BangaloreLayout = ({ children }) => {
   return (
     <div className='bg-white'>
       {/* <Header city="Bangalore" /> */}
-      <HamburgerMenuBng/>
+      <HamburgerMenuBng />
       <main>{children}</main>
       <FooterBng />
     </div>

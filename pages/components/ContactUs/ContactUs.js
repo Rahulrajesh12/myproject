@@ -14,21 +14,21 @@ import app from '../../../pages/images/appcontact.webp'
 const ContactUS = () => {
 
     return (
-        <Layout>
+        
             <div className='text-black bg-white'>
                 <div className='pl-6 lg:px-24'>
                     <div className='px-2 py-2 lg:py-8 pt-36 border-b-2 border-gray-100 flex'>
                         <div className='lg:pt-8 flex flex-col gap-4'>
                             <p className="lg:text-xl text-xl text-[#660066] font-bold pb-8 lg:pb-2 uppercase"><span className="font-bold text-lg text-[#dbbeed]">/</span><span className="font-bold text-lg text-[#c97ef7]">/</span><span className="font-bold text-lg text-[#660066]">/ </span>ONLINE BOOKING</p>
                             <p className='text-xl lg:text-3xl font-semibold pb-4'>Get the Long Drive Cars Mobile app and Start Your Journey!</p>
-                            <ul className='flex flex-wrap gap-3 font-semibold'>
+                            <ul className='flex flex-wrap gap-3 lg:gap-5 font-semibold'>
                                 <li className='flex flex-col'>
                                     <Image
                                         src={ds}
                                         height={1000}
                                         width={1000}
                                         alt='sss'
-                                        className='w-16 h-16'
+                                        className='w-16 h-16 pb'
                                     ></Image>
                                     <p>Easy to search</p>
                                     <p>Long Drive Cars</p>
@@ -63,7 +63,7 @@ const ContactUS = () => {
                                         height={1000}
                                         width={1000}
                                         alt='sss'
-                                        className='w-32 h-[5.2rem]'
+                                        className='w-32 h-[5.2rem] lg:w-44'
                                     >
                                     </Image>
                                 </li>
@@ -73,7 +73,7 @@ const ContactUS = () => {
                                         height={1000}
                                         width={1000}
                                         alt='sss'
-                                        className='w-28 h-14'
+                                        className='w-28 h-14 lg:w-40'
 
                                     >
                                     </Image>
@@ -134,7 +134,7 @@ const ContactUS = () => {
                                         </Link>
                                     </li>
                                 </ul>
-                                <p className='lg:text-5xl font-bold lg:py-4'>Helpline Number: <span className='text-2xl text-[#0556e8]'><Link href="tel:9111911162" target="_blank">9111-9111-62</Link></span></p>
+                                <p className='lg:text-5xl font-bold lg:py-4'>Helpline Number: <span className='text-2xl lg:text-5xl text-[#0556e8] '><Link href="tel:9111911162" target="_blank">9111-9111-62</Link></span></p>
                             </div>
                             <div>
                                 <Image
@@ -174,7 +174,6 @@ const ContactUS = () => {
                     </div>
                 </div>
             </div>
-        </Layout>
 
     )
 }
