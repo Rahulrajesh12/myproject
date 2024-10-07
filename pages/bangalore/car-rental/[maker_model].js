@@ -60,7 +60,7 @@ const CarDetails = () => {
           <meta property="og:description" content="Self-drive cars start at 62/hr, We offer Self Drive Cars for the best prices with unlimited km & Zero deposit, Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
         </Head>
         <div className='xl:mx-16  mx-4'>
-          <div className='flex flex-col mt-32 md:mt-20 lg:mt-2 md:flex-row p-2 border-2 border-purple-500 rounded-md'>
+          <div className='flex flex-col mt-[7.48rem] md:mt-20 lg:mt-2 md:flex-row p-2 border-2 border-purple-500 rounded-md'>
             {loading && <div>Loading...</div>}
             {!loading && (
               <div className="relative md:w-2/3 w-full p-1 xl:pt-6 pt-8 border-1 border-gray-300 h-[534px]">
