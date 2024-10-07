@@ -10,10 +10,10 @@ import imgs2 from '../../images/EA2u65Ss0VJeJ2l1hfQc7-transformed (1).webp'
 import logo2 from '../../images/logo-white.webp';
 
 
-function Footer({ branch }) {
+function Footer({ locname }) {
     return (
         <div className={`bg-white`}>
-            <div className='flex pl-10 py-5 md:justify-between text-white xl:px-28 lg:py-14 flex-wrap bg-[#660066] rounded-md mx-[14px] lg:mx-[58px] my-3 items-center '>
+            <div className={`${locname=='warangal'?'hidden':''} flex pl-10 py-5 md:justify-between text-white xl:px-28 lg:py-14 flex-wrap bg-[#660066] rounded-md mx-[14px] lg:mx-[58px] my-3 items-center `}>
                 <div className=' xl:text-left xl:text-base text-left text-xs font-semibold'>
                     <ul className='lg:gap-x-16 lg:gap-y-3 gap-2 grid lg:grid-cols-3 grid-cols-1 capitalize'>
                         <li className='hover:scale-105'><Link href={'/self-drive-car-rental/gachibowli'}>Self drive car rental in Gachibowli</Link></li>

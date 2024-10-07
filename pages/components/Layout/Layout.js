@@ -6,7 +6,7 @@ const Layout = ({ children , city, phoneno ,locname}) => {
         <div className=" min-h-screen bg-white">
             <Header phoneno={phoneno} locname={locname}/>
             <main className="flex-grow bg-white">{children}</main>
-            <Footer/>
+            <Footer locname={locname}/>
         </div>
     );
 };
