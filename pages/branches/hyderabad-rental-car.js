@@ -1,7 +1,8 @@
 import React from 'react'
 import HamburgerMenu from '../components/Hamburger/HamburgerMenu';
 import Footer from '../components/Footer/Footer';
-import www from '../images/2.webp'
+import www from '../images/branchimages/2.webp'
+import Image from 'next/image';
 function hyderabadrentalcar() {
   return (
     <div className='bg-white'>
