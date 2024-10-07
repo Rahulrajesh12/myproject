@@ -1,6 +1,6 @@
 import React from 'react'
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
-import rightimg from '../../images/creta.webp'
+import rightimg from '../../images/Xuv-700.webp'
 import Image from 'next/image';
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 import { SlSpeedometer } from "react-icons/sl";
@@ -45,12 +45,12 @@ function WhyChooseUs({locname}) {
                 </div>
             </div>
             {<Image
-                className='lg:w-[320px] lg:h-[400px] xl:w-[550px] xl:h-[600px] hidden lg:block'
+                className='lg:w-[320px] lg:h-[400px] xl:w-[600px] xl:h-[600px] hidden lg:block'
                 alt="car rental near you creta"
                 title="car rental near you creta"
                 src={rightimg}
-                width={500}
-                height={500}
+                width={3700}
+                height={3700}
             />}
         </div>
     )

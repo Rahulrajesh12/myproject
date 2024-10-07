@@ -1,36 +1,45 @@
 import React from 'react'
 import HamburgerMenu from '../components/Hamburger/HamburgerMenu';
 import Footer from '../components/Footer/Footer';
-
+import www from '../images/branchimages/5.webp'
 function madhapur() {
   return (
     <div className='bg-white'>
-      <HamburgerMenu />
+      <HamburgerMenu  phoneno={'9000-478-478'}/>
       <div className='text-black lg:px-16 px-4 leading-9 lg:leading-10 pt-24 lg:pt-16'>
-        <p className='text-xl lg:text-2xl font-bold'>Self Drive Cars Madhapur ends here</p>
-        <p className='text-lg font-bold'>It's not far, find Self Drive Cars near Madhapur</p>
+      <div>
+          <Image
+            src={www}
+            height={2000}
+            width={2000}
+            className='py-3 object-cover w-full'
+            alt="self drive car rental ameerpet"
+          />
+        </div>
+        <p className='text-xl lg:text-5xl font-bold'>Self Drive Cars Madhapur ends here</p>
+        <p className='text-lg font-bold lg:text-2xl py-2 lg:py-4'>It's not far, find Self Drive Cars near Madhapur</p>
         <p>If you are searching for Self Drive Carss near Madhapur, know that you have arrived at the right place - Long Drive Cars.</p>
-        <p className='text-lg font-bold'>Choose the best Self Drive Cars hire in Madhapur</p>
+        <p className='text-lg font-bold py-2 lg:py-4'>Choose the best Self Drive Cars hire in Madhapur</p>
         <p>Why Self Drive Cars? Because Hyderabad is one of the best cities in India to experience Self Drive Carss in which you can travel across this historical city. Through the best Self Drive Cars hire in Madhapur from a quality company like Long Drive Cars, you can indulge in a variety of trips that include personal shopping trips, family outings, business trips and for any other purpose.</p>
-        <p className='text-lg font-bold'>Discover Self Drive Cars per day in Madhapur</p>
+        <p className='text-lg font-bold py-2 lg:py-4'>Discover Self Drive Cars per day in Madhapur</p>
         <p>Not just for Self Drive Cars per day in Madhapur area, Long Drive Cars are present across the city, and Hyderabad's malls and iconic stores welcome its visitors and shoppers all year round. In the best self driving cars at Madhapur like Long Drive Cars, you can take your time exploring the shopping scene of Hyderabad as you prefer. No hassle of waiting for cabs or finding a stranger (the driver) overhearing your conversations!</p>
-        <p className='text-lg font-bold'>Go for cars with self driving at Madhapur</p>
+        <p className='text-lg font-bold py-2 lg:py-4'>Go for cars with self driving at Madhapur</p>
         <p>Just pick up your choice of cars with self driving in Madhapur through Long Drive Cars, and self drive through some of the city of pearls' major shopping areas like old city for glass bangles, imitation jewelry and so on, the Abids area for contemporary fashion, the General Bazaar of Secunderabad for daily needs, travel bags and so on, without a flutter. You don’t have to know the city roads inside out to enjoy the treasures that lie within the lanes and bylanes of Hyderabad, just follow the digital maps and zoom off in style.</p>
-        <p className='text-lg font-bold'>Madhapur Self Drive Cars mean Long Drive Cars</p>
+        <p className='text-lg font-bold py-2 lg:py-4'>Madhapur Self Drive Cars mean Long Drive Cars</p>
         <p>Have leisure time at hand and the entire family is feeling bored? Worry not. Simply find Madhapur Self Drive Carss and start the journey within no time. Escape to any of the wonderful getaways that are mere hours away from Hyderabad and expect a refreshing change.</p>
-        <p className='text-lg font-bold'>The best self driving cars at Madhapur</p>
+        <p className='text-lg font-bold py-2 lg:py-4'>The best self driving cars at Madhapur</p>
         <p>The weekend getaways in Self Drive Cars are the ideal options to spend a short weekend or a long holiday with family and friends. Located amid rejuvenating settings, the short trip or a long vacation in the best self driving cars at Madhapur can help everyone come back feeling refreshed and ready to face city chaos and urban struggles.</p>
-        <p className='text-lg font-bold'>Experience top class 'Car Rental for Self Driven in Madhapur'</p>
+        <p className='text-lg font-bold py-2 lg:py-4'>Experience top class 'Car Rental for Self Driven in Madhapur'</p>
         <p>The weekend getaways from Hyderabad offer self drive enthusiasts with all sorts of getaways to choose from. If you like cool places, there are hill stations. Love sun, sand and sea? Self drive to beach destinations. Like knowing about India's great past, visit a historical place of your choice. Feeling spiritual, the city is close to religious towns. The best part, you can travel to the above places without booking any seat on trains, buses or flights, simply let your fingers do the magic: search for "Car Rental for Self Driven Madhapur", and find the best service of Long Drive Cars. Don't think twice, enjoy the company's terrific tariff!</p>
         <p>Each destination has something to offer: something interesting and worth coming back for more. A few of the interesting self drive destinations near Hyderabad include Warangal, Nagarjunasagar, Yadagirigutta, Vijayawada, Suryalanka, Konaseema, Araku Valley, Visakhapatnam, Srisailam, Horsley Hills, and many more. Excited!</p>
-        <p className='text-lg font-bold'>Self drive to Nagarjuna Sagar in Long Drive Cars</p>
+        <p className='text-lg font-bold py-2 lg:py-4'>Self drive to Nagarjuna Sagar in Long Drive Cars</p>
         <p>Self drive first to the second-largest water reservoir of India - Nagarjuna Sagar, which is also arguably the tallest and the largest dam in the world. Built over the mighty Krishna River, Nagarjuna Sagar is worth a self drive in Long Drive Cars owing to its lush green landscape replete with finest flora and fauna. That's not all. You can indulge in boating, fishing and memorable photography for social media and posterity.</p>
         <p>What's more, the sunrise and sunset too are interesting. The old Buddhist excavation sites near the dam are also worth visiting. There are several splendid waterfalls around that add to the joy of self driving to the place, including the Ethipothala Waterfalls, which is at a miniscule distance of 15 km from Nagarjuna Sagar and offers a ringside view of water cascading down from a great height.</p>
         <p>Bring out the nature admirer and wildlife enthusiast in you, for the Nagarjuna Sagar Wildlife Sanctuary, a tiger reserve is here too. Self drive from Madhapur to this special place with many rare species of plants, animals, and birds in the natural habitat. There are two ways of reaching this dam from Hyderabad. One route takes you through Nalgonda and the other takes you through Devarakond, the latter being a beautiful pit-stop worth a stopover.</p>
         <p>At a breezy distance of just 153 km from Hyderabad, your less than 3 hours self drive to Nagarjuna Sagar and its nearby attractions in well maintained Long Drive Cars will be a satisfying experience.</p>
-        <p className='text-lg font-bold'>Your search for Self Drive Cars near Madhapur ends at Long Drive Cars</p>
+        <p className='text-lg font-bold py-2 lg:py-4'>Your search for Self Drive Cars near Madhapur ends at Long Drive Cars</p>
         <p>After your first memorable self drive, you would be on a look out for another scintillating destination. So while you can search for more places (no need of searching for best self driving cars in Madhapur as you might have already experienced Long Drive Cars advantages), do think of Warangal.</p>
-        <p className='text-lg font-bold'>Visit Warangal through best self driving cars from Madhapur</p>
+        <p className='text-lg font-bold py-2 lg:py-4'>Visit Warangal through best self driving cars from Madhapur</p>
         <p>Imagine the glory of Kakatiya dynasty. The thousand pillars temple. The Ramappa temple. And your heart would naturally vouch for the majestic aura of Warangal. So take 2 days leave, or choose a weekend, and head straight to Long Drive Cars to choose your kind of car model. Next, self drive straight to Warangal, which is just about 150 km from Hyderabad.</p>
         <p>Once the capital city of famous Kakatiya dynasty, Warangal, once boasted of the massive fort, which is now in ruins, yet displays glory of the past. The famed Kakatiyan arch has been officially embedded into the emblem of newly formed Telangana after the Andhrapradesh state's bifurcation on June 2,2014. Warangal fort has four ornamental gates, referred to as Kakatiya Kala Thoranam, that actually formed the entrances to a now ruined Shiva temple.</p>
         <p>Self drive straight to Thousand pillars temple next, located near the Hanamkonda -Warangal Highway. Built under the rule of king Rudra Deva of Kakatiya empire, the marvelous architecture of this temple stands testimony to splendour of those times.You can miss a mega monolith Nandi, made up of black basalt stone. The intricately carved pillars leave all tourists in awe. There are many fine aspects that words can't describe and so you should discover on your own.</p>
@@ -46,7 +55,7 @@ function madhapur() {
         <p>While coming back from Warangal spare some time for another must visit place - the Jain Temple at Kolanupaka. Also known as Kulpakji, this temple is 2000 years old, located in Kolanupaka at a distance of 83 kms from Warangal, on the way to Hyderabad. Yet another reason to self drive!</p>
         <p>No ordinary place, the Jain Temple of Kolanupaka is supposed to be built in 11th Century AD by Bharata Chakravarty of the Rahtrakutas. Recently restored, this temple is regarded to be sacred for the Shwetambaras and is reasonably well maintained by the community. The temple is home to the idols of the three main Jain Tirthankaras : Lord Rishabha, Lord Neminath and Lord Mahavira . The idol of Lord Rishabha is made from a single jade (thus the magnificence it reflects) and is also known as Maniyaswami. If you are the one who goes into great details, then you can find a myriad of Jain manuscripts, antiquities and inscriptions here, proving that that this temple was once a major religious hub for the Jains.</p>
         <p>On the road again, you would notice that the last couple of hours on the way back to Hyderabad are quite scenic.</p>
-        <p className='text-lg font-bold'>Feel comfortable in the quality self driven cars of Long Drive Cars, always</p>
+        <p className='text-lg font-bold py-2 lg:py-4'>Feel comfortable in the quality self driven cars of Long Drive Cars, always</p>
         <p>While you and your family/friends would feel comfortable in the quality self driven cars offered by Long Drive Cars, however, it is worth noting that Warangal is a less visited tourist spot during the summer season when the sun is blazing, the weather is hot and a bit unpleasant.</p>
       </div>
       <Footer/>

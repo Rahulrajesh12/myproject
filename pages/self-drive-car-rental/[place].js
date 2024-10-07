@@ -16,7 +16,6 @@ const components = {
   ramanthapur: dynamic(() => import('../components/Branches/ramanthapur')),
   gachibowli: dynamic(() => import('../components/Branches/gachibowli')),
 
-  indiranagar: dynamic(() => import('../components/Branches/indiranagar')),
 };
 
 function Place() {

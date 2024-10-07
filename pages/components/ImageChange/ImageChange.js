@@ -39,11 +39,12 @@ const ImageChange = ({locname}) => {
           <Image
             src={homebanner}
             alt={'home banner'}
-            height={1000}
-            width={1000}
+            height={1200}
+            width={1200}
             className='xl:w-[500px] lg:w-[350px] w-[300px]'
+            priority
           />
-          <div className="lg:text-left xl:pl-0 lg:pl-4 text-black font-[500] xl:text-base text-xl pl-8 lg:pt-10 " data-wow-delay="50ms" data-wow-duration="200ms">
+          <div className="lg:text-left xl:pl-0 lg:pl-4 text-black font-[500] xl:text-base text-xl pl-8 lg:pt-10 " data-wow-delay="50ms">
             <p className='xl:text-3xl lg:text-2xl text-xl  lg:pb-2 font-bold py-2 lg:pl-0 w-fit lg:w-3/4 px-4'>Install Long Drive Cars Mobile app &
               Start Your Journey!</p>
             <div className='flex flex-wrap justify-center lg:justify-normal lg:gap-8 pt-2 gap-2 lg:w-full text-sm md:text-xs xl:text-lg'>
@@ -53,7 +54,7 @@ const ImageChange = ({locname}) => {
                     height={500}
                     width={500}
                     alt='apple'
-                    className='lg:w-36 lg:h-14 w-24 h-10'
+                    className='lg:w-40 lg:h-14 w-28 h-11 lg:hover:scale-105'
                     src={apple}
                   >
                   </Image>
@@ -63,7 +64,7 @@ const ImageChange = ({locname}) => {
                     height={500}
                     width={500}
                     alt='google'
-                    className='lg:w-48 lg:h-20 w-28 h-16'
+                    className='lg:w-48 lg:h-20 w-32 h-16 lg:hover:scale-105'
                     src={google}
                   >
                   </Image>
@@ -94,7 +95,7 @@ const ImageChange = ({locname}) => {
                   </div>
                   <div className="flex items-center gap-1 p-2 bg-[#660066] xl:text-lg lg:text-xs text-sm  border-[1px] border-black lg:rounded-full rounded-md lg:hover:scale-105 xl:w-[330px] lg:w-[250px]  w-full">
                     <FaCarSide className="bg-white text-black lg:rounded-full rounded-md p-1" size={40} />
-                    <p className="ml-2">Car Starts at {(locname!=='bangalore')?'₹1488/day':'₹1848/Day'}</p>
+                    <p className="ml-2">Car Starts at {(locname!=='bangalore')?'₹ 1488/day':'₹1848/Day'}</p>
                   </div>
                   <div className="flex items-center gap-1 p-2 bg-[#660066] xl:text-lg lg:text-xs text-sm  border-[1px] border-black lg:rounded-full rounded-md lg:hover:scale-105 xl:w-[330px] lg:w-[250px]  w-full">
                     <IoMdArrowDropdownCircle className="bg-white text-black lg:rounded-full rounded-md p-1" size={40} />

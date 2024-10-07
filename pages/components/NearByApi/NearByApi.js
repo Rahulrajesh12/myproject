@@ -19,7 +19,7 @@ function NearByApi({ city }) {
                             className='xl:w-full lg:w-96 lg:h-28 w-full pl-4 '
                         />
                     </Link>
-                    <span className='animate-ping text-xl bg-red-800 rounded-full w-3 h-3 relative bottom-8 left-28 xl:bottom-10 xl:left-44 lg:bottom-10 lg:left-36'></span>
+                    <span className='animate-ping text-xl bg-red-800 rounded-full w-3 h-3 relative bottom-8 left-28 mxs:left-32 xl:bottom-10 xl:left-44 lg:bottom-10 lg:left-36'></span>
                 </div>
                 <div>
                     <Link href={`${city?.length ? city : ''}/get-near-by-cars`}>
