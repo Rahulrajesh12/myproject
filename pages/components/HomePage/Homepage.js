@@ -22,7 +22,7 @@ export default function Homepage({ data }) {
       <div>
         <DynNearByApi />
       </div>
-      <CarProducts phoneno={'9000478478'} data={data2} />
+      <CarProducts phoneno={'9000478478'} data={data2} count={8}/>
       <div><DynNearYou /></div>
       <FeaturedCars data={data2}/>
       <DynCallBackForm />

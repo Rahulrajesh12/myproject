@@ -104,7 +104,7 @@ const fddata = [
 function FeaturedCars({ data, branch }) {
   return (
     <div className='feature-cars bg  text-black px-7 py-6 h-[655px] bg-gray-800 '>
-      <p className='text-center text-4xl font-semibold py-8 pb-4 text-white'>Check Out Our Featured Cars</p>
+      <p className='text-center lg:text-4xl text-2xl font-semibold lg:py-8 py-4 text-white'>Check Out Our Featured Cars</p>
       <div className="slider-container h-[600px] ">
         <Slider {...settings}>
           {

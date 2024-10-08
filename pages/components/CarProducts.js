@@ -16,8 +16,9 @@ import discfree from '../images/free.webp'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function CarProducts({ data, branch, phoneno }) {
-  const [visibleItems, setVisibleItems] = useState(7);
+function CarProducts({ data, branch, phoneno,count }) {
+  
+  const [visibleItems, setVisibleItems] = useState(count);
   const [searchQuery, setSearchQuery] = useState('');
   const handleLoadMore = () => {
     setVisibleItems(prev => prev + 9);
@@ -51,7 +52,7 @@ function CarProducts({ data, branch, phoneno }) {
      
         {filteredData?.slice(0, visibleItems).map((item, index) => (
           <React.Fragment key={index}>
-            { item?.car_number != "TS13FB0915" && item?.car_number != "TG032643" && item?.car_number != "KA10M8289" && <div className=" lg:rounded-md flex flex-col  w-[100%] md:w-72 lg:h-[480px] bg-white  h-[530px] lg:hover:scale-105">
+            { item?.car_number !== "TS13FB0915" && item?.car_number !== "TG032643" && item?.maker_model !== "MARUTHI SWIFT"  && <div className=" lg:rounded-md flex flex-col  w-[100%] md:w-72 lg:h-[480px] bg-white  h-[530px] lg:hover:scale-105">
               <div className="relative lg:h-[480px]  h-[480px] lg:rounded-md bg-white">
                 <div className="relative z-20 bg-gradient-to-b from-black opacity-90 lg:rounded-md bottom-4">
                   {/* <p className='p-1 font-bold font-manrope text-3xl '>{item?.maker_model}</p> */}
@@ -138,7 +139,7 @@ function CarProducts({ data, branch, phoneno }) {
                 </div>
               </div>
             </div>}
-            {(index + 1 === 3) && (
+            {(index + 1 === 5) && (
               <div className=" ">
                 <div className="bg-[#8d398d] lg:rounded-md  flex flex-col  w-[100%] md:w-72 lg:h-[496px]   h-[530px] lg:hover:scale-105 relative bottom-4">
                   <div>

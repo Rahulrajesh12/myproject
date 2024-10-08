@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import homebanner from '../../images/homebanner.webp'
 import apple from '../../images/apple.webp'
 import google from '../../images/ggle.webp'
 import Link from 'next/link';
-import img2 from '../../changeimg/ertiga.webp'
-import img3 from '../../changeimg/polo.webp'
-import img4 from '../../changeimg/swift.webp'
-import img5 from '../../changeimg/i20.webp'
 import { FaRegClock } from "react-icons/fa";
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 import { SlSpeedometer } from "react-icons/sl";
@@ -19,21 +15,9 @@ import { FaCarSide } from "react-icons/fa";
 import { IoCarSportSharp } from "react-icons/io5";
 
 const ImageChange = ({locname}) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [
-    img2, img3, img4, img5
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
+ 
   return (
-    <div className='mt-28 xl:mt-0 2xl:mt-0 lg:mt-0 xl:pl-16 lg:pl-4 poppins-text'>
+    <div className='mt-28 xl:mt-0 lg:mt-0 xl:pl-16 lg:pl-4 poppins-text'>
       <div className='h-full lg:pt-2 xl:pl-4 lg:pl-10 flex flex-wrap bg-white'>
         <div className='lg:flex lg:flex-row-reverse flex flex-col justify-center items-center lg:pr-2 '>
           <Image

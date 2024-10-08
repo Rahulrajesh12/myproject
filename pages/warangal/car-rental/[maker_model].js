@@ -61,6 +61,20 @@ const CarDetails = () => {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta property="og:title" content="Zero Deposit & Unlimited km - Self-Drive Car Rentals In Hyderabad" />
           <meta property="og:description" content="Self-drive cars start at 62/hr, We offer Self Drive Cars for the best prices with unlimited km & Zero deposit, Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=AW-16731119855"
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16731119855');
+          `,
+            }}
+          ></script>
         </Head>
         <div className='xl:mx-16  mx-4'>
           <div className='flex flex-col mt-[7.48rem] md:mt-20 lg:mt-2 md:flex-row p-2 border-2 border-purple-500 rounded-md'>
