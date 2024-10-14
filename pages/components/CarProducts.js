@@ -18,7 +18,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 function CarProducts({ data, branch, phoneno,count }) {
   
-  const [visibleItems, setVisibleItems] = useState(count);
+  const [visibleItems, setVisibleItems] = useState(6);
   const [searchQuery, setSearchQuery] = useState('');
   const handleLoadMore = () => {
     setVisibleItems(prev => prev + 9);
@@ -34,11 +34,11 @@ function CarProducts({ data, branch, phoneno,count }) {
   const filteredData = data?.filter(item =>
     item.maker_model.toLowerCase().includes(searchQuery.toLowerCase())
   );
-  // console.log(filteredData,"-------fd----");
+
   return (
     <div className=' bg-white'>
       <p className='text-black xl:text-5xl lg:text-4xl text-lg font-bold text-center py-7 capitalize'>Explore Our Cars in {branch?.length ? branch : 'Hyderabad'}</p>
-      <div className=' lg:mb-16 pl-3 flex flex-grow items-center justify-center pt-2 pb-14 lg:pb-2'>
+      <div className=' lg:mb-16 pl-3 flex items-center justify-center pt-2 pb-14 lg:pb-2'>
         <input
           placeholder='Search for your favourite car'
           className='placeholder-black text-black px-4 py-3 rounded-full bg-gray-200 w-full  md:max-w-96 lg:max-w-2xl'
@@ -52,7 +52,7 @@ function CarProducts({ data, branch, phoneno,count }) {
      
         {filteredData?.slice(0, visibleItems).map((item, index) => (
           <React.Fragment key={index}>
-            { item?.car_number !== "TS13FB0915" && item?.car_number !== "TG032643" && item?.maker_model !== "MARUTHI SWIFT"  && <div className=" lg:rounded-md flex flex-col  w-[100%] md:w-72 lg:h-[480px] bg-white  h-[530px] lg:hover:scale-105">
+            { <div className=" lg:rounded-md flex flex-col  w-[100%] md:w-72 lg:h-[480px] bg-white  h-[530px] lg:hover:scale-105">
               <div className="relative lg:h-[480px]  h-[480px] lg:rounded-md bg-white">
                 <div className="relative z-20 bg-gradient-to-b from-black opacity-90 lg:rounded-md bottom-4">
                   {/* <p className='p-1 font-bold font-manrope text-3xl '>{item?.maker_model}</p> */}
@@ -104,7 +104,7 @@ function CarProducts({ data, branch, phoneno,count }) {
                     <p className='font-bold text-lg shadow-black'>Book Now</p>
                     <p className='capitalize p-1 font-bold text-white bg-blue-700 rounded-md  z-50 font-manrope text-base pt-2 px-2 border-[1px] border-white'>₹ {item?.price_24_hours * 24}/day</p>
                   </div>
-                  <ul className="flex gap-4 justify-center text-sm pt-2 pb-6 font-bold">
+                  <ul className="flex gap-4 justify-center text-xs pt-2 pb-6 font-bold">
                     <li className="border-r-2 border-white flex items-center gap-1 pr-2"><span><BsFillFuelPumpFill className="text-orange-500" /></span><span>{item?.fuel_type}</span></li>
                     <li className="border-r-2 border-white flex items-center gap-1 pr-2"><span><GrGroup className="text-blue-500" /></span><span>{item?.seater} Seater</span></li>
                     <li className=" flex items-center gap-1"><span><TbManualGearbox size={20} className="text-red-600" /></span><span>{item?.transmission_type}</span></li>
