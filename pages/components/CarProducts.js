@@ -4,20 +4,17 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaSearch } from 'react-icons/fa';
-
 import { BsFillFuelPumpFill } from "react-icons/bs";
 import { GrGroup } from "react-icons/gr";
 import { TbManualGearbox } from "react-icons/tb";
-import { Carousel } from "react-responsive-carousel";
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Slider from 'react-slick';
 import disc from '../images/discoutn.webp'
 import discfree from '../images/free.webp'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function CarProducts({ data, branch, phoneno,count }) {
-  
+function CarProducts({ data, branch, phoneno, count }) {
+
   const [visibleItems, setVisibleItems] = useState(6);
   const [searchQuery, setSearchQuery] = useState('');
   const handleLoadMore = () => {
@@ -49,13 +46,12 @@ function CarProducts({ data, branch, phoneno,count }) {
         <FaSearch size={25} className='text-blue-500 relative right-9 lg:right-20 md:right-14' />
       </div>
       <div className="flex flex-wrap gap-x-8 gap-y-8 lg:items-start justify-center lg:pl-12 items-center text-white">
-     
+
         {filteredData?.slice(0, visibleItems).map((item, index) => (
           <React.Fragment key={index}>
-            { <div className=" lg:rounded-md flex flex-col  w-[100%] md:w-72 lg:h-[480px] bg-white  h-[530px] lg:hover:scale-105">
+            {<div className=" lg:rounded-md flex flex-col  w-[100%] md:w-72 lg:h-[480px] bg-white  h-[530px] lg:hover:scale-105">
               <div className="relative lg:h-[480px]  h-[480px] lg:rounded-md bg-white">
                 <div className="relative z-20 bg-gradient-to-b from-black opacity-90 lg:rounded-md bottom-4">
-                  {/* <p className='p-1 font-bold font-manrope text-3xl '>{item?.maker_model}</p> */}
                   <div className="flex flex-col gap-2 items-end pt-5 pr-5">
                     <p className='capitalize p-1 font-bold text-white bg-blue-700 rounded-md  z-50 font-manrope text-base pt-2 '>{item?.maker_model.toLowerCase()}</p>
                   </div>
@@ -98,7 +94,6 @@ function CarProducts({ data, branch, phoneno,count }) {
                     </Link>
                   </div>
                 </Slider>
-
                 <div className="relative z-20 bottom-[12.5rem] lg:bottom-[12.1rem] bg-gradient-to-t from-black opacity-90">
                   <div className="flex gap-2 items-center justify-around pt-5 pr-5 pb-2">
                     <p className='font-bold text-lg shadow-black'>Book Now</p>
@@ -112,7 +107,7 @@ function CarProducts({ data, branch, phoneno,count }) {
                 </div>
               </div>
               <div>
-                <div className="z-20 relative flex justify-between  text-white bottom-[3.5rem] lg:bottom-[2.3rem]">
+                <div className="z-20 relative flex justify-between  text-white bottom-[3.5rem] lg:bottom-[2.4rem]">
                   <ul className="flex w-full justify-between">
                     <li className="bg-green-500 w-full py-4 lg:py-2 text-center lg:rounded-bl-md">
                       {" "}
@@ -121,7 +116,7 @@ function CarProducts({ data, branch, phoneno,count }) {
                           <span>
                             <FaWhatsapp size={20} />
                           </span>{" "}
-                          <span>Whatsapp</span>
+                          <span>Whatsappp</span>
                         </p>
                       </Link>
                     </li>
@@ -139,22 +134,21 @@ function CarProducts({ data, branch, phoneno,count }) {
                 </div>
               </div>
             </div>}
-            {(index + 1 === 5) && (
+            {(index + 1 === 2) && (
               <div className=" ">
-                <div className="bg-[#8d398d] lg:rounded-md  flex flex-col  w-[100%] md:w-72 lg:h-[496px]   h-[530px] lg:hover:scale-105 relative bottom-4">
+                <div className="bg-[#8d398d] lg:rounded-md  flex flex-col  w-[100%] md:w-72 lg:h-[496px] h-[530px] lg:hover:scale-105 relative bottom-4">
                   <div>
                     <Image
                       src={disc}
                       height={1000}
                       width={1000}
                       alt='discount self drive car rental'
-                      className="scale-90 mxs:scale-75 lg:scale-90 relative mxs:bottom- rounded-md"
+                      className="scale-90 mxs:scale-[0.7] lg:scale-90 relative mxs:bottom-24 md:bottom-0 mxs:bottom- rounded-md"
                     />
                   </div>
                 </div>
               </div>
             )}
-
             {(index + 1 === 4) && (
               <div className="">
                 <div className="bg-[#000000] lg:rounded-md flex flex-col  w-[100%] md:w-72 lg:h-[496px]   h-[530px] lg:hover:scale-105 relative bottom-4">

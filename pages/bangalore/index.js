@@ -20,7 +20,7 @@ export default function Place({cars,canonicalUrl}) {
 
     return (
         <div>
-            <BangaloreLayout>
+            <BangaloreLayout locname={'bangalore'} phoneno={"912-912-2525"}>
                 <Head>
                     <title>Zero Deposit & Unlimited Km - Self-Drive Car Rentals In Bangalore</title>
                     <meta name="description" content="Self-drive cars start at 77/hr, We offer Self Drive Cars for the best prices with unlimited km & Zero deposit, Book Dzire @ ₹77/hr, Baleno @ ₹83/hr, Ertiga @ ₹116/hr, Swift @ ₹77/hr, Thar @ ₹208/hr." />
@@ -34,13 +34,13 @@ export default function Place({cars,canonicalUrl}) {
                     <div>
                         <DynNearByApi city={'bangalore'} />
                     </div>
-                    <CarProducts data={cars} branch={"bangalore"} phoneno={'9129122525'} count={8}/>
+                    <CarProducts data={cars} branch={"bangalore"} phoneno={'9129122525'} count={6}/>
                     <div><DynNearYou /></div>
                     <FeaturedCars data={cars} branch={"bangalore"} />
                     <DynCallBackForm />
                     <DynWhyChooseUs locname={'bangalore'} />
                     <div className='bg-white rounded shadow-md xl:py-12 lg:px-14 xl:px-14 p-2'>
-                        <h2 className='uppercase p-2 mb-4 text-center text-black font-bold xl:text-2xl font-manrope'>Frequently asked questions</h2>
+                        <p className='uppercase p-2 mb-4 text-center text-black font-bold xl:text-2xl font-manrope'>Frequently asked questions</p>
                         <DynamicFaqComponent city={'bangalore'} />
                     </div>
                     <GetInTouch city={'bangalore'} phoneno={'9129122525'} />
@@ -52,7 +52,7 @@ export default function Place({cars,canonicalUrl}) {
 }
 
 export async function getServerSideProps({req}) {
-    const response = await fetch('https://api.longdrivecarz.in/site/cars-info?location=Hyderabad');
+    const response = await fetch('https://api.longdrivecarz.in/site/cars-info?location=bangalore');
     const items = await response.json();
     const cars = items?.data?.results;
     const host = req.headers.host;
