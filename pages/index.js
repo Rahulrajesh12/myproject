@@ -37,7 +37,7 @@ export default function Place({cars,canonicalUrl}) {
 
     return (
         <div>
-            <Layout locname={''} phoneno={"9000-478-478"}>
+            <Layout locname={''} phoneno={"9000-888-922"}>
                 <Head>
                     <title>Zero Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad</title>
                     <meta name="description" content="Self-drive cars start at 62/hr, We offer Long Drive Cars for the best prices with unlimited km & Zero deposit, Book clDzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
@@ -65,7 +65,7 @@ export default function Place({cars,canonicalUrl}) {
                     <div>
                         <DynNearByApi city={''} />
                     </div>
-                    <CarProducts data={cars} branch={""} phoneno={'9000478478'} count={7}/>
+                    <CarProducts data={cars} branch={""} phoneno={'9000888922'} count={7}/>
                     <div><DynNearYou /></div>
                     <FeaturedCars data={carData2} branch={""} />
                     <DynCallBackForm />
@@ -74,7 +74,7 @@ export default function Place({cars,canonicalUrl}) {
                         <p className='uppercase p-2 mb-4 text-center text-black font-bold xl:text-2xl font-manrope'>Frequently asked questions</p>
                         <DynamicFaqComponent />
                     </div>
-                    <GetInTouch phoneno={'9000478478'} />
+                    <GetInTouch phoneno={'9000888922'} />
                     <PriceList city={'hyd'} />
                 </div>
             </Layout>
