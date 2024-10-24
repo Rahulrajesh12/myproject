@@ -34,7 +34,6 @@ export default function Place({ cars, canonicalUrl }) {
                 const cars = items?.data?.results;
                 setCarData2(cars);
             } catch (error) {
-                ``
                 console.error('Error fetching car details:', error);
             }
         }
