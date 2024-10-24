@@ -17,7 +17,6 @@ import Head from 'next/head';
 
 export default function Place({cars,canonicalUrl}) {
     const [carData, setCarData] = useState(null);
-    // 9886666883    988-6666-883
     return (
         <div>
             <BangaloreLayout locname={'bangalore'} phoneno={"988-6666-883"}>

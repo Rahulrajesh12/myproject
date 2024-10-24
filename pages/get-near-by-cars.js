@@ -10,13 +10,11 @@ const Dynfooter =  dynamic(() => import('../pages/components/Footer/Footer'), {
 function getnearbycars() {
   return (
     <div className='bg-white'>
-      <Layout phoneno={'9000-478-478'}>
-
+      <Layout phoneno={'9000-888-922'}>
         <DynNearby/>
       </Layout>
-        
     </div>
   )
 }
 
-export default getnearbycars
+export default getnearbycars;

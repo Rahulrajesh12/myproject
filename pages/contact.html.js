@@ -22,7 +22,7 @@ function contact() {
         };
     }, [router.events]);
     return (
-        <Layout phoneno={'9000-478-478'}>
+        <Layout phoneno={'9000-888-922'}>
             {loading && <Loading />}
             <ContactUS />
         </Layout>

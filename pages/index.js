@@ -58,6 +58,7 @@ export default function Place({ cars, canonicalUrl }) {
             router.events.off('routeChangeError', handleComplete);
         };
     }, [router.events]);
+
     const handleLocation = (location) => {
         if (location === 'hyderabad') {
             setSelectedLocation('hyderabad');
@@ -74,8 +75,31 @@ export default function Place({ cars, canonicalUrl }) {
             router.push('/vizag');
         }
     };
+
     return (
         <div>
+            <Head>
+                <title>Zero Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad</title>
+                <meta name="description" content="Self-drive cars start at 62/hr, We offer Long Drive Cars for the best prices with unlimited km & Zero deposit, Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta property="og:title" content="Zero Deposit & Unlimited km - Self-Drive Car Rentals In Hyderabad" />
+                <meta property="og:description" content="Self-drive cars start at 62/hr, We offer Long Drive Cars for the best prices with unlimited km & Zero deposit, Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
+                <script
+                    async
+                    src="https://www.googletagmanager.com/gtag/js?id=AW-16731119855"
+                ></script>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'AW-16731119855');
+                    `,
+                    }}
+                ></script>
+                <link rel="canonical" href={canonicalUrl} />
+            </Head>
             {loading && <Loading />}
             {(!selectedLocation) && (
                 <div className='flex justify-center items-center lg:pt-32 pt-20 flex-col gap-4 lg:text-3xl'>
@@ -119,22 +143,22 @@ export default function Place({ cars, canonicalUrl }) {
                             /></span><span className='text-[#0456e8]'>Warangal</span></button>
                         </div>
                         <div className='flex gap-6 flex-col lg:flex-row'>
-                        <button onClick={() => handleLocation('vizag')} className='lg:hover:scale-105 p-2  border-2 border-[#0456e8] rounded-md flex items-center gap-2 w-48 lg:w-64 h-16'><span><Image
-                            className="w-10 h-10 relative bottom-1"
-                            src={viz}
-                            alt="Long Drive Cars"
-                            width={110}
-                            height={110}
-                        // placeholder="blur"
-                        /></span><span className='text-[#0456e8]'>Vizag</span></button>
-                        <button onClick={() => handleLocation('mysore')} className='lg:hover:scale-105 p-2  border-2 border-[#0456e8] rounded-md flex items-center gap-2 w-48 lg:w-64 h-16'><span><Image
-                            className="w-12 h-12 relative bottom-1"
-                            src={mys}
-                            alt="Long Drive Cars"
-                            width={110}
-                            height={110}
-                        // placeholder="blur"
-                        /></span><span className='text-[#0456e8]'>Mysore</span></button>
+                            <button onClick={() => handleLocation('vizag')} className='lg:hover:scale-105 p-2  border-2 border-[#0456e8] rounded-md flex items-center gap-2 w-48 lg:w-64 h-16'><span><Image
+                                className="w-10 h-10 relative bottom-1"
+                                src={viz}
+                                alt="Long Drive Cars"
+                                width={110}
+                                height={110}
+                            // placeholder="blur"
+                            /></span><span className='text-[#0456e8]'>Vizag</span></button>
+                            <button onClick={() => handleLocation('mysore')} className='lg:hover:scale-105 p-2  border-2 border-[#0456e8] rounded-md flex items-center gap-2 w-48 lg:w-64 h-16'><span><Image
+                                className="w-12 h-12 relative bottom-1"
+                                src={mys}
+                                alt="Long Drive Cars"
+                                width={110}
+                                height={110}
+                            // placeholder="blur"
+                            /></span><span className='text-[#0456e8]'>Mysore</span></button>
                         </div>
                     </div>
                     {/* <Link href={'/warangal'}> warangal</Link> */}
