@@ -25,7 +25,7 @@ const ImageChange = ({ locname }) => {
             alt={'self drive car rental hyderabad'}
             height={1000}
             width={1000}
-            className='xl:w-[500px] lg:w-[350px] w-[300px] hidden lg:block'
+            className='xl:w-[500px] lg:w-[350px] w-[300px]'
             priority
           />
           <div className="lg:text-left xl:pl-0 lg:pl-4 text-black font-[500] xl:text-base text-xl lg:pt-10 pt-3">
