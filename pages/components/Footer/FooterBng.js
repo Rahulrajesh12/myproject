@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
 import { TbPointFilled } from "react-icons/tb";
 import imgs from '../../images/cretafoot_2_11zon-transformed.webp'
-import imgs2 from '../../images/EA2u65Ss0VJeJ2l1hfQc7-transformed.webp'
+import imgs2 from '../../images/EA2u65Ss0VJeJ2l1hfQc7-transformed (1).webp'
 import logo2 from '../../images/logo-white.webp';
 
 function Footer({ branch }) {

@@ -84,6 +84,8 @@ export default function ExploreCars({ loc,phoneno }) {
         });
     }, [carData, searchQuery, selectedBrand, selectedSeater, selectedFuelType, selectedTransType]);
 
+    const sortedData = filteredData?.sort((a, b) => a.price_24_hours - b.price_24_hours);
+
     const clearFilters = () => {
         setSelectedBrand('');
         setSelectedSeater('');
@@ -304,7 +306,7 @@ export default function ExploreCars({ loc,phoneno }) {
                                     <div className="relative h-80">
                                         <Link href={`${(("car-rental/" + item.maker_model).toLowerCase()).replace(/ /g, '-')}`}>
                                             <Image
-                                                src={replaceText(item?.car_image_car_right_view)}
+                                                src={replaceText(item?.car_image_front_view)}
                                                 alt={StaticData(String(item?.maker_model.toLowerCase())) + String(item?.maker_model.toLowerCase())}
                                                 title={StaticData(String(item?.maker_model.toLowerCase())) + String(item?.maker_model.toLowerCase())}
                                                 layout="fill"
@@ -362,7 +364,7 @@ export default function ExploreCars({ loc,phoneno }) {
                                                 height={1000}
                                                 width={1000}
                                                 alt='discount'
-                                                className="scale-90"
+                                                className="scale-75"
                                             />
                                         </div>
                                     </div>
