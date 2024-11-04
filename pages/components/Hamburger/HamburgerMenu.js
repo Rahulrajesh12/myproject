@@ -124,7 +124,7 @@ const HamburgerMenu = ({ locname, phoneno }) => {
             <Image
               className="w-10 lg:w-48 lg:h-48"
               src={logo2}
-              alt="carrr"
+              alt="Long Drive Cars app"
               width={192}
               height={192}
               priority

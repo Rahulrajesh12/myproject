@@ -3,11 +3,19 @@ import HamburgerMenu from '../components/Hamburger/HamburgerMenu';
 import Footer from '../components/Footer/Footer';
 import www from '../images/branchimages/2.webp'
 import Image from 'next/image';
+import Head from 'next/head';
 function hyderabadrentalcar() {
   return (
     <div className='bg-white text-black'>
       <HamburgerMenu phoneno={'9000-478-478'} />
       <div className=' pt-32 lg:pt-16 bg-white'>
+      <Head>
+        <title>No Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad</title>
+        <meta name="description" content="Hyderabad rental car in a matter of minutes!"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="No Deposit & Unlimited km - Self-Drive Car Rentals In Hyderabad" />
+        <meta property="og:description" content="Hyderabad rental car in a matter of minutes!"/> 
+      </Head>
 
         <p className='text-xl font-bold py-2 lg:py-4 lg:text-4xl xl:mx-72 lg:mx-80 mx-6'>Hyderabad rental car in a matter of minutes!</p>
         <div>
@@ -16,7 +24,7 @@ function hyderabadrentalcar() {
             height={2000}
             width={2000}
             className='py-3 object-cover w-full'
-            alt="self drive car rental ameerpet"
+            alt="Long Drive Cars app"
           />
         </div>
         <div className='xl:mx-72 lg:mx-80 mx-6 text-xs lg:text-lg  leading-7 lg:leading-9'>

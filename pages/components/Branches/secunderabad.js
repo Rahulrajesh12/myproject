@@ -11,6 +11,7 @@ function secunderabad() {
                 height={1000}
                 width={1000}
                 className='py-3 object-cover w-full'
+                alt='Long Drive Cars app'
             />
             <div className='xl:mx-72 lg:mx-80 mx-6'>
                 <p className='pb-2'><strong>Self Drive Cars Hyderabad</strong> is a market-leading provider of <strong>self-drive car rentals</strong>  in Secunderabad, offering a modern fleet to meet individual needs. The services provided by <strong>Self Drive Cars</strong>  reflect the professionalism and quality you'd expect from a top-notch self-driving solutions company.</p>

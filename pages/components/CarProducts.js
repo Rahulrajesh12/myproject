@@ -76,23 +76,23 @@ function CarProducts({ data, branch, phoneno, count }) {
                   <div>
                     {
                       <Link href={`${(((branch?.length ? branch : '') + "/car-rental/" + item.maker_model).toLowerCase()).replace(/ /g, '-')}`}>
-                        <Image className={' rounded-md h-[500px] object-cover'} width={1000} height={1000} alt="cars" src={replaceText(item?.car_image_front_view)}></Image>
+                        <Image className={' rounded-md h-[500px] object-cover'} width={1000} height={1000} alt="Long Drive Cars app" src={replaceText(item?.car_image_front_view)}></Image>
                       </Link>}
                   </div>
                   <div onClick={() => {
                   }}>
                     <Link href={`${(("car-rental/" + item.maker_model).toLowerCase()).replace(/ /g, '-')}`}>
-                      <Image alt="self drive car rental" className=' rounded-md h-[500px] object-cover' width={1000} height={1000} src={replaceText(item?.car_image_back_inner)}></Image>
+                      <Image alt="Long Drive Cars app" className=' rounded-md h-[500px] object-cover' width={1000} height={1000} src={replaceText(item?.car_image_back_inner)}></Image>
                     </Link>
                   </div>
                   <div>
                     <Link href={`${(("car-rental/" + item.maker_model).toLowerCase()).replace(/ /g, '-')}`}>
-                      <Image alt="self drive car rental" className=' rounded-md h-[500px] object-cover' width={1000} height={1000} src={replaceText(item?.car_image_reading_view)}></Image>
+                      <Image alt="Long Drive Cars app" className=' rounded-md h-[500px] object-cover' width={1000} height={1000} src={replaceText(item?.car_image_reading_view)}></Image>
                     </Link>
                   </div>
                   <div>
                     <Link href={`${(("car-rental/" + item.maker_model).toLowerCase()).replace(/ /g, '-')}`}>
-                      <Image alt="self drive car rental" className=' rounded-md h-[500px] object-cover' width={1000} height={1000} src={replaceText(item?.car_image_back_view)}></Image>
+                      <Image alt="Long Drive Cars app" className=' rounded-md h-[500px] object-cover' width={1000} height={1000} src={replaceText(item?.car_image_back_view)}></Image>
                     </Link>
                   </div>
                 </Slider>
@@ -144,7 +144,7 @@ function CarProducts({ data, branch, phoneno, count }) {
                       src={disc}
                       height={1000}
                       width={1000}
-                      alt='discount self drive car rental'
+                      alt='Long Drive Cars app'
                       className="scale-75 mxs:scale-[0.6] lg:scale-90 relative bottom-[4rem] mxs:bottom-16 md:bottom-0 mxs:bottom- rounded-md"
                     />
                   </div>
@@ -159,7 +159,7 @@ function CarProducts({ data, branch, phoneno, count }) {
                       src={discfree}
                       height={1000}
                       width={1000}
-                      alt='discount self drive car rental'
+                      alt='Long Drive Cars app'
                       className=" rounded-md bg-cover"
                     />
                   </div>

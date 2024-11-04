@@ -43,7 +43,7 @@ function Footer({ locname }) {
                                     <Image
                                         className="lg:w-72 xl:w-full xl:h-32 lg:20"
                                         src={logo2}
-                                        alt="carrr"
+                                        alt="Long Drive Cars app"
                                         width={1000}
                                         height={1000}
                                     // placeholder="blur"
@@ -130,7 +130,7 @@ function Footer({ locname }) {
                                 width={1000}
                                 height={1000}
                                 className='lg:w-[170px] lg:h-28 w-16 h-12 relative bottom-1 lg:bottom-[0.55rem]'
-                                alt="car rental"
+                                alt="Long Drive Cars app"
                             >
                             </Image>
                             <Image
@@ -138,7 +138,7 @@ function Footer({ locname }) {
                                 width={1000}
                                 height={1000}
                                 className='lg:w-32 lg:h-28 h-12 w-12 '
-                                alt="car rental"
+                                alt="Long Drive Cars app"
                             >
                             </Image>
                         </div>

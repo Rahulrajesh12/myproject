@@ -22,7 +22,7 @@ const ImageChange = ({ locname }) => {
         <div className='lg:flex lg:flex-row-reverse flex flex-col justify-center items-center lg:px-6 xl:px-0'>
           <Image
             src={homebanner}
-            alt={'self drive car rental hyderabad'}
+            alt="Long Drive Cars app"
             height={1000}
             width={1000}
             className='xl:w-[500px] lg:w-[350px] w-[300px]'

@@ -3,10 +3,19 @@ import HamburgerMenu from '../components/Hamburger/HamburgerMenu';
 import Footer from '../components/Footer/Footer';
 import Image from 'next/image';
 import www from '../images/branchimages/6.webp'
+import Head from 'next/head';
 
 function kukatpally() {
   return (
     <div className='bg-white'>
+         <Head>
+        <title>No Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad</title>
+        <meta name="description" content="It's time for self drive cars in Kukatpally"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="No Deposit & Unlimited km - Self-Drive Car Rentals In Hyderabad" />
+        <meta property="og:description" content="It's time for self drive cars in Kukatpally"/> 
+      </Head>
+
       <HamburgerMenu phoneno={'9000-478-478'}/>
       <div className='text-black lg:px-16 px-4 leading-9 lg:leading-10 pt-32 lg:pt-16'>
         <p className='text-xl lg:text-5xl font-bold py-2 lg:py-4'>It's time for self drive cars in Kukatpally</p>
@@ -16,7 +25,7 @@ function kukatpally() {
             height={2000}
             width={2000}
             className='py-3 object-cover w-full'
-            alt="self drive car rental ameerpet"
+            alt="Long Drive Cars"
           />
         </div>
         <p>Are you looking for Best Self Drive Cars Kukatpally?</p>

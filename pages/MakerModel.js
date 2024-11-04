@@ -86,19 +86,19 @@ const CarDetails = ({ city, phoneno }) => {
                 className="relative bottom-[4.5rem] lg:rounded-md"
               >
                 <div>
-                  <Image className={'lg:h-[655px] h-[450px]  rounded-md'} width={1000} height={1000} alt="cars" src={replaceText(caritem?.car_image_car_right_view)}></Image>
+                  <Image className={'lg:h-[655px] h-[450px]  rounded-md'} width={1000} height={1000} alt="Long Drive Cars app" src={replaceText(caritem?.car_image_car_right_view)}></Image>
                 </div>
                 <div onClick={() => {
                 }}>
 
-                  <Image alt="self drive car rental" className='lg:h-[655px] h-[450px]  rounded-md' width={1000} height={1000} src={replaceText(caritem?.car_image_back_inner)}></Image>
+                  <Image alt="Long Drive Cars app" className='lg:h-[655px] h-[450px]  rounded-md' width={1000} height={1000} src={replaceText(caritem?.car_image_back_inner)}></Image>
 
                 </div>
                 <div>
-                  <Image alt="self drive car rental" className='lg:h-[655px] h-[450px]  rounded-md' width={1000} height={1000} src={replaceText(caritem?.car_image_reading_view)}></Image>
+                  <Image alt="Long Drive Cars app" className='lg:h-[655px] h-[450px]  rounded-md' width={1000} height={1000} src={replaceText(caritem?.car_image_reading_view)}></Image>
                 </div>
                 <div>
-                  <Image alt="self drive car rental" className='lg:h-[655px] h-[450px]  rounded-md' width={1000} height={1000} src={replaceText(caritem?.car_image_back_view)}></Image>
+                  <Image alt="Long Drive Cars app" className='lg:h-[655px] h-[450px]  rounded-md' width={1000} height={1000} src={replaceText(caritem?.car_image_back_view)}></Image>
                 </div>
               </Slider>
             </div>

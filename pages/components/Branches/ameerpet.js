@@ -12,7 +12,7 @@ function Ameerpet() {
                     height={2000}
                     width={2000}
                     className='py-3 object-cover w-full'
-                    alt="self drive car rental ameerpet"
+                    alt="Long Drive Cars app"
                 />
             </div>
             <div className='xl:mx-80 lg:mx-80 mx-6'>

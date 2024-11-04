@@ -146,21 +146,21 @@ export default function Place({ cars, canonicalUrl }) {
                                             <button onClick={() => handleLocation('hyderabad')} className='lg:hover:scale-105 p-2  border-2 border-[#0456e8]  rounded-md flex items-center gap-2 w-48 h-16 lg:w-64'><span><Image
                                                 className="w-8 h-8 relative bottom-1"
                                                 src={hyd}
-                                                alt="Long Drive Cars"
+                                                alt="Long Drive Cars app"
                                                 width={110}
                                                 height={110}
                                             /></span><span className='text-[#0456e8]'>Hyderabad</span></button>
                                             <button onClick={() => handleLocation('bangalore')} className='lg:hover:scale-105 p-2  border-2 border-[#0456e8] rounded-md flex items-center gap-2 w-48 lg:w-64 h-16'><span><Image
                                                 className="w-12 h-12 relative bottom-1"
                                                 src={bang}
-                                                alt="Long Drive Cars"
+                                                alt="Long Drive Cars app"
                                                 width={110}
                                                 height={110}
                                             /></span><span className='text-[#0456e8]'>Bangalore</span></button>
                                             <button onClick={() => handleLocation('warangal')} className='lg:hover:scale-105 p-2  border-2 border-[#0456e8]  rounded-md flex items-center gap-2 w-48 lg:w-64 h-16'><span><Image
                                                 className="w-8 h-8 relative bottom-1"
                                                 src={wrg}
-                                                alt="Long Drive Cars"
+                                                alt="Long Drive Cars app"
                                                 width={110}
                                                 height={110}
                                             /></span><span className='text-[#0456e8]'>Warangal</span></button>
@@ -169,14 +169,14 @@ export default function Place({ cars, canonicalUrl }) {
                                             <button onClick={() => handleLocation('vizag')} className='lg:hover:scale-105 p-2  border-2 border-[#0456e8] rounded-md flex items-center gap-2 w-48 lg:w-64 h-16'><span><Image
                                                 className="w-10 h-10 relative bottom-1"
                                                 src={viz}
-                                                alt="Long Drive Cars"
+                                                alt="Long Drive Cars app"
                                                 width={110}
                                                 height={110}
                                             /></span><span className='text-[#0456e8]'>Vizag</span></button>
                                             <button onClick={() => handleLocation('mysore')} className='lg:hover:scale-105 p-2  border-2 border-[#0456e8] rounded-md flex items-center gap-2 w-48 lg:w-64 h-16'><span><Image
                                                 className="w-12 h-12 relative bottom-1"
                                                 src={mys}
-                                                alt="Long Drive Cars"
+                                                alt="Long Drive Cars app"
                                                 width={110}
                                                 height={110}
                                             /></span><span className='text-[#0456e8]'>Mysore</span></button>
