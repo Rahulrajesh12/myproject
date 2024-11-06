@@ -90,10 +90,15 @@ const metadata = {
  
   // Add other branches here...
 };
-
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context) { 
+  const { req } = context;
   const { place } = context.params;
   const { title = 'Default Title', description = 'Default Description', ogDescription = '' } = metadata[place.toLowerCase()] || {};
+
+  const host = req.headers.host;
+  const canonicalUrl = host.includes('.in')
+      ? `https://www.longdrivecars.in/self-drive-car-rental/${place.toLowerCase()}`
+      : `https://www.longdrivecars.com/self-drive-car-rental/${place.toLowerCase()}`;
 
   return {
     props: {
@@ -101,11 +106,12 @@ export async function getServerSideProps(context) {
       title,
       description,
       ogDescription,
+      canonicalUrl
     },
   };
 }
 
-function Place({ place, title, description, ogDescription }) {
+function Place({ place, title, description, ogDescription, canonicalUrl }) {  // Include canonicalUrl here
   const [Component, setComponent] = useState(null);
   const router = useRouter();
 
@@ -124,6 +130,7 @@ function Place({ place, title, description, ogDescription }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={ogDescription} />
+        <link rel="canonical" href={canonicalUrl} />  {/* Use canonicalUrl here */}
       </Head>
       <div>{Component ? <Component /> : <div>Loading...</div>}</div>
     </Layout>
@@ -131,3 +138,5 @@ function Place({ place, title, description, ogDescription }) {
 }
 
 export default Place;
+
+

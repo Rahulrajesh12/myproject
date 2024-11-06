@@ -5,7 +5,7 @@ function medipally() {
 
     return (
         <div className='text-black pt-36 lg:py-12 text-xs lg:text-base leading-7 lg:leading-9 '>
-            <h1 className='font-bold text-base lg:text-3xl xl:mx-72 lg:mx-80 mx-6'>Experience the Self Drive Cars ECIL at your own peace </h1>
+            <h1 className='font-bold text-base lg:text-3xl xl:mx-72 lg:mx-80 mx-6'>Experience the Self Drive Cars Medipally at your own peace </h1>
             <Image
                 src={harrier}
                 height={2000}
@@ -14,11 +14,11 @@ function medipally() {
                 alt="Long Drive Cars app"
             />
             <div className='xl:mx-72 lg:mx-80 mx-6'>
-            <p>If you're searching for the best <strong>self drive car rentals</strong>  in ECIL, look no further than<strong> Self Drive Cars Hyderabad</strong>. Offering a seamless and convenient car rental experience, this service is perfect for those who want the freedom to explore without the hassle of deposits or mileage restrictions. </p>
+            <p>If you're searching for the best <strong>self drive car rentals</strong>  in Medipally, look no further than<strong> Self Drive Cars Hyderabad</strong>. Offering a seamless and convenient car rental experience, this service is perfect for those who want the freedom to explore without the hassle of deposits or mileage restrictions. </p>
             <p className='font-bold pt-8'>Explore Anywhere, Anytime  </p>
             <p>One of the standout features of Self Drive Cars Hyderabad is the ability to explore without boundaries. With<strong> unlimited kilometers</strong> , you can travel as far as you want without worrying about additional charges. Whether you're planning a weekend getaway, a business trip, or simply need a car for daily errands, the unlimited kilometers option ensures that you can go the extra mile—literally.</p>
-            <p className='pt-8'>Located in ECIL, Self Drive Cars Hyderabad offers a wide range of cars to suit all your needs. Whether you're looking for a compact car for city driving or an SUV for a family trip, they have a variety of options to choose from. The easy booking process and convenient location make it simple to find<strong> self drive cars near me.</strong>  </p>
-            <p className='pt-8'>For those looking to experience the best<strong> self drive car rentals</strong> in ECIL, Self Drive Cars Hyderabad is the go-to choice. With No Deposit requirements and unlimited kilometers, you can enjoy the freedom to explore wherever your heart desires. Whether you're a local resident or a visitor, this service offers unparalleled convenience and flexibility, making your journey as smooth as possible.</p>
+            <p className='pt-8'>Located in Medipally, Self Drive Cars Hyderabad offers a wide range of cars to suit all your needs. Whether you're looking for a compact car for city driving or an SUV for a family trip, they have a variety of options to choose from. The easy booking process and convenient location make it simple to find<strong> self drive cars near me.</strong>  </p>
+            <p className='pt-8'>For those looking to experience the best<strong> self drive car rentals</strong> in Medipally, Self Drive Cars Hyderabad is the go-to choice. With No Deposit requirements and unlimited kilometers, you can enjoy the freedom to explore wherever your heart desires. Whether you're a local resident or a visitor, this service offers unparalleled convenience and flexibility, making your journey as smooth as possible.</p>
             <p className='pt-8'>Vijayawada is a city rich in cultural and spiritual heritage, known for its magnificent temples. For those seeking a peaceful and spiritual journey, renting a self-drive car from <strong> Self Drive Cars Hyderabad</strong> offers the perfect way to explore these sacred sites at your own pace.</p>
             <ul>
                 <li>
