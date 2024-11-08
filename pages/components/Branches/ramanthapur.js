@@ -8,17 +8,17 @@ function ramanthapur() {
 
     return (
         <div className='text-black pt-36 lg:py-12 text-xs lg:text-base leading-7 lg:leading-9 '>
-            <h1 className='font-bold text-xl lg:text-4xl xl:mx-72 lg:mx-80 mx-6'>Drive yourself around Hyderabad with self-drive cars from Ramanthapur </h1>
+            <h1 className='font-bold text-xl lg:text-4xl xl:mx-72 lg:mx-80 mx-6 lg:pb-6'>Drive yourself around Hyderabad with self-drive cars from Ramanthapur </h1>
             
             <Image
                 src={kushaq}
                 height={2000}
                 width={2000}
-                className='py-3 object-cover w-full'
+                className='object-cover w-full'
                 alt="Long Drive Cars app"
             />
             <div className='xl:mx-72 lg:mx-80 mx-6'>
-            <p className='font-bold text-sm lg:text-3xl py-6 '>Discover Hyderabad on Your Terms</p>
+            <p className='font-bold text-sm lg:text-3xl lg:pb-3  '>Discover Hyderabad on Your Terms</p>
                 <p>Looking for the freedom to explore Hyderabad at your own pace? <strong>Self-drive car rentals</strong> offer the perfect solution. Ramanthapur, a bustling tech hub, is a convenient starting point for your adventures. With <strong>Self Drive Cars Hyderabad</strong>, you can easily rent a car and embark on exciting journeys.</p>
                 <p className='font-bold lg:text-xl py-1 lg:pt-8 pt-4'>Why Choose Self-Drive in Ramanthapur?</p>
                 <ul>

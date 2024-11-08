@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import Layout from '../components/Layout/Layout';
 import Head from 'next/head';
+import ecil from '../components/Branches/ecil';
 
 const components = {
   ameerpet: dynamic(() => import('../components/Branches/ameerpet'), { ssr: false }),
@@ -22,34 +23,40 @@ const components = {
 const metadata = {
 
   ameerpet: {
-    title: 'No Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad',
-    description: 'Discover Hyderabad at your own pace with self-drive cars in Ameerpet',
-    ogDescription: 'Discover Hyderabad at your own pace with self-drive cars in Ameerpet',
+    title: ' Self Drive Cars Hyderabad- Best Car Rentals in Ameerpet',
+    description:"Explore a wide range of self-drive cars in Ameerpet with Self Drive Cars Hyderabad. Enjoy quality, convenience, and flexibility with our top-notch rental services",
+    ogDescription: 'Explore a wide range of self-drive cars in Ameerpet withSelf Drive Cars Hyderabad. Enjoy quality, convenience, and flexibility with our top-notch rental services',
   },
 
   dilshuknagar: {
-    title: 'No Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad',
-    description: 'Convenient Availability of Self-Driving Cars in Dilsukhnagar',
-    ogDescription: "Convenient Availability of Self-Driving Cars in Dilsukhnagar",
+    title: 'Discover Hyderabad with Self-Drive Cars from Dilsukhnagar',
+    description: 'Discover Hyderabad at your own pace with self-drive car rentals. Enjoy flexible, cost-effective, and comfortable travel to city sights, Araku Valley, and beyond',
+    ogDescription: 'Discover Hyderabad at your own pace with self-drive car rentals. Enjoy flexible, cost-effective, and comfortable travel to city sights, Araku Valley, and beyond',
+
   },
 
-  ecil: {
-    title: 'No Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad',
-    description: "Experience the Self Drive Cars ECIL at your own peace",
-    ogDescription: 'Experience the Self Drive Cars ECIL at your own peace',
+  
+  ecil:{
+    title:"Top Self Drive Rentals ECIL- Unlimited KM, No Deposit",
+    description:'Explore with freedom using Self Drive Cars Hyderabad!No deposit, unlimited kilometers, and a wide car range for your perfectjourney around ECIL and beyond',
+    ogDescription:'Explore with freedom using Self Drive Cars Hyderabad!No deposit, unlimited kilometers, and a wide car range for your perfectjourney around ECIL and beyond',
+
   },
+
+
 
   kukatpally: {
-    title: 'No Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad',
-    description: "It's Time for Self-Drive Car Rentals in Kukatpally",
-    ogDescription: 'Its Time for Self-Drive Car Rentals in Kukatpally',
+    title: 'Best Prices on Self Drive Cars in Kukatpally– Book Now',
+    description: "Rent self-drive cars in Hyderabad with Self Drive Cars Kukatpally. Enjoy unlimited kms, no deposit, and flexible rental options for a comfortable journey",
+    ogDescription: 'Rent self-drive cars in Hyderabad with Self Drive Cars Kukatpally. Enjoy unlimited kms, no deposit, and flexible rental optionsfor a comfortable journey',
   },
 
   madhapur: {
-    title: 'No Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad',
-    description: 'Self-Drive Car Rentals in Madhapur: Your Go-To Car Rental Services',
-    ogDescription: 'Self-Drive Car Rentals in Madhapur: Your Go-To Car Rental Services',
+    title: ' Hyderabad Self-Drive Car Rentals Book in Madhapur',
+    description: " Explore Hyderabad and Karnataka with Self Drive Cars' wide range of 5-seater and 7-8-seater rentals, featuring excellent service anddiverse model choices. Book now",
+  ogDescription:" Explore Hyderabad and Karnataka with Self Drive Cars' wide range of 5-seater and 7-8-seater rentals, featuring excellent service anddiverse model choices. Book now",
   },
+  
   medipally: {
     title: 'No Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad',
     description: 'Self Drive Car Rentals in Uppal, Medipally',
@@ -57,15 +64,15 @@ const metadata = {
   },
 
   miyapur: {
-    title: 'No Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad',
-    description: 'Drive yourself around Hyderabad with self-drive car options in Miyapur',
-    ogDescription: "Drive yourself around Hyderabad with self-drive car options in Miyapur",
-  },
+    title: ' Best Self-Drive Car Rentals in Miyapur- Hyderabad',
+    description: "Discover reliable self-drive car rentals in Miyapur with Self Drive Cars Hyderabad. Perfect for family outings, shopping trips,and weekend getaways from Hyderabad",
+    ogDescription: "Discover reliable self-drive car rentals in Miyapur with Self Drive Cars Hyderabad. Perfect for family outings, shopping trips,and weekend getaways from Hyderabad",
+ },
 
   secunderabad: {
-    title: 'No Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad',
-    description: "Experience the convenience of self-drive cars in Secunderabad",
-    ogDescription: 'Experience the convenience of self-drive cars in Secunderabad',
+    title: 'Drive Your Way with Budget-Friendly Car Rentals',
+    description: ":Rent a self-drive car in Secunderabad with Self DriveCars Hyderabad. Enjoy comfort, safety, and flexibility with modernvehicles for your next trip",
+    ogDescription: ':Rent a self-drive car in Secunderabad with Self DriveCars Hyderabad. Enjoy comfort, safety, and flexibility with modern vehicles for your next trip',
   },
 
 
@@ -76,17 +83,18 @@ const metadata = {
   },
 
   ramanthapur: {
-    title: 'No Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad',
-    description: 'Find a Range of Self-Drive Cars in Ramanthapur',
-    ogDescription: 'Find a Range of Self-Drive Cars in Ramanthapur',
+    title: ' Self-Drive Car Rentals in Ramanthapur No Deposit.',
+    description: "Discover Hyderabad at your pace with self-drive carrentals from Ramanthapur. Choose from compact cars to SUVs forcity trips or weekend getaways. Book now",
+    ogDescription: "Discover Hyderabad at your pace with self-drive carrentals from Ramanthapur. Choose from compact cars to SUVs forcity trips or weekend getaways. Book now",
   },
 
   gachibowli: {
-    title: 'No Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad',
-    description: 'Drive yourself around Hyderabad with self-drive cars from Gachibowli. Discover Hyderabad on Ys',
-    ogDescription: 'Drive yourself around Hyderabad with self-drive cars from Gachibowli. Discover Hyderabad on Your Terms',
+    title: ' Self Drive Car Rental Hyderabad– No Deposit, Unlimited Kms',
+    description: ': Rent a self-drive car in Hyderabad with no deposit andunlimited kms. Convenient pick-up in Gachibowli for a hassle-free travel experience',
+    ogDescription: ': Rent a self-drive car in Hyderabad with no deposit andunlimited kms. Convenient pick-up in Gachibowli for a hassle-free travel experience',
+   
   },
-
+  
  
   // Add other branches here...
 };

@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import nexon from '../../images/branchimages/4.webp'
+import carens from '../../images/branchimages/10.webp'
 
 function gachibowli() {
 
@@ -8,7 +8,7 @@ function gachibowli() {
         <div className='text-black pt-36 lg:py-12  text-xs lg:text-base leading-7 lg:leading-9 '>
             <h1 className='font-bold text-base lg:text-3xl xl:mx-72 lg:mx-80 mx-6'>Find a Range of Self-Drive Cars in Gachibowli</h1>
             <Image
-                src={nexon}
+                src={carens}
                 height={2000}
                 width={2000}
                 className='py-3 object-cover w-full'
