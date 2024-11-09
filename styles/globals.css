@@ -45,7 +45,7 @@ body {
 .shimmer {
   color: white;
   display: inline-block;
-  font-size: 50px;
+  /* font-size: 50px; */
   max-width: 200px;
   
   /* Shimmer effect */

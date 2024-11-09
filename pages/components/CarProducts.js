@@ -139,7 +139,7 @@ function CarProducts({ data, branch, phoneno, count }) {
                           <span>
                             <FaWhatsapp size={20} />
                           </span>{" "}
-                          <span>Whatsappp</span>
+                          <span>Whatsapp</span>
                         </p>
                       </Link>
                     </li>
@@ -156,7 +156,7 @@ function CarProducts({ data, branch, phoneno, count }) {
                   </ul>
               <div onClick={handleStoreRedirect}className="cursor-pointer flex w-full   justify-center bg-fuchsia-700 py-4 lg:py-2 lg:rounded-b-lg lg:font-jungle lg:shake ">
         
-                <button className="flex text-center text-2xl lg:text-xl tracking-wide shimmer">
+                <button className="flex text-center text-xl lg:text-xl tracking-wide shimmer">
                     Download App 
                 </button>
              </div>
