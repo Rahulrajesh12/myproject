@@ -13,7 +13,28 @@ import discfree from '../images/free.webp'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+
+
 function CarProducts({ data, branch, phoneno, count }) {
+
+
+  const handleStoreRedirect = () => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      // Redirect to App Store if iOS
+      window.open('https://apps.apple.com/in/app/long-drive-cars/id6466695391', '_blank');
+    } else if (/android/i.test(userAgent)) {
+      // Redirect to Play Store if Android
+      window.open('https://play.google.com/store/search?q=long+drive+cars&c=apps', '_blank');
+
+    } else {
+      // Optional: Provide a message for non-mobile devices
+      alert("App is available only on mobile devices.");
+    }
+  }
 
   const [visibleItems, setVisibleItems] = useState(6);
   const [searchQuery, setSearchQuery] = useState('');
@@ -33,7 +54,7 @@ function CarProducts({ data, branch, phoneno, count }) {
   );
   const sortedData = filteredData?.sort((a, b) => a.price_24_hours - b.price_24_hours);
 
-// console.log(sortedData);
+  // console.log(sortedData);
   return (
     <div className=' bg-white'>
       <p className='text-black xl:text-5xl lg:text-4xl text-lg font-bold text-center py-7 capitalize'>Explore Our Cars in {branch?.length ? branch : 'Hyderabad'}</p>
@@ -109,9 +130,9 @@ function CarProducts({ data, branch, phoneno, count }) {
                 </div>
               </div>
               <div>
-                <div className="z-20 relative flex justify-between  text-white bottom-2 lg:bottom-[2.4rem]">
+                <div className="z-20 relative flex flex-col justify-between  text-white bottom-2 lg:bottom-[2.4rem]">
                   <ul className="flex w-full justify-between">
-                    <li className="bg-green-500 w-full py-4 lg:py-2 text-center lg:rounded-bl-md">
+                    <li className="bg-green-500 w-full py-4 lg:py-2 text-center lg:rounded-none">
                       {" "}
                       <Link href={`https://api.whatsapp.com/send?phone=+91${phoneno}&text=Hi%0AI%20am%20looking%20for%20a%20car%20booking.`} target='_blank'>
                         <p className=" flex gap-1 lg:text-sm text-lg justify-center items-center">
@@ -122,7 +143,7 @@ function CarProducts({ data, branch, phoneno, count }) {
                         </p>
                       </Link>
                     </li>
-                    <li className="bg-blue-500 w-full py-3 lg:py-2 lg:rounded-br-md">
+                    <li className="bg-blue-500 w-full py-3 lg:py-2 lg:rounded-none">
                       <Link href={`tel:${phoneno}`} target="_blank">
                         <p className=" flex gap-1 lg:text-sm text-lg justify-center items-center">
                           <span>
@@ -133,7 +154,13 @@ function CarProducts({ data, branch, phoneno, count }) {
                       </Link>
                     </li>
                   </ul>
-                </div>
+              <div onClick={handleStoreRedirect}className="cursor-pointer flex w-full   justify-center bg-fuchsia-700 py-4 lg:py-2 lg:rounded-b-lg lg:font-jungle lg:shake ">
+        
+                <button className="flex text-center text-2xl lg:text-xl tracking-wide shimmer">
+                    Download App 
+                </button>
+             </div>
+              </div>
               </div>
             </div>}
             {(index + 1 === 2) && (

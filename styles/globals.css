@@ -12,6 +12,57 @@ body {
   --background-end-rgb: 255, 255, 255;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+
+.font-jungle {
+    text-shadow: 2px 2px 5px rgba(0, 100, 0, 0.5); /* Jungle-like shadow */
+}
+
+/* Shake animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+/* Apply shake animation on hover */
+.shake:hover {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+
+.shimmer {
+  color: white;
+  display: inline-block;
+  font-size: 50px;
+  max-width: 200px;
+  
+  /* Shimmer effect */
+  mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/350% 100%;
+  -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/350% 100%;
+  
+  animation: shimmer 2.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    mask-position: left;
+    -webkit-mask-position: left;
+  }
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
