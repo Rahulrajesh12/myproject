@@ -15,7 +15,7 @@ function dilshuknagar() {
         <meta property="og:description" content="Easy access to self drive cars in Dilsukhnagar"/> 
       </Head>
       <HamburgerMenu phoneno={'9000-478-478'} />
-      <div className='text-black lg:px-16 px-4 leading-9 lg:leading-10 pt-32 lg:pt-16'>
+      <div className='text-black lg:px-16 px-4 leading-9 lg:leading-10 pt-36 lg:pt-16'>
         <p className='text-xl lg:text-5xl font-bold py-2 lg:py-4'>Easy access to self drive cars in Dilsukhnagar</p>
         <div>
           <Image

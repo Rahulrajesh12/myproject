@@ -118,7 +118,7 @@ function CarProducts({ data, branch, phoneno, count }) {
                           <span>
                             <FaWhatsapp size={20} />
                           </span>{" "}
-                          <span>Whatsappp</span>
+                          <span>Whatsapp</span>
                         </p>
                       </Link>
                     </li>

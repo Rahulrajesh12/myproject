@@ -5,8 +5,8 @@ import innovaa from '../../images/branchimages/8.webp'
 function miyapur() {
 
     return (
-        <div className='text-black pt-36 lg:py-12 text-xs lg:text-base leading-7 lg:leading-9 '>
-            <h1 className='font-bold text-sm lg:text-3xl xl:mx-72 lg:mx-80 mx-6'>Self-Drive Car Rentals in Miyapur: Your Go-To Car Rental Services </h1>
+        <div className='text-black pt-40 lg:py-12 text-xs lg:text-base leading-7 lg:leading-9 '>
+            <h1 className='font-bold text-sm  lg:text-3xl xl:mx-72 lg:mx-80 mx-6'>Self-Drive Car Rentals in Miyapur: Your Go-To Car Rental Services </h1>
             <Image
                 src={innovaa}
                 height={2000}

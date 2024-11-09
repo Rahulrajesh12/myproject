@@ -17,7 +17,7 @@ function madhapur() {
       </Head>
 
       <HamburgerMenu  phoneno={'9000-478-478'}/>
-      <div className='text-black lg:px-16 px-4 leading-9 lg:leading-10 pt-32 lg:pt-16'>
+      <div className='text-black lg:px-16 px-4 leading-9 lg:leading-10 pt-40 lg:pt-16'>
         <p className='text-xl lg:text-5xl font-bold'>Self Drive Cars Madhapur ends here</p>
         <p className='text-lg font-bold lg:text-2xl py-2 lg:py-4'>It's not far, find Self Drive Cars near Madhapur</p>
         <div>

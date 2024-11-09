@@ -18,7 +18,7 @@ function warangal() {
       </Head>
 
       <HamburgerMenu phoneno={'9000-478-478'} />
-      <div className='text-black lg:px-16 px-4 leading-9 lg:leading-10 pt-32 lg:pt-16'>
+      <div className='text-black lg:px-16 px-4 leading-9 lg:leading-10 pt-36 lg:pt-16'>
         
         <p className='font-bold text-xl lg:text-3xl py-2'>Stop here if you are searching for Self Drive Cars Warangal</p>
         <div>

@@ -8,7 +8,7 @@ function ramanthapur() {
 
     return (
         <div className='text-black pt-36 lg:py-12 text-xs lg:text-base leading-7 lg:leading-9 '>
-            <h1 className='font-bold text-xl lg:text-4xl xl:mx-72 lg:mx-80 mx-6 lg:pb-6'>Drive yourself around Hyderabad with self-drive cars from Ramanthapur </h1>
+            <h1 className='font-bold text-xl  lg:text-4xl xl:mx-72 lg:mx-80 mx-6 lg:pb-6 py-3'>Drive yourself around Hyderabad with self-drive cars from Ramanthapur </h1>
             
             <Image
                 src={kushaq}

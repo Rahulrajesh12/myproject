@@ -7,7 +7,7 @@ import creta from '../../images/branchimages/6.webp'
 function madhapur() {
 
     return (
-        <div className='text-black pt-36 lg:py-12 text-xs lg:text-base leading-7 lg:leading-9 '>
+        <div className='text-black pt-40 lg:py-12 text-xs lg:text-base leading-7 lg:leading-9 '>
             <h1 className='font-bold text-base lg:text-3xl  xl:mx-72 lg:mx-80 mx-6'>Drive yourself around Hyderabad with self-drive car options in Madhapur</h1>
             <Image
                 src={creta}

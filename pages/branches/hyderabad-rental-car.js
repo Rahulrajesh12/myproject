@@ -8,7 +8,7 @@ function hyderabadrentalcar() {
   return (
     <div className='bg-white text-black'>
       <HamburgerMenu phoneno={'9000-478-478'} />
-      <div className=' pt-32 lg:pt-16 bg-white'>
+    
       <Head>
         <title>No Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad</title>
         <meta name="description" content="Hyderabad rental car in a matter of minutes!"/>
@@ -16,8 +16,8 @@ function hyderabadrentalcar() {
         <meta property="og:title" content="No Deposit & Unlimited km - Self-Drive Car Rentals In Hyderabad" />
         <meta property="og:description" content="Hyderabad rental car in a matter of minutes!"/> 
       </Head>
-
-        <p className='text-xl font-bold py-3 lg:py-4 lg:text-4xl xl:mx-72 lg:mx-80 mx-6'>Hyderabad rental car in a matter of minutes!</p>
+      <div className=' py-36 lg:pt-16 bg-white'>
+        <p className='text-xl font-bold py-2 pt-5 lg:py-4 lg:text-4xl xl:mx-72 lg:mx-80 mx-6 '>Hyderabad rental car in a matter of minutes!</p>
         <div>
           <Image
             src={www}

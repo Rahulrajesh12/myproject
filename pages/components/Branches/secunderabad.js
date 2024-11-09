@@ -4,7 +4,7 @@ import xuv500 from '../../images/branchimages/1.webp'
 function secunderabad() {
 
     return (
-        <div className='text-black pt-36 lg:py-12 text-xs lg:text-base leading-7 lg:leading-9  '>
+        <div className='text-black pt-40 lg:py-12 text-xs lg:text-base leading-7 lg:leading-9  '>
             <h1 className='font-bold text-base lg:text-4xl  xl:mx-72 lg:mx-80 mx-6'>It's Time for Self-Drive Car Rentals in Secunderabad</h1>
             <Image
               
@@ -12,7 +12,7 @@ function secunderabad() {
                 height={2000}
                 width={2000}
                 className='py-3 object-cover w-full'
-                alt="Long Drive Cars app"
+                alt="Long Drive Cars app"   
             />
             <div className=' xl:mx-72 lg:mx-80 mx-6'>
             <p className='font-bold lg:text-xl py-2'>Are you looking for the best self-drive car rentals in Secunderabad?</p>

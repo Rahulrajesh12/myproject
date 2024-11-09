@@ -17,7 +17,7 @@ function kukatpally() {
       </Head>
 
       <HamburgerMenu phoneno={'9000-478-478'} />
-      <div className='text-black lg:px-16 px-4 leading-9 lg:leading-10 pt-32 lg:pt-16'>
+      <div className='text-black lg:px-16 px-4 leading-9 lg:leading-10 pt-40 lg:pt-16'>
         <p className='text-xl lg:text-5xl font-bold py-2 lg:py-4'>It's time for self drive cars in Kukatpally</p>
         <div>
           <Image

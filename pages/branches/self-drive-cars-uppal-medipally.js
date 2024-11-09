@@ -20,7 +20,7 @@ function hyderabadrentalcar() {
 
       <HamburgerMenu phoneno={'9000-478-478'}/>
       
-      <div className='text-black lg:px-16 px-4 leading-9 lg:leading-10 pt-32 lg:pt-16'>
+      <div className='text-black lg:px-16 px-4 leading-9 lg:leading-10 pt-36 lg:pt-16'>
       <p className='lg:text-3xl text-xl font-bold py-2'>Now it's easy to get self drive cars in Uppal, Medipally</p>
       <div>
           <Image

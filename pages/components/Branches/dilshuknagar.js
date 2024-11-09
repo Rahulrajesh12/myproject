@@ -4,8 +4,8 @@ import safari from '../../images/branchimages/2.webp'
 function dilshuknagar() {
 
     return (
-        <div className='text-black pt-36 lg:pt-24 text-xs lg:text-lg leading-6 lg:leading-8 '>
-            <h1 className='font-bold text-sm xl:text-4xl xl:mx-72 lg:mx-80 mx-6 pb-8'>Discover Hyderabad at your own pace with self-drive cars in Dilsukhnagar</h1>
+        <div className='text-black pt-40 lg:pt-24 text-xs lg:text-lg leading-6 lg:leading-8 '>
+            <h1 className='font-bold text-sm xl:text-4xl xl:mx-72 lg:mx-80 mx-6 py-1 '>Discover Hyderabad at your own pace with self-drive cars in Dilsukhnagar</h1>
             <div>
                 <Image
                     src={safari} 

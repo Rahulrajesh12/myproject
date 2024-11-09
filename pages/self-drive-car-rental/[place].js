@@ -71,8 +71,8 @@ const metadata = {
 
   secunderabad: {
     title: 'Drive Your Way with Budget-Friendly Car Rentals',
-    description: ":Rent a self-drive car in Secunderabad with Self DriveCars Hyderabad. Enjoy comfort, safety, and flexibility with modernvehicles for your next trip",
-    ogDescription: ':Rent a self-drive car in Secunderabad with Self DriveCars Hyderabad. Enjoy comfort, safety, and flexibility with modern vehicles for your next trip',
+    description: "Rent a self-drive car in Secunderabad with Self DriveCars Hyderabad. Enjoy comfort, safety, and flexibility with modernvehicles for your next trip",
+    ogDescription: 'Rent a self-drive car in Secunderabad with Self DriveCars Hyderabad. Enjoy comfort, safety, and flexibility with modern vehicles for your next trip',
   },
 
 
@@ -90,8 +90,8 @@ const metadata = {
 
   gachibowli: {
     title: ' Self Drive Car Rental Hyderabad– No Deposit, Unlimited Kms',
-    description: ': Rent a self-drive car in Hyderabad with no deposit andunlimited kms. Convenient pick-up in Gachibowli for a hassle-free travel experience',
-    ogDescription: ': Rent a self-drive car in Hyderabad with no deposit andunlimited kms. Convenient pick-up in Gachibowli for a hassle-free travel experience',
+    description: ' Rent a self-drive car in Hyderabad with no deposit andunlimited kms. Convenient pick-up in Gachibowli for a hassle-free travel experience',
+    ogDescription: ' Rent a self-drive car in Hyderabad with no deposit andunlimited kms. Convenient pick-up in Gachibowli for a hassle-free travel experience',
    
   },
   
