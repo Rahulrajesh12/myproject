@@ -157,13 +157,14 @@ function CarProducts({ data, branch, phoneno, count }) {
                       </Link>
                     </li>
                   </ul>
-              <div onClick={handleStoreRedirect}className="cursor-pointer bg-[#001f3d] py-4 lg:py-2 rounded-b-lg lg:rounded-b-lg  ">
-              <div className="flex justify-around items-center ">
+
+              <div onClick={handleStoreRedirect}className="cursor-pointer bg-[#001f3d] py-4 lg:py-2 rounded-b-lg lg:rounded-b-lg shimmer ">
+              <div className="flex justify-around items-center tracking-wide shimmer">
               <span className="flex  "><FaGooglePlay className="lg:size-6" size={25}/> <RxSlash  className="lg:size-6" size={30}/>  <FaAppStoreIos className="lg:size-6" size={25} /></span>
-              <p className=" text-center flex font-semibold text-2xl lg:text-xl tracking-wide shimmer "> Download App </p>   
-              </div>
-               
+              <p className=" text-center flex font-semibold text-2xl lg:text-xl "> Download App </p>   
+              </div>  
              </div>
+
               </div>
               </div>
             </div>}
