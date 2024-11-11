@@ -13,8 +13,11 @@ import discfree from '../images/free.webp'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
+import { FaGooglePlay } from "react-icons/fa";
+import { FaAppStoreIos } from "react-icons/fa";
+import { RxSlash } from "react-icons/rx";
+
+
 
 
 function CarProducts({ data, branch, phoneno, count }) {
@@ -154,11 +157,12 @@ function CarProducts({ data, branch, phoneno, count }) {
                       </Link>
                     </li>
                   </ul>
-              <div onClick={handleStoreRedirect}className="cursor-pointer flex w-full   justify-center bg-fuchsia-700 py-4 lg:py-2 lg:rounded-b-lg lg:font-jungle lg:shake ">
-        
-                <button className="flex text-center text-xl lg:text-xl tracking-wide shimmer">
-                    Download App 
-                </button>
+              <div onClick={handleStoreRedirect}className="cursor-pointer bg-[#001f3d] py-4 lg:py-2 rounded-b-lg lg:rounded-b-lg  ">
+              <div className="flex justify-around items-center ">
+              <span className="flex  "><FaGooglePlay className="lg:size-6" size={25}/> <RxSlash  className="lg:size-6" size={30}/>  <FaAppStoreIos className="lg:size-6" size={25} /></span>
+              <p className=" text-center flex font-semibold text-2xl lg:text-xl tracking-wide shimmer "> Download App </p>   
+              </div>
+               
              </div>
               </div>
               </div>
