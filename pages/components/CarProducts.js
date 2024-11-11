@@ -13,7 +13,31 @@ import discfree from '../images/free.webp'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { FaGooglePlay } from "react-icons/fa";
+import { FaAppStoreIos } from "react-icons/fa";
+import { RxSlash } from "react-icons/rx";
+
+
+
+
 function CarProducts({ data, branch, phoneno, count }) {
+
+
+  const handleStoreRedirect = () => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      // Redirect to App Store if iOS
+      window.open('https://apps.apple.com/in/app/long-drive-cars/id6466695391', '_blank');
+    } else if (/android/i.test(userAgent)) {
+      // Redirect to Play Store if Android
+      window.open('https://play.google.com/store/search?q=long+drive+cars&c=apps', '_blank');
+
+    } else {
+      // Optional: Provide a message for non-mobile devices
+      alert("App is available only on mobile devices.");
+    }
+  }
 
   const [visibleItems, setVisibleItems] = useState(6);
   const [searchQuery, setSearchQuery] = useState('');
@@ -33,7 +57,7 @@ function CarProducts({ data, branch, phoneno, count }) {
   );
   const sortedData = filteredData?.sort((a, b) => a.price_24_hours - b.price_24_hours);
 
-// console.log(sortedData);
+  // console.log(sortedData);
   return (
     <div className=' bg-white'>
       <p className='text-black xl:text-5xl lg:text-4xl text-lg font-bold text-center py-7 capitalize'>Explore Our Cars in {branch?.length ? branch : 'Hyderabad'}</p>
@@ -109,9 +133,9 @@ function CarProducts({ data, branch, phoneno, count }) {
                 </div>
               </div>
               <div>
-                <div className="z-20 relative flex justify-between  text-white bottom-2 lg:bottom-[2.4rem]">
+                <div className="z-20 relative flex flex-col justify-between  text-white bottom-2 lg:bottom-[2.4rem]">
                   <ul className="flex w-full justify-between">
-                    <li className="bg-green-500 w-full py-4 lg:py-2 text-center lg:rounded-bl-md">
+                    <li className="bg-green-500 w-full py-4 lg:py-2 text-center lg:rounded-none">
                       {" "}
                       <Link href={`https://api.whatsapp.com/send?phone=+91${phoneno}&text=Hi%0AI%20am%20looking%20for%20a%20car%20booking.`} target='_blank'>
                         <p className=" flex gap-1 lg:text-sm text-lg justify-center items-center">
@@ -122,7 +146,7 @@ function CarProducts({ data, branch, phoneno, count }) {
                         </p>
                       </Link>
                     </li>
-                    <li className="bg-blue-500 w-full py-3 lg:py-2 lg:rounded-br-md">
+                    <li className="bg-blue-500 w-full py-3 lg:py-2 lg:rounded-none">
                       <Link href={`tel:${phoneno}`} target="_blank">
                         <p className=" flex gap-1 lg:text-sm text-lg justify-center items-center">
                           <span>
@@ -133,7 +157,15 @@ function CarProducts({ data, branch, phoneno, count }) {
                       </Link>
                     </li>
                   </ul>
-                </div>
+                  
+              <div onClick={handleStoreRedirect}className="cursor-pointer bg-[#001f3d] py-4 lg:py-2 rounded-b-lg lg:rounded-b-lg  shimmer ">
+              <div className="flex justify-around place-items-center   ">
+              <span className="flex  "><FaGooglePlay className="lg:size-6" size={25}/> <RxSlash  className="lg:size-5" size={30}/>  <FaAppStoreIos className="lg:size-6" size={25} /></span>
+              <p className=" text-center  font-semibold text-2xl lg:text-xl tracking-wide  "> Download App </p>   
+              </div>   
+              </div>
+
+              </div>
               </div>
             </div>}
             {(index + 1 === 2) && (
@@ -145,7 +177,7 @@ function CarProducts({ data, branch, phoneno, count }) {
                       height={1000}
                       width={1000}
                       alt='Long Drive Cars app'
-                      className="scale-75 mxs:scale-[0.6] lg:scale-90 relative bottom-[4rem] mxs:bottom-16 md:bottom-0 mxs:bottom- rounded-md"
+                      className="scale-75 mxs:scale-[0.6] lg:scale-90 relative bottom-[4rem] mxs:bottom-16 md:bottom-0 mxs:bottom- rounded-md  lg:h-[545px]"
                     />
                   </div>
                 </div>
@@ -160,7 +192,7 @@ function CarProducts({ data, branch, phoneno, count }) {
                       height={1000}
                       width={1000}
                       alt='Long Drive Cars app'
-                      className=" rounded-md bg-cover"
+                      className=" rounded-md bg-cover lg:h-[545px] "
                     />
                   </div>
                 </div>
