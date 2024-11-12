@@ -21,10 +21,8 @@ import { SiLinkedin } from "react-icons/si";
 import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
-import bang from './images/mysore.png'
 import hyd from './images/hyderabad-charminar.png'
 import wrg from './images/warangal.png'
-import mys from './images/mysore.webp'
 import viz from './images/vizag.webp'
 import Loading from './components/Loading';
 export default function Place({ cars, canonicalUrl }) {
@@ -61,9 +59,7 @@ export default function Place({ cars, canonicalUrl }) {
         else if (location === 'warangal') {
             router.push('/warangal');
         }
-        else if (location === 'mysore') {
-            router.push('/mysore');
-        }
+
         else if (location === 'vizag') {
             router.push('/vizag');
         }
@@ -110,6 +106,38 @@ export default function Place({ cars, canonicalUrl }) {
                     `,
                         }}
                     ></script>
+                    
+                    <script
+                        async
+                        src="https://www.googletagmanager.com/gtag/js?id=AW-16647839094">
+                    </script>
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'AW-16647839094');
+                    `,
+                        }}
+                    ></script>
+
+                      <script
+                        async
+                        src='https://www.googletagmanager.com/gtag/js?id=G-E5F1QT47V0'>
+                    </script>
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-E5F1QT47V0');
+                    `,
+                        }}
+                    ></script>
+
+
             </Head>
             {loading && <Loading />}
 
@@ -185,13 +213,7 @@ export default function Place({ cars, canonicalUrl }) {
                                                 width={110}
                                                 height={110}
                                             /></span><span className='text-[#0456e8]'>Vizag</span></button>
-                                            <button onClick={() => handleLocation('mysore')} className='lg:hover:scale-105 p-2  border-2 border-[#0456e8] rounded-md flex items-center gap-2 w-48 lg:w-64 h-16'><span><Image
-                                                className="w-12 h-12 relative bottom-1"
-                                                src={mys}
-                                                alt="Long Drive Cars app"
-                                                width={110}
-                                                height={110}
-                                            /></span><span className='text-[#0456e8]'>Mysore</span></button>
+                                           
                                         </div>
                                     </div>
                                 </div>

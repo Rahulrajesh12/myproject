@@ -1,17 +1,17 @@
 import React from 'react'
 import Link from 'next/link'
-import { FaFacebook, FaInstagram, FaSearch, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaSearch, FaYoutube } from 'react-icons/fa'
 import { SiLinkedin } from "react-icons/si";
 import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
 import imgs from '../../images/cretafoot_2_11zon-transformed.webp';
 import imgs2 from '../../images/EA2u65Ss0VJeJ2l1hfQc7-transformed (1).webp';
 import logo2 from '../../images/logo-white.webp';
-const a = ['warangal', 'mysore', 'vizag']
+const a = ['warangal', 'vizag']
 function Footer({ locname }) {
     return (
         <div className={`bg-white`}>
-            <div className={`${['warangal', 'mysore', 'vizag'].includes(locname) ? 'hidden' : ''} flex pl-10 py-5 md:justify-between text-white xl:px-28 lg:py-14 flex-wrap bg-[#660066] rounded-md mx-[14px] lg:mx-[58px] my-3 items-center `}>
+            <div className={`${['warangal','vizag'].includes(locname) ? 'hidden' : ''} flex pl-10 py-5 md:justify-between text-white xl:px-28 lg:py-14 flex-wrap bg-[#660066] rounded-md mx-[14px] lg:mx-[58px] my-3 items-center `}>
                 <div className=' xl:text-left xl:text-base text-left text-xs font-semibold'>
                     <ul className='lg:gap-x-12 lg:gap-y-3 gap-2 grid lg:grid-cols-3 grid-cols-1 capitalize'>
                         <li className='hover:scale-105'><Link href={'/self-drive-car-rental/gachibowli'}>Self drive car rental in Gachibowli</Link></li>
@@ -63,7 +63,7 @@ function Footer({ locname }) {
                                     <li className='lg:hover:scale-105'><Link href={'/vizag'} target='_blank'>Vizag</Link></li>
                                     <li className='lg:hover:scale-105'> <Link href={'/'}>Vijayawada</Link></li>
                                     {/* <li className='lg:hover:scale-105'><Link href={'/bangalore'}>Bangalore</Link></li> */}
-                                    <li className='lg:hover:scale-105'><Link href={'/mysore'}>Mysore</Link></li>
+                                    {/* <li className='lg:hover:scale-105'><Link href={'/mysore'}>Mysore</Link></li> */}
                                     <li className='lg:hover:scale-105'><Link href={'/'}>Mangalore</Link></li>
                                 </ul>
                             </div>
