@@ -44,7 +44,7 @@ const ContactUS = () => {
                         <li>Hyderabad</li>
                         <li>Vizag</li>
                         <li>Vijayawada</li>
-                        <li>Bangalore</li>
+                        {/* <li>Bangalore</li> */}
                         <li>Mysore</li>
                         <li>Mangalore</li>
                     </ol>

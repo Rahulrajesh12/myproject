@@ -57,9 +57,7 @@ export default function Place({ cars, canonicalUrl }) {
         setShowPopup(false);
         if (location === 'hyderabad') {
             router.push('/hyderabad');
-        } else if (location === 'bangalore') {
-            router.push('/bangalore');
-        }
+        } 
         else if (location === 'warangal') {
             router.push('/warangal');
         }
@@ -171,13 +169,6 @@ export default function Place({ cars, canonicalUrl }) {
                                                 width={110}
                                                 height={110}
                                             /></span><span className='text-[#0456e8]'>Hyderabad</span></button>
-                                            <button onClick={() => handleLocation('bangalore')} className='lg:hover:scale-105 p-2  border-2 border-[#0456e8] rounded-md flex items-center gap-2 w-48 lg:w-64 h-16'><span><Image
-                                                className="w-12 h-12 relative bottom-1"
-                                                src={bang}
-                                                alt="Long Drive Cars app"
-                                                width={110}
-                                                height={110}
-                                            /></span><span className='text-[#0456e8]'>Bangalore</span></button>
                                             <button onClick={() => handleLocation('warangal')} className='lg:hover:scale-105 p-2  border-2 border-[#0456e8]  rounded-md flex items-center gap-2 w-48 lg:w-64 h-16'><span><Image
                                                 className="w-8 h-8 relative bottom-1"
                                                 src={wrg}

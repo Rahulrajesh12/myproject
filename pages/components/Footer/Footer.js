@@ -62,7 +62,7 @@ function Footer({ locname }) {
                                     <li className='lg:hover:scale-105'><Link href={'/warangal'}>Warangal</Link></li>
                                     <li className='lg:hover:scale-105'><Link href={'/vizag'} target='_blank'>Vizag</Link></li>
                                     <li className='lg:hover:scale-105'> <Link href={'/'}>Vijayawada</Link></li>
-                                    <li className='lg:hover:scale-105'><Link href={'/bangalore'}>Bangalore</Link></li>
+                                    {/* <li className='lg:hover:scale-105'><Link href={'/bangalore'}>Bangalore</Link></li> */}
                                     <li className='lg:hover:scale-105'><Link href={'/mysore'}>Mysore</Link></li>
                                     <li className='lg:hover:scale-105'><Link href={'/'}>Mangalore</Link></li>
                                 </ul>
