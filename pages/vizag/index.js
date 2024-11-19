@@ -46,6 +46,20 @@ export default function Place({cars,canonicalUrl}) {
                     <meta property="og:title" content="No Deposit & Unlimited km - Self-Drive Car Rentals In vizag" />
                     <meta property="og:description" content="Self-drive cars start at 62/hr, We offer Long Drive Cars for the best prices with unlimited km & No Deposit, Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
                     
+                    <script
+                        async
+                        src="https://www.googletagmanager.com/gtag/js?id=AW-16647839094"
+                    ></script>
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'AW-16647839094');
+                    `,
+                        }}
+                    ></script>
                     <link rel="canonical" href={canonicalUrl} />
                 </Head>
                 <div className='pt-32 lg:pt-0'>
