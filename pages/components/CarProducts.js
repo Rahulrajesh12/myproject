@@ -181,8 +181,8 @@
                 </div>
               </div>}
               {(index + 1 === 2) && (
-                <div className=" pt-14 lg:pt-12 lg:items-center  ">
-                  <div className=" lg:rounded-md lg:items-center  lg:w-72 flex flex-col relative">
+                <div className=" pt-14 lg:pt-12  items-center  ">
+                  <div className=" lg:rounded-md items-center  lg:w-72 flex flex-col relative">
 
                     <Image
                       src={disc1}
@@ -217,9 +217,9 @@
                     </div>
                     <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center pb-1 capitalize lg:hover:scale-105 '> 30 Days Booking </p>
 
-                  <div className="px-7 lg:px-5 justify-center lg:hover:scale-105 ">
-                <div className="p-2  bg-[#660066] text-white text-sm lg:text-xs  font-bold flex flex-col gap-2 justify-center items-center space-x-2 border border-white lg:w-[245px]">
-                    <div className="flex items-center space-x-1 justify-center">
+                  <div className="  justify-center lg:hover:scale-105 ">
+                <div className="px-[70px] py-2 text-center  bg-[#660066] text-white text-sm lg:text-xs  font-bold flex flex-col gap-2 justify-center items-center space-x-2 border border-white lg:w-[245px]">
+                    <div className="flex items-center space-x-1 justify-center ">
                     <FaIndianRupeeSign className="text-white" />
                       <span>10000</span>
                       </div>

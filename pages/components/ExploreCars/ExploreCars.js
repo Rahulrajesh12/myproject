@@ -362,8 +362,8 @@ export default function ExploreCars({ loc, phoneno }) {
                                     </div>
                                 </div>
                                 {(index + 1) % (4) === 0 && (
-                                    <div className=" pt-14 lg:pb-[60px] ">
-                                        <div className=" rounded-lg  overflow-hidden  flex flex-col  lg:w-[260px] h-[500px]">
+                                    <div className=" pt-14 lg:pt-12  items-center  ">
+                                    <div className=" lg:rounded-md items-center  lg:w-72 flex flex-col relative">
                                             <Image
                                                 src={disc1}
                                                 height={1000}
@@ -373,7 +373,7 @@ export default function ExploreCars({ loc, phoneno }) {
                                             />
                                             <p className='text-black xl:text-xl lg:text-xl text-lg font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p>
 
-                                            <div className="place-items-center   lg:hover:scale-105 ">
+                                            <div className=" place-items-center   lg:hover:scale-105 ">
                                                 <table className="table-auto border-collapse border text-center  border-white rounded   ">
                                                     <tbody>
                                                         <tr className="bg-[#660066] text-white  ">
@@ -398,9 +398,9 @@ export default function ExploreCars({ loc, phoneno }) {
 
                                             <p className='text-black xl:text-lg  lg:text-lg text-lg font-bold text-center lg:py-[1px] capitalize lg:hover:scale-105 '> 30 Days Booking </p>
 
-                                            <div className="px-14 justify-center lg:hover:scale-105 lg:px-4 ">
-                                                <div className="p-2  bg-[#660066] text-white text-xs lg:text-[13px]  font-bold flex flex-col gap-2 justify-center items-center space-x-2 border border-white">
-                                                    <div className="flex items-center space-x-1 justify-center">
+                                            <div className=" justify-center lg:hover:scale-105 lg:px-4  ">
+                                                <div className=" px-14 py-2 lg:px-[60px] bg-[#660066] text-white text-xs lg:text-[13px]  font-bold flex flex-col gap-2 justify-center items-center space-x-2 border border-white">
+                                                    <div className="flex items-center space-x-1 justify-center ">
                                                         <FaIndianRupeeSign className="text-white" />
                                                         <span>10000</span>
                                                     </div>
@@ -413,8 +413,8 @@ export default function ExploreCars({ loc, phoneno }) {
                                                 </div>
                                             </div>
 
-                                            <div className="flex justify-center items-center px-14 lg:px-4 py-2  lg:hover:scale-105  ">
-                                                <div className="bg-[#660066] text-white lg:py-2  border border-black  ">
+                                            <div className="flex justify-center items-center px-14 lg:px-8 py-2  lg:hover:scale-105  ">
+                                                <div className="bg-[#660066] text-white lg:py-2 py-1 lg:px-1 px-1 border border-white  ">
                                                     <ul className="space-y-2">
                                                         <li className="flex items-center space-x-2 text-xs lg:text-[13px] font-bold">
                                                             <span><RiArrowRightDoubleLine size={24} /></span>
