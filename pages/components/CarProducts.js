@@ -9,7 +9,7 @@ import { GrGroup } from "react-icons/gr";
 import { TbManualGearbox } from "react-icons/tb";
 import Slider from 'react-slick';
 import disc from '../images/discoutn.webp'
-import discfree from '../images/free.webp'
+import disc1 from '../images/cashback.webp'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -17,10 +17,22 @@ import { FaGooglePlay } from "react-icons/fa";
 import { FaAppStoreIos } from "react-icons/fa";
 import { RxSlash } from "react-icons/rx";
 
+import { FaIndianRupeeSign } from "react-icons/fa6";
+import { RiArrowRightDoubleLine } from "react-icons/ri";
+
+import { useRouter } from 'next/router';
 
 
+  function CarProducts({ data, branch, phoneno, count }) {
 
-function CarProducts({ data, branch, phoneno, count }) {
+  const [loading, setLoading] = useState(false); // Tracks button click state
+  const router = useRouter(); // Use Next.js router for navigation
+
+  const handleButtonClick = async () => {
+    setLoading(true); // Show the loader
+    await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay for loader
+    router.push(`${branch?.length ? branch : ''}/explore-self-drive-cars`); // Navigate to the next page
+  };
 
 
   const handleStoreRedirect = () => {
@@ -39,7 +51,8 @@ function CarProducts({ data, branch, phoneno, count }) {
     }
   }
 
-  const [visibleItems, setVisibleItems] = useState(6);
+
+  const [visibleItems, setVisibleItems] = useState(7);
   const [searchQuery, setSearchQuery] = useState('');
   const handleLoadMore = () => {
     setVisibleItems(prev => prev + 9);
@@ -57,13 +70,12 @@ function CarProducts({ data, branch, phoneno, count }) {
   );
   const sortedData = filteredData?.sort((a, b) => a.price_24_hours - b.price_24_hours);
 
-  // console.log(sortedData);
   return (
     <div className=' bg-white'>
       <p className='text-black xl:text-5xl lg:text-4xl text-lg font-bold text-center py-7 capitalize'>Explore Our Cars in {branch?.length ? branch : 'Hyderabad'}</p>
       <div className=' lg:mb-8 pl-3 flex items-center justify-center pt-2 lg:pb-2'>
         <input
-          placeholder='Search for your favourite car'
+          placeholder='Find Your Favourite Car'
           className='placeholder-black text-black px-4 py-3 rounded-full bg-gray-200 w-full  md:max-w-96 lg:max-w-2xl'
           type='search'
           value={searchQuery}
@@ -157,58 +169,118 @@ function CarProducts({ data, branch, phoneno, count }) {
                       </Link>
                     </li>
                   </ul>
-                  
-              <div onClick={handleStoreRedirect}className="cursor-pointer bg-[#001f3d] py-4 lg:py-2 rounded-b-lg lg:rounded-b-lg  shimmer ">
-              <div className="flex justify-around place-items-center   ">
-              <span className="flex  "><FaGooglePlay className="lg:size-6" size={25}/> <RxSlash  className="lg:size-5" size={30}/>  <FaAppStoreIos className="lg:size-6" size={25} /></span>
-              <p className=" text-center  font-semibold text-2xl lg:text-xl tracking-wide  "> Download App </p>   
-              </div>   
-              </div>
 
-              </div>
+                  <div onClick={handleStoreRedirect} className="cursor-pointer bg-[#001f3d] py-4 lg:py-2 rounded-b-lg lg:rounded-b-lg  shimmer ">
+                    <div className="flex justify-around place-items-center   ">
+                      <span className="flex  "><FaGooglePlay className="lg:size-6" size={25} /> <RxSlash className="lg:size-5" size={30} />  <FaAppStoreIos className="lg:size-6" size={25} /></span>
+                      <p className=" text-center  font-semibold text-2xl lg:text-xl tracking-wide  "> Download App </p>
+                    </div>
+                  </div>
+
+                </div>
               </div>
             </div>}
             {(index + 1 === 2) && (
-              <div className=" pt-14 lg:pt-0">
-                <div className="bg-[#8d398d] lg:rounded-md  flex flex-col  w-[100%] md:w-72  lg:hover:scale-105 relative lg:top-14">
-                  <div>
-                    <Image
-                      src={disc}
-                      height={1000}
-                      width={1000}
-                      alt='Long Drive Cars app'
-                      className="scale-75 mxs:scale-[0.6] lg:scale-90 relative bottom-[4rem] mxs:bottom-16 md:bottom-0 mxs:bottom- rounded-md  lg:h-[545px]"
-                    />
+              <div className=" pt-14 lg:pt-12 lg:items-center  ">
+                <div className=" lg:rounded-md lg:items-center  lg:w-72 flex flex-col relative">
+
+                  <Image
+                    src={disc1}
+                    height={1000}
+                    width={1000}
+                    alt='Long Drive Cars app'
+                    className="scale-75 mxs:scale-[0.6] lg:scale-90 relative lg:w-80   "
+                  />
+                  <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p>
+
+                  <div className="place-items-center py-1 lg:py-1 lg:hover:scale-105 rounded ">
+                    <table className="table-auto border-collapse border text-center border-white ">
+                      <tbody>
+                        <tr className="bg-[#660066] text-white ">
+                          <td className="p-2  text-sm lg:text-[13px] font-bold border border-white">200 Cashback</td>
+                          <td className="p-2  text-sm lg:text-[13px] font-bold border border-white">2 days Booking</td>
+                        </tr>
+                        <tr className="bg-[#660066] text-white">
+                          <td className="p-2 text-sm lg:text-[13px] font-bold border border-white">500 Cashback</td>
+                          <td className="p-2 text-sm lg:text-[13px] font-bold border border-white">4 days Booking</td>
+                        </tr>
+                        <tr className="bg-[#660066] text-white">
+                          <td className="p-2 text-sm lg:text-[13px] font-bold border border-white">2000 Cashback</td>
+                          <td className="p-2 text-sm lg:text-[13px] font-bold border border-white">7 days Booking</td>
+                        </tr>
+                        <tr className="bg-[#660066] text-white">
+                          <td className="p-2 text-sm lg:text-[13px] font-bold border border-white">3000 Cashback</td>
+                          <td className="p-2 text-sm lg:text-[13px] font-bold border border-white">10 days Booking</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
+                  <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center pb-1 capitalize lg:hover:scale-105 '> 30 Days Booking </p>
+
+                  <div className="px-7 lg:px-5 justify-center lg:hover:scale-105 ">
+                    <div className="p-2  bg-[#660066] text-white text-sm lg:text-xs  font-bold flex flex-col gap-2 justify-center items-center space-x-2 border border-white lg:w-[245px]">
+                      <div className="flex items-center space-x-1 justify-center">
+                        <FaIndianRupeeSign className="text-white" />
+                        <span>10000</span>
+                      </div>
+                      <span> Hand Cashback</span>
+                      {/* <span> +</span> */}
+
+                      <div className="flex items-center space-x-1 pr-2 lg:pr-2 justify-center">
+                        <FaIndianRupeeSign className="text-white" />
+                        <span>10000</span>
+                      </div>
+                      <span> Into LDC Wallet </span>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-center items-center  px-7 py-2 lg:px-2 lg:hover:scale-105  ">
+                    <div className="bg-[#660066] text-white p-4 lg:p-3   border border-black rounded-sm  lg:w-[245px]">
+                      <ul className="space-y-2">
+                        <li className="flex items-center space-x-2 text-sm lg:text-xs font-bold">
+                          <span><RiArrowRightDoubleLine size={24} /></span>
+                          <span>Cashback Credited into LDC Wallet</span>
+                        </li>
+                        <li className="flex items-center space-x-2 text-sm lg:text-xs font-bold">
+                          <span><RiArrowRightDoubleLine size={24} /></span>
+                          <span>Cashback Can Be Used Monday To Thursday Pickup</span>
+                        </li>
+                        <li className="flex items-center space-x-2 text-sm lg:text-xs font-bold">
+                          <span><RiArrowRightDoubleLine size={24} /></span>
+                          <span>Maximum 50% Of Car Amount</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             )}
-            {(index + 1 === 4) && (
-              <div className="pt-14 lg:pt-0">
-                <div className="bg-[#000000] lg:rounded-md flex flex-col  w-[100%] md:w-72 lg:hover:scale-105 relative lg:top-14">
-                  <div>
-                    <Image
-                      src={discfree}
-                      height={1000}
-                      width={1000}
-                      alt='Long Drive Cars app'
-                      className=" rounded-md bg-cover lg:h-[545px] "
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
+
+
           </React.Fragment>
         ))}
       </div>
 
       {
         visibleItems < filteredData?.length && (
-          <div className="text-center px-6 pb-10 lg:pb-16">
-            <button className="bg-[#4508a6] text-xl font-bold text-white w-full lg:w-96 py-4 rounded-full">
-              <Link href={`${branch?.length ? branch : ''}/explore-self-drive-cars`}>View all cars</Link>
+          <div className="text-center px-6 place-items-center pb-10 lg:pb-16">
+            <button
+              className={`bg-[#4508a6] text-xl font-bold text-white w-full lg:w-96 py-4 rounded-full flex items-center justify-center relative ${loading ? 'opacity-75' : ''
+                }`}
+              onClick={handleButtonClick}
+              disabled={loading} // Prevent multiple clicks while loading
+            >
+              {loading ? (
+                <div className="flex items-center">
+                  <div className="spinner-border animate-spin border-t-4 border-white border-solid rounded-full w-5 h-5 mr-2"></div>
+                </div>
+              ) : (
+                "View all cars"
+              )}
             </button>
           </div>
+
         )
       }
     </div >
