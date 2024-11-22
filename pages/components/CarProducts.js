@@ -193,9 +193,9 @@
                     />
                     <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p>
 
-                    <div className=" items-center py-1 lg:py-1 lg:hover:scale-105  ">
-                      <table className="table-auto border-collapse border  text-center border-white ">
-                        <tbody>
+                    <div className=" place-items-center py-1 lg:py-1 lg:hover:scale-105  ">
+                      <table className="table-auto border-collapse border  justify-center border-white ">
+                        <tbody className="justify-center">
                           <tr className="bg-[#660066] text-white ">
                             <td className="p-2  text-sm lg:text-[13px] font-bold border border-white">200 Cashback</td>
                             <td className="p-2  text-sm lg:text-[13px] font-bold border border-white">2 days Booking</td>
