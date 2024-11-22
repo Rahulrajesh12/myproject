@@ -304,7 +304,7 @@ export default function ExploreCars({ loc, phoneno }) {
                         />
                         <FaSearch size={25} className='text-blue-500 relative right-14 lg:right-20 md:right-14' />
                     </div>
-                    <div className="lg:grid xl:grid-cols-3 lg:grid-cols-2 gap-x-8 gap-y-8 flex flex-col gap-2 items-center justify-center lg:max-w-7xl py-4">
+                    <div className="lg:grid xl:grid-cols-3 lg:grid-cols-2 gap-x-8 gap-y-12 flex flex-col gap-2 items-center justify-center lg:max-w-7xl py-4">
                         {filteredData?.map((item, index) => (
                             <React.Fragment key={index}>
                                 <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col  xs:w-[90%] md:w-64 h-[500px] lg:hover:scale-105">
@@ -362,7 +362,7 @@ export default function ExploreCars({ loc, phoneno }) {
                                     </div>
                                 </div>
                                 {(index + 1) % (4) === 0 && (
-                                    <div className=" pt-14 lg:pt-12  items-center  ">
+                                    <div className=" pt-14 lg:pt-0  items-center   ">
                                     <div className=" lg:rounded-md items-center  lg:w-72 flex flex-col relative">
                                             <Image
                                                 src={disc1}
@@ -373,7 +373,7 @@ export default function ExploreCars({ loc, phoneno }) {
                                             />
                                             <p className='text-black xl:text-xl lg:text-xl text-lg font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p>
 
-                                            <div className=" place-items-center   lg:hover:scale-105 ">
+                                            {/* <div className=" place-items-center   lg:hover:scale-105 ">
                                                 <table className="table-auto border-collapse border text-center  border-white rounded   ">
                                                     <tbody>
                                                         <tr className="bg-[#660066] text-white  ">
@@ -394,11 +394,33 @@ export default function ExploreCars({ loc, phoneno }) {
                                                         </tr>
                                                     </tbody>
                                                 </table>
-                                            </div>
+                                            </div> */}
+
+<div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 lg:p-1">
+                    <div className="w-full bg-[#660066] text-white border border-white lg:w-[265px] lg:text-[11px] text-xs">
+                      <div className="flex justify-between border-b border-white p-2 lg:p-[6px]    font-bold">
+                        <span className=" border-white px-2 ">200 Cashback</span>
+                        <span className="border-l-2 border-white px-2 w-32  ">2 days Booking</span>
+                      </div>
+                      <div className="flex justify-between border-b border-white p-2 lg:p-[6px]  font-bold">
+                        <span className=" border-white px-2">500 Cashback</span>
+                        <span className="border-l-2 border-white px-2 w-32  ">4 days Booking</span>
+                      </div>
+                      <div className="flex justify-between border-b border-white p-2 lg:p-[6px]  font-bold">
+                        <span className=" border-white px-2 w-18">2000 Cashback</span>
+                        <span className="border-l-2 border-white px-2 w-32  ">7 days Booking</span>
+                      </div>
+                      <div className="flex justify-between p-2    lg:p-[6px] font-bold">
+                        <span className=" border-white px-2 ">3000 Cashback</span>
+                        <span className="border-l-2 border-white px-2  w-32  ">10 days Booking</span>
+                      </div>
+                    </div>
+                  </div>
+
 
                                             <p className='text-black xl:text-lg  lg:text-lg text-lg font-bold text-center lg:py-[1px] capitalize lg:hover:scale-105 '> 30 Days Booking </p>
 
-                                            <div className=" justify-center lg:hover:scale-105 lg:px-4  ">
+                                            {/* <div className=" justify-center lg:hover:scale-105 lg:px-4  ">
                                                 <div className=" px-14 py-2 lg:px-[60px] bg-[#660066] text-white text-xs lg:text-[13px]  font-bold flex flex-col gap-2 justify-center items-center space-x-2 border border-white">
                                                     <div className="flex items-center space-x-1 justify-center ">
                                                         <FaIndianRupeeSign className="text-white" />
@@ -411,9 +433,26 @@ export default function ExploreCars({ loc, phoneno }) {
                                                     </div>
                                                     <span> Into LDC Wallet </span>
                                                 </div>
-                                            </div>
+                                            </div> */}
 
-                                            <div className="flex justify-center items-center px-14 lg:px-8 py-2  lg:hover:scale-105  ">
+                                            
+                  <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 lg:p-1">
+                    <div className="w-full bg-[#660066] text-white border border-white  text-xs lg:text-[12px] font-bold flex flex-col items-center gap-2 lg:gap-2 p-2 lg:p-1 px-[77px] lg:px-[82px] lg:py-1 lg:w-[265px]">
+                      <div className="flex items-center ">
+                        <FaIndianRupeeSign className="text-white" />
+                        <span>10000</span>
+                      </div>
+                      <span className="">Hand Cashback</span>
+                      <div className="flex items-center ">
+                        <FaIndianRupeeSign className="text-white" />
+                        <span>10000</span>
+                      </div>
+                      <span>Into LDC Wallet</span>
+                    </div>
+                  </div>
+
+
+                                            {/* <div className="flex justify-center items-center px-14 lg:px-8 py-2  lg:hover:scale-105  ">
                                                 <div className="bg-[#660066] text-white lg:py-2 py-1 lg:px-1 px-1 border border-white  ">
                                                     <ul className="space-y-2 text-[11px] lg:text-[13px] font-bold">
                                                         <li className="flex items-center space-x-2 ">
@@ -430,7 +469,27 @@ export default function ExploreCars({ loc, phoneno }) {
                                                         </li>
                                                     </ul>
                                                 </div>
-                                            </div>
+                                            </div> */}
+
+                                            
+                                                              
+<div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 lg:p-1 px-[38px] ">
+  <div className="w-full bg-[#660066] text-white border border-white rounded-sm p-2 lg:p-1 lg:px-1 lg:w-[265px]">
+    <div className="flex items-center gap-2 mb-2 text-[11px] lg:text-[12px] font-bold">
+      <span><RiArrowRightDoubleLine size={24} /></span>
+      <span>Cashback Credited into LDC Wallet</span>
+    </div>
+    <div className="flex items-center gap-2 mb-2 text-[11px] lg:text-[12px] font-bold">
+    <span><RiArrowRightDoubleLine size={24} /></span>
+    <span>Cashback Can Be Used Monday To Thursday Pickup</span>
+    </div>
+    <div className="flex items-center gap-2 text-[11px] lg:text-[12px] font-bold">
+    <span><RiArrowRightDoubleLine size={24} /></span>
+    <span>Maximum 50% Of Car Amount</span>
+    </div>
+  </div>
+</div>
+
 
                                         </div>
                                     </div>
