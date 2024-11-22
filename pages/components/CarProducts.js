@@ -234,18 +234,18 @@
                         </div>
                         </div>    
 
-                    <div className="flex justify-center items-center  px-7 py-2 lg:px-2 lg:hover:scale-105  ">
+                    <div className="flex  px-7 py-2 lg:px-2 lg:hover:scale-105  ">
                       <div className="bg-[#660066] text-white p-4 lg:p-3   border border-black rounded-sm  lg:w-[245px]">
-                        <ul className="space-y-2">
-                          <li className="flex items-center space-x-2 text-sm lg:text-xs font-bold">
+                        <ul className="space-y-2 text-[11px] lg:text-xs font-bold">
+                          <li className="flex items-center space-x-2 ">
                             <span><RiArrowRightDoubleLine size={24} /></span>
                             <span>Cashback Credited into LDC Wallet</span>
                           </li>
-                          <li className="flex items-center space-x-2 text-sm lg:text-xs font-bold">
+                          <li className="flex items-center space-x-2 ">
                           <span><RiArrowRightDoubleLine size={24} /></span>
                           <span>Cashback Can Be Used Monday To Thursday Pickup</span>
                           </li>
-                          <li className="flex items-center space-x-2 text-sm lg:text-xs font-bold">
+                          <li className="flex items-center space-x-2 ">
                           <span><RiArrowRightDoubleLine size={24} /></span>
                           <span>Maximum 50% Of Car Amount</span>
                           </li>
