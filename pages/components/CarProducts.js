@@ -193,7 +193,7 @@
                     />
                     <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p>
 
-                    <div className="place-items-center py-1 lg:py-1 lg:hover:scale-105 rounded ">
+                    <div className="place-items-center justify-center py-1 lg:py-1 lg:hover:scale-105 rounded ">
                       <table className="table-auto border-collapse border text-center border-white ">
                         <tbody>
                           <tr className="bg-[#660066] text-white ">
