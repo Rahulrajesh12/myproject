@@ -431,74 +431,78 @@ export default function ExploreCars({ loc, phoneno }) {
                                                     </ul>
                                                 </div>
                                             </div> */}
-                                           
-                                           <div className="w-full px-2 py-1 lg:px-2 lg:py-2">
-                                            <p className='text-black xl:text-xl lg:text-xl text-lg font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p>
+
+                                            <div className="w-full px-2 py-1 lg:px-2 lg:py-2">
+                                                <p className='text-black xl:text-xl lg:text-xl text-lg font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p>
+
+                                                  <div className="place-items-center items-center lg:py-1 lg:hover:scale-105 p-2 ">
+                                                    <div className="w-full bg-[#660066] text-white border border-white lg:w-[265px] lg:text-[11px] text-xs ">
+                                                        <div className="flex justify-between border-b border-white p-2   font-bold">
+                                                            <span className=" border-white px-3 ">200 Cashback</span>
+                                                            <span className=" border-white px-1 lg:px-1 border-r-2"></span>
+                                                            <span className=" border-white px-4 ">2 days Booking</span>
+                                                        </div>
+                                                        <div className="flex justify-between border-b border-white p-2   font-bold">
+                                                            <span className=" border-white px-3 ">500 Cashback</span>
+                                                            <span className=" border-white px-1 lg:px-1  border-r-2"></span>
+                                                            <span className=" border-white px-4   ">4 days Booking</span>
+                                                        </div>
+                                                        <div className="flex justify-between border-b border-white p-2   font-bold">
+                                                            <span className=" border-white px-3 w-18 ">2000 Cashback</span>
+                                                            <span className=" border-white  lg:px-0  border-r-2"></span>
+                                                            <span className=" border-white px-4   ">7 days Booking</span>
+                                                        </div>
+                                                        <div className="flex justify-between border-b border-white p-2   font-bold">
+                                                            <span className=" border-white px-3 ">3000 Cashback</span>
+                                                            <span className=" border-white px-0 lg:px-0 border-r-2"></span>
+                                                            <span className=" border-white px-3   ">10 days Booking</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
 
 
-                                            <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 lg:p-1">
-                                                <div className="w-full bg-[#660066] text-white border border-white lg:w-[265px] lg:text-[11px] text-xs">
-                                                    <div className="flex justify-between border-b border-white p-2 lg:p-[6px]    font-bold">
-                                                        <span className=" border-white px-2 ">200 Cashback</span>
-                                                        <span className="border-l-2 border-white px-2 w-32  ">2 days Booking</span>
+                                                <p className='text-black xl:text-lg  lg:text-lg text-lg font-bold text-center lg:py-[1px] capitalize lg:hover:scale-105 '> 30 Days Booking </p>
+
+
+
+
+                                                <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 lg:p-1">
+                                                    <div className="w-full bg-[#660066] text-white border border-white  text-[12px] lg:text-[11px] font-bold flex flex-col items-center gap-1 lg:gap-0 p-2 lg:p-1 px-[68px] lg:px-[60px] lg:py-2 lg:w-[265px]">
+                                                        <div className="flex items-center ">
+                                                            <FaIndianRupeeSign className="text-white" />
+                                                            <span className="text-[13px] lg:text-[12px]">10000 Hand Cashback</span>
+                                                        </div>
+                                                        <span className="text-xl">+</span>
+                                                        <div className="flex items-center ">
+                                                            <FaIndianRupeeSign className="text-white" />
+                                                            <span  className="text-[13px] lg:text-[12px]">10000 Into LDC Wallet</span>
+                                                        </div>
+                                                        <span></span>
                                                     </div>
-                                                    <div className="flex justify-between border-b border-white p-2 lg:p-[6px]  font-bold">
-                                                        <span className=" border-white px-2">500 Cashback</span>
-                                                        <span className="border-l-2 border-white px-2 w-32  ">4 days Booking</span>
-                                                    </div>
-                                                    <div className="flex justify-between border-b border-white p-2 lg:p-[6px]  font-bold">
-                                                        <span className=" border-white px-2 w-18">2000 Cashback</span>
-                                                        <span className="border-l-2 border-white px-2 w-32  ">7 days Booking</span>
-                                                    </div>
-                                                    <div className="flex justify-between p-2    lg:p-[6px] font-bold">
-                                                        <span className=" border-white px-2 ">3000 Cashback</span>
-                                                        <span className="border-l-2 border-white px-2  w-32  ">10 days Booking</span>
+                                                </div>
+
+
+
+
+
+                                                <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 lg:p-1  ">
+                                                    <div className="w-full bg-[#660066] text-white border border-white rounded-sm p-2 lg:p-1 lg:px-1 lg:w-[265px]">
+                                                        <div className="flex items-center gap-2 mb-2 text-[11px] lg:text-[12px] font-bold">
+                                                            <span><RiArrowRightDoubleLine size={24} /></span>
+                                                            <span>Cashback Credited into LDC Wallet</span>
+                                                        </div>
+                                                        <div className="flex items-center gap-2 mb-2 text-[11px] lg:text-[12px] font-bold">
+                                                            <span><RiArrowRightDoubleLine size={24} /></span>
+                                                            <span>Cashback Can Be Used Monday To Thursday Pickup</span>
+                                                        </div>
+                                                        <div className="flex items-center gap-2 text-[11px] lg:text-[12px] font-bold">
+                                                            <span><RiArrowRightDoubleLine size={24} /></span>
+                                                            <span>Maximum 50% Of Car Amount</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-
-
-                                            <p className='text-black xl:text-lg  lg:text-lg text-lg font-bold text-center lg:py-[1px] capitalize lg:hover:scale-105 '> 30 Days Booking </p>
-
-
-
-
-                                            <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 lg:p-1">
-                                                <div className="w-full bg-[#660066] text-white border border-white  text-xs lg:text-[12px] font-bold flex flex-col items-center gap-2 lg:gap-2 p-2 lg:p-1 px-[77px] lg:px-[82px] lg:py-1 lg:w-[265px]">
-                                                    <div className="flex items-center ">
-                                                        <FaIndianRupeeSign className="text-white" />
-                                                        <span>10000</span>
-                                                    </div>
-                                                    <span className="">Hand Cashback</span>
-                                                    <div className="flex items-center ">
-                                                        <FaIndianRupeeSign className="text-white" />
-                                                        <span>10000</span>
-                                                    </div>
-                                                    <span>Into LDC Wallet</span>
-                                                </div>
-                                            </div>
-
-
-
-
-
-                                            <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 lg:p-1  ">
-                                                <div className="w-full bg-[#660066] text-white border border-white rounded-sm p-2 lg:p-1 lg:px-1 lg:w-[265px]">
-                                                    <div className="flex items-center gap-2 mb-2 text-[11px] lg:text-[12px] font-bold">
-                                                        <span><RiArrowRightDoubleLine size={24} /></span>
-                                                        <span>Cashback Credited into LDC Wallet</span>
-                                                    </div>
-                                                    <div className="flex items-center gap-2 mb-2 text-[11px] lg:text-[12px] font-bold">
-                                                        <span><RiArrowRightDoubleLine size={24} /></span>
-                                                        <span>Cashback Can Be Used Monday To Thursday Pickup</span>
-                                                    </div>
-                                                    <div className="flex items-center gap-2 text-[11px] lg:text-[12px] font-bold">
-                                                        <span><RiArrowRightDoubleLine size={24} /></span>
-                                                        <span>Maximum 50% Of Car Amount</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
 
                                         </div>
                                     </div>
