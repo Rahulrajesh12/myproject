@@ -328,14 +328,14 @@ export default function ExploreCars({ loc, phoneno }) {
                         />
                         <FaSearch size={25} className='text-blue-500 relative right-14 lg:right-20 md:right-14' />
                     </div>
-                    <div className="lg:grid xl:grid-cols-3 lg:grid-cols-2 gap-x-8 gap-y-12 flex flex-col gap-2 items-center justify-center lg:max-w-7xl py-4">
+                    <div className="lg:grid xl:grid-cols-3 lg:grid-cols-2 gap-x-8 gap-y-8 flex flex-col gap-2 items-center justify-center lg:max-w-7xl py-4">
                         {filteredData?.map((item, index) => (
                             <React.Fragment key={index}>
-                                <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col  xs:w-[90%] md:w-64 h-[500px] lg:hover:scale-105">
-                                    <div className="relative h-80">
+                                <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col  xs:w-[90%] md:w-64 h-[580px] lg:h-[500px] lg:hover:scale-105">
+                                    <div className="relative h-[500px] lg:h-80">
                                         <Link href={`${(("car-rental/" + item.maker_model).toLowerCase()).replace(/ /g, '-')}`}>
                                             <Image
-                                                src={replaceText(item?.car_image_front_view)}
+                                                src={replaceText(item?.car_image_car_right_view)}
                                                 alt={StaticData(String(item?.maker_model.toLowerCase())) + String(item?.maker_model.toLowerCase())}
                                                 title={StaticData(String(item?.maker_model.toLowerCase())) + String(item?.maker_model.toLowerCase())}
                                                 layout="fill"
@@ -368,10 +368,10 @@ export default function ExploreCars({ loc, phoneno }) {
                                                 <span>{item.seater}</span>
                                             </div>
                                         </div>
-                                        <div className='pt-6'>
+                                        <div className='pt-6 lg:pt-2'>
                                             <p className='text-black text-lg text-center font-semibold pb-2'>For Booking</p>
                                             <div className="flex justify-around text-white">
-                                                <button className='bg-green-500 w-full -md p-2 flex justify-center'>
+                                                <button className='bg-green-500 w-full  p-2 flex justify-center'>
                                                     <Link href={`https://api.whatsapp.com/send?phone=+91${phoneno}&text=Hi%0AI%20am%20looking%20for%20a%20car%20booking.`} target='_blank'>
                                                         <p className=' flex gap-1 text-lg items-center'><span><FaWhatsapp size={20} /></span> <span>Whatsapp</span></p>
                                                     </Link>
@@ -381,7 +381,6 @@ export default function ExploreCars({ loc, phoneno }) {
                                                         <p className='flex gap-1 text-lg items-center px-1'><span><BiPhoneCall size={20} /></span> <span>Call Us</span></p>
                                                     </Link>
                                                 </button>
-
 
                                             </div>
                                             <div onClick={handleStoreRedirect} className="cursor-pointer bg-[#001f3d] py-4 lg:py-2 rounded-b-lg lg:rounded-b-lg  shimmer ">
@@ -397,14 +396,15 @@ export default function ExploreCars({ loc, phoneno }) {
                                     </div>
                                 </div>
                                 {(index + 1) % (4) === 0 && (
-                                    <div className=" pt-14 lg:pt-0  items-center   ">
-                                        <div className=" lg:rounded-md items-center  lg:w-72 flex flex-col relative">
+                                    <div className=" pt-14 lg:pt-0  items-center ">
+                                        <div className=" lg:rounded-md items-center    lg:w-72 flex flex-col relative">
+
                                             <Image
                                                 src={disc1}
                                                 height={1000}
                                                 width={1000}
                                                 alt='Long Drive Cars app'
-                                                className="scale-75 mxs:scale-[0.6] lg:scale-90 relative lg:w-80  "
+                                                className="scale-75 mxs:scale-[0.6] lg:scale-90 relative lg:w-80 lg:pr-14  "
                                             />
                                             {/* <p className='text-black xl:text-xl lg:text-xl text-lg font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p> */}
 
@@ -467,7 +467,7 @@ export default function ExploreCars({ loc, phoneno }) {
                                                 </div>
                                             </div> */}
 
-                                            <div className="w-full px-2 py-1 lg:px-2 lg:py-2">
+                                            <div className="w-full px-2 py-1 lg:px-2 lg:py-2 lg:pr-12 ">
                                                 <p className='text-black xl:text-xl lg:text-xl text-lg font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p>
 
                                                 <div className="place-items-center items-center lg:py-1 lg:hover:scale-105 p-2 ">
@@ -494,9 +494,6 @@ export default function ExploreCars({ loc, phoneno }) {
                                                         </div>
                                                     </div>
                                                 </div>
-
-
-
                                                 <p className='text-black xl:text-lg  lg:text-lg text-lg font-bold text-center lg:py-[1px] capitalize lg:hover:scale-105 '> 30 Days Booking </p>
 
 
@@ -538,8 +535,8 @@ export default function ExploreCars({ loc, phoneno }) {
                                                     </div>
                                                 </div>
                                             </div>
+                                            </div>
 
-                                        </div>
                                     </div>
                                 )}
                             </React.Fragment>

@@ -33,7 +33,7 @@ function CarProducts({ data, branch, phoneno, count }) {
     await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay for loader
     router.push(`${branch?.length ? branch : ''}/explore-self-drive-cars`); // Navigate to the next page
   };
-
+   
 
   const handleStoreRedirect = () => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -393,6 +393,7 @@ function CarProducts({ data, branch, phoneno, count }) {
               ) : (
                 "View all cars"
               )}
+              
             </button>
           </div>
 
