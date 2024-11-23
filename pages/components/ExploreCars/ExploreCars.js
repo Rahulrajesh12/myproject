@@ -18,12 +18,36 @@ import img4 from '../../changeimg/swift.webp'
 import img5 from '../../changeimg/i20.webp'
 import HamburgerMenu from "../Hamburger/HamburgerMenu";
 
+
+import { FaGooglePlay } from "react-icons/fa";
+import { FaAppStoreIos } from "react-icons/fa";
+import { RxSlash } from "react-icons/rx";
+
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { RiArrowRightDoubleLine } from "react-icons/ri";
 
 
 
 export default function ExploreCars({ loc, phoneno }) {
+
+
+
+    const handleStoreRedirect = () => {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            // Redirect to App Store if iOS
+            window.open('https://apps.apple.com/in/app/long-drive-cars/id6466695391', '_blank');
+        } else if (/android/i.test(userAgent)) {
+            // Redirect to Play Store if Android
+            window.open('https://play.google.com/store/search?q=long+drive+cars&c=apps', '_blank');
+
+        } else {
+            // Optional: Provide a message for non-mobile devices
+            alert("App is available only on mobile devices.");
+        }
+    }
+
     // console.log(loc,"loccc");
 
     const [locationG, setLocationG] = useState('')
@@ -347,18 +371,29 @@ export default function ExploreCars({ loc, phoneno }) {
                                         <div className='pt-6'>
                                             <p className='text-black text-lg text-center font-semibold pb-2'>For Booking</p>
                                             <div className="flex justify-around text-white">
-                                                <button className='bg-green-500 w-full rounded-bl-md p-2 flex justify-center'>
+                                                <button className='bg-green-500 w-full -md p-2 flex justify-center'>
                                                     <Link href={`https://api.whatsapp.com/send?phone=+91${phoneno}&text=Hi%0AI%20am%20looking%20for%20a%20car%20booking.`} target='_blank'>
                                                         <p className=' flex gap-1 text-lg items-center'><span><FaWhatsapp size={20} /></span> <span>Whatsapp</span></p>
                                                     </Link>
                                                 </button>
-                                                <button className='bg-blue-500 w-full rounded-br-md p-2 flex justify-center' >
+                                                <button className='bg-blue-500 w-full  p-2 flex justify-center' >
                                                     <Link href={`tel:${phoneno}`} target='_blank'>
                                                         <p className='flex gap-1 text-lg items-center px-1'><span><BiPhoneCall size={20} /></span> <span>Call Us</span></p>
                                                     </Link>
                                                 </button>
+
+
+                                            </div>
+                                            <div onClick={handleStoreRedirect} className="cursor-pointer bg-[#001f3d] py-4 lg:py-2 rounded-b-lg lg:rounded-b-lg  shimmer ">
+                                                <div className="flex justify-around place-items-center   ">
+                                                    <span className="flex  "><FaGooglePlay className="lg:size-6" size={20} /> <RxSlash className="lg:size-5" size={24} />  <FaAppStoreIos className="lg:size-6" size={20} /></span>
+                                                    <p className=" text-center  font-semibold text-xl lg:text-xl tracking-wide  "> Download App </p>
+                                                </div>
                                             </div>
                                         </div>
+
+
+
                                     </div>
                                 </div>
                                 {(index + 1) % (4) === 0 && (
@@ -435,7 +470,7 @@ export default function ExploreCars({ loc, phoneno }) {
                                             <div className="w-full px-2 py-1 lg:px-2 lg:py-2">
                                                 <p className='text-black xl:text-xl lg:text-xl text-lg font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p>
 
-                                                  <div className="place-items-center items-center lg:py-1 lg:hover:scale-105 p-2 ">
+                                                <div className="place-items-center items-center lg:py-1 lg:hover:scale-105 p-2 ">
                                                     <div className="w-full bg-[#660066] text-white border border-white lg:w-[265px] lg:text-[11px] text-xs ">
                                                         <div className="flex justify-between border-b border-white p-2   font-bold">
                                                             <span className=" border-white px-3 ">200 Cashback</span>
@@ -459,7 +494,7 @@ export default function ExploreCars({ loc, phoneno }) {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            
+
 
 
                                                 <p className='text-black xl:text-lg  lg:text-lg text-lg font-bold text-center lg:py-[1px] capitalize lg:hover:scale-105 '> 30 Days Booking </p>
@@ -468,15 +503,15 @@ export default function ExploreCars({ loc, phoneno }) {
 
 
                                                 <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 lg:p-1">
-                                                    <div className="w-full bg-[#660066] text-white border border-white  text-[12px] lg:text-[11px] font-bold flex flex-col items-center gap-1 lg:gap-0 p-2 lg:p-1 px-[68px] lg:px-[60px] lg:py-2 lg:w-[265px]">
+                                                    <div className="w-full bg-[#660066] text-white border border-white  text-[12px] lg:text-[11px] font-bold flex flex-col items-center gap-1 lg:gap-0 p-2 lg:p-1 px-[64px] lg:px-[60px] lg:py-2 lg:w-[265px]">
                                                         <div className="flex items-center ">
                                                             <FaIndianRupeeSign className="text-white" />
-                                                            <span className="text-[13px] lg:text-[12px]">10000 Hand Cashback</span>
+                                                            <span className="text-[13px] lg:text-[12px]"><span className="text-sm">10000 </span> Hand Cashback</span>
                                                         </div>
                                                         <span className="text-xl">+</span>
                                                         <div className="flex items-center ">
                                                             <FaIndianRupeeSign className="text-white" />
-                                                            <span  className="text-[13px] lg:text-[12px]">10000 Into LDC Wallet</span>
+                                                            <span className="text-[13px] lg:text-[12px]"><span className="text-sm">10000 </span> Into LDC Wallet</span>
                                                         </div>
                                                         <span></span>
                                                     </div>
