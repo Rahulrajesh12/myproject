@@ -42,7 +42,7 @@ function ExploreSelfDriveCars() {
       // Set loading to true to show the loader
       setLoading(true);
       // Simulate delay (e.g., with a timeout or actual async operation)
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1500));
       // Set loading to false after data has loaded
       setLoading(false);
     };
