@@ -191,7 +191,9 @@ function CarProducts({ data, branch, phoneno, count }) {
                     alt='Long Drive Cars app'
                     className="scale-75 mxs:scale-[0.6] lg:scale-90 relative lg:w-80   "
                   />
-                  <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p>
+
+                  {/* <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p> */}
+
                   {/* 
                     <div className=" place-items-center lg:py-1 lg:hover:scale-105 p-2  ">
                       <table className="table-auto border-collapse border w-full   justify-center border-white ">
@@ -216,6 +218,53 @@ function CarProducts({ data, branch, phoneno, count }) {
                       </table>
                     </div> */}
 
+
+
+
+                  {/* <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p> */}
+                  {/* 
+                  <div className="justify-center lg:hover:scale-105 w-full p-2  ">
+                <div className=" text-center px-2 py-2  bg-[#660066] text-white text-sm lg:text-xs  font-bold flex flex-col gap-2 justify-center items-center space-x-2 border border-white lg:w-[245px]">
+                    <div className="flex items-center space-x-1 justify-center ">
+                    <FaIndianRupeeSign className="text-white" />
+                      <span>10000</span>
+                      </div>
+                      <span> Hand Cashback</span>
+                      {/* <span> +</span> */}
+
+                  {/* <div className="flex items-center space-x-1 pr-2 lg:pr-2 justify-center">
+                    <FaIndianRupeeSign className="text-white" />
+                      <span>10000</span>
+                      </div>
+                      <span> Into LDC Wallet </span>
+                       </div>
+                 </div>      */}
+
+                  {/* 
+                  <div className="flex lg:px-2 lg:hover:scale-105 w-full p-2 ">
+                    <div className="bg-[#660066] text-white px-2 py-2    lg:p-3   border border-black rounded-sm  lg:w-[245px]">
+                      <ul className="space-y-2 text-[11px] lg:text-xs font-bold">
+                        <li className="flex items-center space-x-2 ">
+                          <span><RiArrowRightDoubleLine size={24} /></span>
+                          <span>Cashback Credited into LDC Wallet</span>
+                        </li>
+                        <li className="flex items-center space-x-2 ">
+                          <span><RiArrowRightDoubleLine size={24} /></span>
+                          <span>Cashback Can Be Used Monday To Thursday Pickup</span>
+                        </li>
+                        <li className="flex items-center space-x-2 ">
+                          <span><RiArrowRightDoubleLine size={24} /></span>
+                          <span>Maximum 50% Of Car Amount</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div> */}
+
+
+
+                  <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p>
+
+                  <div className="w-full px-2 py-1 lg:px-2 lg:py-2">
                   <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2">
                     <div className="w-full bg-[#660066] text-white border border-white lg:w-[265px] lg:text-[11px] text-xs ">
                       <div className="flex justify-between border-b border-white p-2   font-bold">
@@ -237,29 +286,11 @@ function CarProducts({ data, branch, phoneno, count }) {
                     </div>
                   </div>
 
-
-
                   <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center pb-1 capitalize lg:hover:scale-105 '> 30 Days Booking </p>
-                  {/* 
-                  <div className="justify-center lg:hover:scale-105 w-full p-2  ">
-                <div className=" text-center px-2 py-2  bg-[#660066] text-white text-sm lg:text-xs  font-bold flex flex-col gap-2 justify-center items-center space-x-2 border border-white lg:w-[245px]">
-                    <div className="flex items-center space-x-1 justify-center ">
-                    <FaIndianRupeeSign className="text-white" />
-                      <span>10000</span>
-                      </div>
-                      <span> Hand Cashback</span>
-                      {/* <span> +</span> */}
 
-                  {/* <div className="flex items-center space-x-1 pr-2 lg:pr-2 justify-center">
-                    <FaIndianRupeeSign className="text-white" />
-                      <span>10000</span>
-                      </div>
-                      <span> Into LDC Wallet </span>
-                       </div>
-                 </div>      */}
 
                   <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2">
-                    <div className="w-full bg-[#660066] text-white border border-white  text-sm lg:text-[12px] font-bold flex flex-col items-center gap-2 p-2 px-[70px] lg:px-[82px] lg:w-[265px]">
+                    <div className="w-full bg-[#660066] text-white border border-white  text-xs lg:text-[12px] font-bold flex flex-col items-center gap-2 p-2 px-[70px] lg:px-[82px] lg:w-[265px]">
                       <div className="flex items-center space-x-1 ">
                         <FaIndianRupeeSign className="text-white" />
                         <span>10000</span>
@@ -274,42 +305,25 @@ function CarProducts({ data, branch, phoneno, count }) {
                   </div>
 
 
-{/* 
-                  <div className="flex lg:px-2 lg:hover:scale-105 w-full p-2 ">
-                    <div className="bg-[#660066] text-white px-2 py-2    lg:p-3   border border-black rounded-sm  lg:w-[245px]">
-                      <ul className="space-y-2 text-[11px] lg:text-xs font-bold">
-                        <li className="flex items-center space-x-2 ">
-                          <span><RiArrowRightDoubleLine size={24} /></span>
-                          <span>Cashback Credited into LDC Wallet</span>
-                        </li>
-                        <li className="flex items-center space-x-2 ">
-                          <span><RiArrowRightDoubleLine size={24} /></span>
-                          <span>Cashback Can Be Used Monday To Thursday Pickup</span>
-                        </li>
-                        <li className="flex items-center space-x-2 ">
-                          <span><RiArrowRightDoubleLine size={24} /></span>
-                          <span>Maximum 50% Of Car Amount</span>
-                        </li>
-                      </ul>
+                  <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2   ">
+                    <div className="w-full bg-[#660066] text-white border border-black rounded-sm p-2 lg:px-1 lg:w-[265px]">
+                      <div className="flex items-center gap-2 mb-2 text-[11px] lg:text-[12px] font-bold">
+                        <span><RiArrowRightDoubleLine size={24} /></span>
+                        <span>Cashback Credited into LDC Wallet</span>
+                      </div>
+                      <div className="flex items-center gap-2 mb-2 text-[11px] lg:text-[12px] font-bold">
+                        <span><RiArrowRightDoubleLine size={24} /></span>
+                        <span>Cashback Can Be Used Monday To Thursday Pickup</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-[11px] lg:text-[12px] font-bold">
+                        <span><RiArrowRightDoubleLine size={24} /></span>
+                        <span>Maximum 50% Of Car Amount</span>
+                      </div>
                     </div>
-                  </div> */}
+                  </div>
 
-<div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 px-8  ">
-  <div className="w-full bg-[#660066] text-white border border-black rounded-sm p-2 lg:px-1 lg:w-[265px]">
-    <div className="flex items-center gap-2 mb-2 text-[11px] lg:text-[12px] font-bold">
-      <span><RiArrowRightDoubleLine size={24} /></span>
-      <span>Cashback Credited into LDC Wallet</span>
-    </div>
-    <div className="flex items-center gap-2 mb-2 text-[11px] lg:text-[12px] font-bold">
-    <span><RiArrowRightDoubleLine size={24} /></span>
-    <span>Cashback Can Be Used Monday To Thursday Pickup</span>
-    </div>
-    <div className="flex items-center gap-2 text-[11px] lg:text-[12px] font-bold">
-    <span><RiArrowRightDoubleLine size={24} /></span>
-    <span>Maximum 50% Of Car Amount</span>
-    </div>
-  </div>
-</div>
+                </div>
+
 
 
                 </div>

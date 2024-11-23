@@ -482,7 +482,7 @@ export default function ExploreCars({ loc, phoneno }) {
 
 
 
-                                            <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 lg:p-1 px-[38px] ">
+                                            <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 lg:p-1  ">
                                                 <div className="w-full bg-[#660066] text-white border border-white rounded-sm p-2 lg:p-1 lg:px-1 lg:w-[265px]">
                                                     <div className="flex items-center gap-2 mb-2 text-[11px] lg:text-[12px] font-bold">
                                                         <span><RiArrowRightDoubleLine size={24} /></span>
