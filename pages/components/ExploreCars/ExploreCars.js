@@ -390,9 +390,6 @@ export default function ExploreCars({ loc, phoneno }) {
                                                 </div>
                                             </div>
                                         </div>
-
-
-
                                     </div>
                                 </div>
                                 {(index + 1) % (4) === 0 && (
@@ -406,66 +403,6 @@ export default function ExploreCars({ loc, phoneno }) {
                                                 alt='Long Drive Cars app'
                                                 className="scale-75 mxs:scale-[0.6] lg:scale-90 relative lg:w-80 lg:pr-14  "
                                             />
-                                            {/* <p className='text-black xl:text-xl lg:text-xl text-lg font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p> */}
-
-                                            {/* <div className=" place-items-center   lg:hover:scale-105 ">
-                                                <table className="table-auto border-collapse border text-center  border-white rounded   ">
-                                                    <tbody>
-                                                        <tr className="bg-[#660066] text-white  ">
-                                                            <td className=" px-2 py-1  lg:py-[5px] text-xs lg:text-[13px] font-bold border border-white">200 Cashback</td>
-                                                            <td className=" px-2 py-1 lg:py-[5px] text-xs lg:text-[13px] font-bold border border-white">2 days Booking</td>
-                                                        </tr>
-                                                        <tr className="bg-[#660066] text-white">
-                                                            <td className="px-2 py-1  lg:py-[5px] text-xs lg:text-[13px] font-bold border border-white">500 Cashback</td>
-                                                            <td className=" px-2 py-1 lg:py-[5px]  text-xs lg:text-[13px] font-bold border border-white">4 days Booking</td>
-                                                        </tr>
-                                                        <tr className="bg-[#660066] text-white">
-                                                            <td className=" px-2 py-1 lg:py-[5px]  text-xs lg:text-[13px] font-bold border border-white">2000 Cashback</td>
-                                                            <td className="px-2 py-1 lg:py-[5px] text-xs lg:text-[13px] font-bold border border-white">7 days Booking</td>
-                                                        </tr>
-                                                        <tr className="bg-[#660066] text-white">
-                                                            <td className="px-2 py-1 lg:py-[5px] text-xs lg:text-[13px] font-bold border border-white">3000 Cashback</td>
-                                                            <td className=" px-2 py-1  lg:py-[5px] text-xs lg:text-[13px] font-bold border border-white">10 days Booking</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div> */}
-
-                                            {/* <div className=" justify-center lg:hover:scale-105 lg:px-4  ">
-                                                <div className=" px-14 py-2 lg:px-[60px] bg-[#660066] text-white text-xs lg:text-[13px]  font-bold flex flex-col gap-2 justify-center items-center space-x-2 border border-white">
-                                                    <div className="flex items-center space-x-1 justify-center ">
-                                                        <FaIndianRupeeSign className="text-white" />
-                                                        <span>10000</span>
-                                                    </div>
-                                                    <span> Hand Cashback</span>
-                                                    <div className="flex items-center space-x-1 pr-2 lg:pr-2 justify-center">
-                                                        <FaIndianRupeeSign className="text-white" />
-                                                        <span>10000</span>
-                                                    </div>
-                                                    <span> Into LDC Wallet </span>
-                                                </div>
-                                            </div> */}
-
-                                            {/* <p className='text-black xl:text-lg  lg:text-lg text-lg font-bold text-center lg:py-[1px] capitalize lg:hover:scale-105 '> 30 Days Booking </p> */}
-
-                                            {/* <div className="flex justify-center items-center px-14 lg:px-8 py-2  lg:hover:scale-105  ">
-                                                <div className="bg-[#660066] text-white lg:py-2 py-1 lg:px-1 px-1 border border-white  ">
-                                                    <ul className="space-y-2 text-[11px] lg:text-[13px] font-bold">
-                                                        <li className="flex items-center space-x-2 ">
-                                                            <span><RiArrowRightDoubleLine size={24} /></span>
-                                                            <span>Cashback Credited into LDC Wallet</span>
-                                                        </li>
-                                                        <li className="flex items-center space-x-2 ">
-                                                            <span><RiArrowRightDoubleLine size={24} /></span>
-                                                            <span>Cashback Can Be Used Monday To Thursday Pickup</span>
-                                                        </li>
-                                                        <li className="flex items-center space-x-2 ">
-                                                            <span><RiArrowRightDoubleLine size={24} /></span>
-                                                            <span>Maximum 50% Of Car Amount</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div> */}
 
                                             <div className="w-full px-2 py-1 lg:px-2 lg:py-2 lg:pr-12 ">
                                                 <p className='text-black xl:text-xl lg:text-xl text-lg font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p>
@@ -474,31 +411,27 @@ export default function ExploreCars({ loc, phoneno }) {
                                                     <div className="w-full bg-[#660066] text-white border border-white lg:w-[265px] lg:text-[11px] text-xs ">
                                                         <div className="flex justify-between border-b border-white p-2   font-bold">
                                                             <span className=" border-white px-3 ">200 Cashback</span>
-                                                            <span className=" border-white px-1 lg:px-1 border-r-2"></span>
+                                                            <span className=" border-white px-[5px]  lg:px-[4.5px] border-r-2"></span>
                                                             <span className=" border-white px-4 ">2 days Booking</span>
                                                         </div>
                                                         <div className="flex justify-between border-b border-white p-2   font-bold">
                                                             <span className=" border-white px-3 ">500 Cashback</span>
-                                                            <span className=" border-white px-1 lg:px-1  border-r-2"></span>
+                                                            <span className=" border-white px-[5px] lg:px-[4.5px]  border-r-2"></span>
                                                             <span className=" border-white px-4   ">4 days Booking</span>
                                                         </div>
                                                         <div className="flex justify-between border-b border-white p-2   font-bold">
                                                             <span className=" border-white px-3 w-18 ">2000 Cashback</span>
-                                                            <span className=" border-white  lg:px-0  border-r-2"></span>
+                                                            <span className=" border-white px-[1px] lg:px-[1px]  border-r-2"></span>
                                                             <span className=" border-white px-4   ">7 days Booking</span>
                                                         </div>
                                                         <div className="flex justify-between border-b border-white p-2   font-bold">
                                                             <span className=" border-white px-3 ">3000 Cashback</span>
-                                                            <span className=" border-white px-0 lg:px-0 border-r-2"></span>
+                                                            <span className=" border-white px-[0.5px] lg:px-0 border-r-2"></span>
                                                             <span className=" border-white px-3   ">10 days Booking</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <p className='text-black xl:text-lg  lg:text-lg text-lg font-bold text-center lg:py-[1px] capitalize lg:hover:scale-105 '> 30 Days Booking </p>
-
-
-
-
                                                 <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 lg:p-1">
                                                     <div className="w-full bg-[#660066] text-white border border-white  text-[12px] lg:text-[11px] font-bold flex flex-col items-center gap-1 lg:gap-0 p-2 lg:p-1 px-[64px] lg:px-[60px] lg:py-2 lg:w-[265px]">
                                                         <div className="flex items-center ">
@@ -513,11 +446,6 @@ export default function ExploreCars({ loc, phoneno }) {
                                                         <span></span>
                                                     </div>
                                                 </div>
-
-
-
-
-
                                                 <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 lg:p-1  ">
                                                     <div className="w-full bg-[#660066] text-white border border-white rounded-sm p-2 lg:p-1 lg:px-1 lg:w-[265px]">
                                                         <div className="flex items-center gap-2 mb-2 text-[11px] lg:text-[12px] font-bold">
@@ -535,7 +463,7 @@ export default function ExploreCars({ loc, phoneno }) {
                                                     </div>
                                                 </div>
                                             </div>
-                                            </div>
+                                        </div>
 
                                     </div>
                                 )}

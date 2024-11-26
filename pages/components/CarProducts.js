@@ -33,7 +33,7 @@ function CarProducts({ data, branch, phoneno, count }) {
     await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay for loader
     router.push(`${branch?.length ? branch : ''}/explore-self-drive-cars`); // Navigate to the next page
   };
-   
+
 
   const handleStoreRedirect = () => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -191,91 +191,19 @@ function CarProducts({ data, branch, phoneno, count }) {
                     alt='Long Drive Cars app'
                     className="scale-75 mxs:scale-[0.6] lg:scale-90 relative lg:w-80   "
                   />
-
-                  {/* <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p> */}
-
-                  {/* 
-                    <div className=" place-items-center lg:py-1 lg:hover:scale-105 p-2  ">
-                      <table className="table-auto border-collapse border w-full   justify-center border-white ">
-                        <tbody className="justify-center">
-                          <tr className="bg-[#660066] text-white ">
-                            <td className="  px-2 py-2 text-sm lg:text-[13px] font-bold border border-white">200 Cashback</td>
-                            <td className=" px-2 py-2  text-sm lg:text-[13px] font-bold border border-white">2 days Booking</td>
-                          </tr>
-                          <tr className="bg-[#660066] text-white">
-                            <td className="  px-2 py-2 text-sm lg:text-[13px] font-bold border border-white">500 Cashback</td>
-                            <td className="  px-2 py-2 text-sm lg:text-[13px] font-bold border border-white">4 days Booking</td>
-                          </tr>
-                          <tr className="bg-[#660066] text-white">
-                            <td className=" px-2 py-2 text-sm lg:text-[13px] font-bold border border-white">2000 Cashback</td>
-                            <td className=" px-2 py-2 text-sm lg:text-[13px] font-bold border border-white">7 days Booking</td>
-                          </tr>
-                          <tr className="bg-[#660066] text-white">
-                            <td className="  px-2 py-2 text-sm lg:text-[13px] font-bold border border-white">3000 Cashback</td>
-                            <td className=" px-2 py-2 text-sm lg:text-[13px] font-bold border border-white">10 days Booking</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div> */}
-
-
-
-
-                  {/* <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p> */}
-                  {/* 
-                  <div className="justify-center lg:hover:scale-105 w-full p-2  ">
-                <div className=" text-center px-2 py-2  bg-[#660066] text-white text-sm lg:text-xs  font-bold flex flex-col gap-2 justify-center items-center space-x-2 border border-white lg:w-[245px]">
-                    <div className="flex items-center space-x-1 justify-center ">
-                    <FaIndianRupeeSign className="text-white" />
-                      <span>10000</span>
-                      </div>
-                      <span> Hand Cashback</span>
-                      {/* <span> +</span> */}
-
-                  {/* <div className="flex items-center space-x-1 pr-2 lg:pr-2 justify-center">
-                    <FaIndianRupeeSign className="text-white" />
-                      <span>10000</span>
-                      </div>
-                      <span> Into LDC Wallet </span>
-                       </div>
-                 </div>      */}
-
-                  {/* 
-                  <div className="flex lg:px-2 lg:hover:scale-105 w-full p-2 ">
-                    <div className="bg-[#660066] text-white px-2 py-2    lg:p-3   border border-black rounded-sm  lg:w-[245px]">
-                      <ul className="space-y-2 text-[11px] lg:text-xs font-bold">
-                        <li className="flex items-center space-x-2 ">
-                          <span><RiArrowRightDoubleLine size={24} /></span>
-                          <span>Cashback Credited into LDC Wallet</span>
-                        </li>
-                        <li className="flex items-center space-x-2 ">
-                          <span><RiArrowRightDoubleLine size={24} /></span>
-                          <span>Cashback Can Be Used Monday To Thursday Pickup</span>
-                        </li>
-                        <li className="flex items-center space-x-2 ">
-                          <span><RiArrowRightDoubleLine size={24} /></span>
-                          <span>Maximum 50% Of Car Amount</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div> */}
-
-
                   <div className="w-full px-2 py-1 lg:px-2 lg:py-2">
-
                     <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p>
-
                     <div className="w-full px-2 py-1 lg:px-2 lg:py-2 ">
                       <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 ">
                         <div className="w-full bg-[#660066] text-white border border-white lg:w-[265px] lg:text-[11px] text-xs ">
                           <div className="flex justify-between border-b border-white p-[10px] lg:p-2  font-bold">
                             <span className=" border-white px-2 ">200 Cashback</span>
-                            <span className=" border-white px-1 lg:px-2 border-r-2"></span>
+                            <span className=" border-white px-[4px] lg:px-[10px] border-r-2"></span>
                             <span className=" border-white px-3 w-32 lg:px-4  ">2 days Booking</span>
                           </div>
                           <div className="flex justify-between border-b border-white p-[10px] lg:p-2  font-bold">
                             <span className=" border-white px-2 ">500 Cashback</span>
-                            <span className=" border-white px-1 lg:px-2  border-r-2"></span>
+                            <span className=" border-white px-[3.5px] lg:px-[9px]  border-r-2"></span>
                             <span className=" border-white px-3 lg:px-4 w-32  ">4 days Booking</span>
                           </div>
                           <div className="flex justify-between border-b border-white p-[10px] lg:p-2  font-bold">
@@ -343,42 +271,6 @@ function CarProducts({ data, branch, phoneno, count }) {
 
       {
         visibleItems < filteredData?.length && (
-          // <div className="text-center px-6 pb-10 lg:pb-16">
-          //   <button className="bg-[#4508a6] text-xl font-bold text-white w-full lg:w-96 py-4 rounded-full">
-          //     <Link href={`${branch?.length ? branch : ''}/explore-self-drive-cars`}>View all cars</Link>
-          //     {loading && <div className="text-center py-4">
-          //         <div className="fixed inset-0 bg-white flex items-center z-50 opacity-90">
-          //             <div className="spinner-border animate-spin border-t-4 border-blue-500 border-solid rounded-full w-16 h-16"></div>
-          //         </div>
-          //     </div>}
-          //   </button>
-
-          // </div>
-
-          //  <div className="text-center px-6 place-items-center pb-10 lg:pb-16">
-          //   <button
-          //     className={`bg-[#4508a6] text-xl font-bold text-white w-full lg:w-96 py-4 rounded-full flex items-center justify-center relative ${
-          //       loading ? 'opacity-75' : ''
-          //     }`}
-          //     onClick={handleButtonClick}
-          //     disabled={loading} // Prevent multiple clicks while loading
-
-          //   >
-
-          //     {loading ? (
-          //       <div className="flex items-center">
-          //         <div className="spinner-border animate-spin border-t-4 border-white border-solid rounded-full w-5 h-5 mr-2"></div>
-          //         Loading...
-          //       </div>
-          //     ) : (
-          //       <Link href={`${branch?.length ? branch : ''}/explore-self-drive-cars`}>
-          //         View all cars
-          //       </Link>
-          //     )}
-          //   </button>
-
-          // </div>
-
           <div className="text-center px-6 place-items-center pb-10 lg:pb-16">
             <button
               className={`bg-[#4508a6] text-xl font-bold text-white w-full lg:w-96 py-4 rounded-full flex items-center justify-center relative ${loading ? 'opacity-75' : ''
@@ -393,7 +285,7 @@ function CarProducts({ data, branch, phoneno, count }) {
               ) : (
                 "View all cars"
               )}
-              
+
             </button>
           </div>
 
