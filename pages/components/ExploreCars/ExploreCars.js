@@ -411,22 +411,22 @@ export default function ExploreCars({ loc, phoneno }) {
                                                     <div className="w-full bg-[#660066] text-white border border-white lg:w-[265px] lg:text-[11px] text-xs ">
                                                         <div className="flex justify-between border-b border-white p-2   font-bold">
                                                             <span className=" border-white px-3 ">200 Cashback</span>
-                                                            <span className=" border-white px-1 lg:px-1 border-r-2"></span>
+                                                            <span className=" border-white px-[5px]  lg:px-[4.5px] border-r-2"></span>
                                                             <span className=" border-white px-4 ">2 days Booking</span>
                                                         </div>
                                                         <div className="flex justify-between border-b border-white p-2   font-bold">
                                                             <span className=" border-white px-3 ">500 Cashback</span>
-                                                            <span className=" border-white px-1 lg:px-1  border-r-2"></span>
+                                                            <span className=" border-white px-[5px] lg:px-[4.5px]  border-r-2"></span>
                                                             <span className=" border-white px-4   ">4 days Booking</span>
                                                         </div>
                                                         <div className="flex justify-between border-b border-white p-2   font-bold">
                                                             <span className=" border-white px-3 w-18 ">2000 Cashback</span>
-                                                            <span className=" border-white  lg:px-0  border-r-2"></span>
+                                                            <span className=" border-white px-[1px] lg:px-[1px]  border-r-2"></span>
                                                             <span className=" border-white px-4   ">7 days Booking</span>
                                                         </div>
                                                         <div className="flex justify-between border-b border-white p-2   font-bold">
                                                             <span className=" border-white px-3 ">3000 Cashback</span>
-                                                            <span className=" border-white px-0 lg:px-0 border-r-2"></span>
+                                                            <span className=" border-white px-[0.5px] lg:px-0 border-r-2"></span>
                                                             <span className=" border-white px-3   ">10 days Booking</span>
                                                         </div>
                                                     </div>

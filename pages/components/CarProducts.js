@@ -198,12 +198,12 @@ function CarProducts({ data, branch, phoneno, count }) {
                         <div className="w-full bg-[#660066] text-white border border-white lg:w-[265px] lg:text-[11px] text-xs ">
                           <div className="flex justify-between border-b border-white p-[10px] lg:p-2  font-bold">
                             <span className=" border-white px-2 ">200 Cashback</span>
-                            <span className=" border-white px-1 lg:px-2 border-r-2"></span>
+                            <span className=" border-white px-[4px] lg:px-[10px] border-r-2"></span>
                             <span className=" border-white px-3 w-32 lg:px-4  ">2 days Booking</span>
                           </div>
                           <div className="flex justify-between border-b border-white p-[10px] lg:p-2  font-bold">
                             <span className=" border-white px-2 ">500 Cashback</span>
-                            <span className=" border-white px-1 lg:px-2  border-r-2"></span>
+                            <span className=" border-white px-[3.5px] lg:px-[9px]  border-r-2"></span>
                             <span className=" border-white px-3 lg:px-4 w-32  ">4 days Booking</span>
                           </div>
                           <div className="flex justify-between border-b border-white p-[10px] lg:p-2  font-bold">
