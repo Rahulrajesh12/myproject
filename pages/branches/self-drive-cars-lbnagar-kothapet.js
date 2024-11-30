@@ -8,10 +8,10 @@ function dilshuknagar() {
   return (
     <div className='bg-white'>
          <Head>
-        <title>No Deposit & Unlimited Km - Self-Drive Car Rentals In Hyderabad</title>
+        <title> Unlimited Km - Self-Drive Car Rentals In Hyderabad</title>
         <meta name="description" content="Easy access to self drive cars in Dilsukhnagar"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="No Deposit & Unlimited km - Self-Drive Car Rentals In Hyderabad" />
+        <meta property="og:title" content=" Unlimited km - Self-Drive Car Rentals In Hyderabad" />
         <meta property="og:description" content="Easy access to self drive cars in Dilsukhnagar"/> 
       </Head>
       <HamburgerMenu phoneno={'9000-478-478'} />

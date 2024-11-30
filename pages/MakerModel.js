@@ -57,11 +57,11 @@ const CarDetails = ({ city, phoneno }) => {
   return (
     <div className='bg-white text-black'>
       <Head>
-        <title>No Deposit & Unlimited km - Self-Drive Car Rentals In {city}</title>
-        <meta name="description" content="Self-drive cars start at 62/hr, We offer Self Drive Cars for the best prices with unlimited km & No Deposit, Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
+        <title>Unlimited km - Self-Drive Car Rentals In {city}</title>
+        <meta name="description" content="Self-drive cars start at 62/hr, We offer Self Drive Cars for the best prices with unlimited km, Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="No Deposit & Unlimited km - Self-Drive Car Rentals In {city}" />
-        <meta property="og:description" content="Self-drive cars start at 62/hr, We offer Self Drive Cars for the best prices with unlimited km & No Deposit, Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
+        <meta property="og:title" content="Unlimited km - Self-Drive Car Rentals In {city}" />
+        <meta property="og:description" content="Self-drive cars start at 62/hr, We offer Self Drive Cars for the best prices with unlimited km, Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
         
       </Head>
       <div className='xl:mx-16  mx-4'>
@@ -143,10 +143,10 @@ const CarDetails = ({ city, phoneno }) => {
           <div className='py-4'>
             <div className="flex gap-2 flex-col md:flex-row flex-wrap jus lg:justify-center lg:pt-12 xl:pt-8 pt-4 
                      font-semibold  lg:w-full">
-              <div className="flex items-center gap-1 p-2 bg-[#ffffff] border-[1px] border-black rounded-md">
+              {/* <div className="flex items-center gap-1 p-2 bg-[#ffffff] border-[1px] border-black rounded-md">
                 <HiCurrencyRupee className="bg-blue-200 rounded-md p-1" size={40} />
                 <p className=" ml-2 text-xs">No Deposit</p>
-              </div>
+              </div> */}
               <div className="flex items-center gap-1 p-2 bg-[#ffffff] border-[1px] border-black rounded-md">
                 <SlSpeedometer className="bg-blue-200 rounded-md p-1" size={40} />
                 <p className="  ml-2 text-xs">Unlimited Kilometers</p>
