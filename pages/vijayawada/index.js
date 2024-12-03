@@ -16,7 +16,7 @@ import DynWhyChooseUs from '../components/WhyChooseUs/WhyChooseUs';
 import Layout from '../components/Layout/Layout';
 import PriceList from '../components/PriceList/PriceList';
 import Head from 'next/head';
-// const allowedKeywords = ['vizag', 'bangalore', 'keyword3'];
+// const allowedKeywords = ['vijayawada', 'bangalore', 'keyword3'];
 
 export default function Place({cars,canonicalUrl}) {
     const [carData, setCarData] = useState(null);
@@ -38,12 +38,12 @@ export default function Place({cars,canonicalUrl}) {
 
     return (
         <div>
-            <Layout locname={'vizag'} phoneno={"96666-99583"}>
+            <Layout locname={'vijayawada'} phoneno={"96666-99583"}>
                 <Head>
-                    <title> No Deposit & Unlimited km - Self-Drive Car Rentals In vizag</title>
+                    <title> No Deposit & Unlimited km - Self-Drive Car Rentals In vijayawada</title>
                     <meta name="description" content="Self-drive cars start at 62/hr, We offer Long Drive Cars for the best prices with unlimited km , Book clDzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
-                    <meta property="og:title" content=" No Deposit & Unlimited km - Self-Drive Car Rentals In vizag" />
+                    <meta property="og:title" content=" No Deposit & Unlimited km - Self-Drive Car Rentals In vijayawada" />
                     <meta property="og:description" content="Self-drive cars start at 62/hr, We offer Long Drive Cars for the best prices with unlimited km , Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
                     
                     <script
@@ -65,11 +65,11 @@ export default function Place({cars,canonicalUrl}) {
                 <div className='pt-32 lg:pt-0'>
                     <DynImageChange />
                     <div>
-                        <DynNearByApi city={'vizag'} />
+                        <DynNearByApi city={'vijayawada'} />
                     </div>
-                    <CarProducts data={cars} branch={"vizag"} phoneno={'9666699583'} count={7}/>
+                    <CarProducts data={cars} branch={"vijayawada"} phoneno={'9666699583'} count={7}/>
                     <div><DynNearYou /></div>
-                    <FeaturedCars data={carData2} branch={"vizag"} />
+                    <FeaturedCars data={carData2} branch={"vijayawada"} />
                     <DynCallBackForm />
                     <DynWhyChooseUs />
                     <div className='bg-white rounded shadow-md xl:py-12 lg:px-14 xl:px-14 p-2'>
@@ -87,13 +87,13 @@ export default function Place({cars,canonicalUrl}) {
 
 
 export async function getServerSideProps({req}) {
-    const response = await fetch('https://api.longdrivecarz.in/site/cars-info?location=vizag');
+    const response = await fetch('https://api.longdrivecarz.in/site/cars-info?location=vijayawada');
     const items = await response.json();
     const cars = items?.data?.results;
     const host = req.headers.host;
     const canonicalUrl = host.includes('.in')
-      ? 'https://www.longdrivecars.in/vizag'
-      : 'https://www.longdrivecars.com/vizag';
+      ? 'https://www.longdrivecars.in/vijayawada'
+      : 'https://www.longdrivecars.com/vijayawada';
   
     return {
       props: {

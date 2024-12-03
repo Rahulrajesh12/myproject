@@ -11,7 +11,7 @@ const a = ['warangal', 'vizag']
 function Footer({ locname }) {
     return (
         <div className={`bg-white`}>
-            <div className={`${['warangal','vizag'].includes(locname) ? 'hidden' : ''} flex pl-10 py-5 md:justify-between text-white xl:px-28 lg:py-14 flex-wrap bg-[#660066] rounded-md mx-[14px] lg:mx-[58px] my-3 items-center `}>
+            <div className={`${['warangal','vizag','vijayawada'].includes(locname) ? 'hidden' : ''} flex pl-10 py-5 md:justify-between text-white xl:px-28 lg:py-14 flex-wrap bg-[#660066] rounded-md mx-[14px] lg:mx-[58px] my-3 items-center `}>
                 <div className=' xl:text-left xl:text-base text-left text-xs font-semibold'>
                     <ul className='lg:gap-x-12 lg:gap-y-3 gap-2 grid lg:grid-cols-3 grid-cols-1 capitalize'>
                         <li className='hover:scale-105'><Link href={'/self-drive-car-rental/gachibowli'}>Self drive car rental in Gachibowli</Link></li>
@@ -58,10 +58,10 @@ function Footer({ locname }) {
                             <p className='text-left text-xl font-bold pb-2'>Our Branches</p>
                             <div className=' xl:text-left lg:text-base text-left text-base font-semibold'>
                                 <ul className='gap-2 flex flex-col lg:pt-0'>
-                                    <li className='lg:hover:scale-105'><Link href={'/'}>Hyderabad</Link></li>
+                                    <li className='lg:hover:scale-105'><Link href={'/hyderabad'}>Hyderabad</Link></li>
                                     <li className='lg:hover:scale-105'><Link href={'/warangal'}>Warangal</Link></li>
                                     <li className='lg:hover:scale-105'><Link href={'/vizag'} target='_blank'>Vizag</Link></li>
-                                    <li className='lg:hover:scale-105'> <Link href={'/'}>Vijayawada</Link></li>
+                                    <li className='lg:hover:scale-105'> <Link href={'/vijayawada'}>Vijayawada</Link></li>
                                     {/* <li className='lg:hover:scale-105'><Link href={'/bangalore'}>Bangalore</Link></li> */}
                                     {/* <li className='lg:hover:scale-105'><Link href={'/mysore'}>Mysore</Link></li> */}
                                     {/* <li className='lg:hover:scale-105'><Link href={'/'}>Mangalore</Link></li> */}
