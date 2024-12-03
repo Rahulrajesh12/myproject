@@ -55,7 +55,7 @@ const metadata = {
   },
   
   medipally: {
-    title: ' Unlimited Km - Self-Drive Car Rentals In Hyderabad',
+    title: ' No Deposit & Unlimited km - Self-Drive Car Rentals In Hyderabad',
     description: 'Self Drive Car Rentals in Uppal, Medipally',
     ogDescription: 'Self Drive Car Rentals in Uppal, Medipally',
   },
@@ -74,7 +74,7 @@ const metadata = {
 
 
   shamshabad: {
-    title: ' Unlimited Km - Self-Drive Car Rentals In Hyderabad',
+    title: ' No Deposit & Unlimited km - Self-Drive Car Rentals In Hyderabad',
     description: "Explore the variety of self-drive car services in Shamshabad",
     ogDescription: 'Explore the variety of self-drive car services in Shamshabad',
   },
