@@ -57,7 +57,7 @@ export default function ExploreCars({ loc, phoneno }) {
         setLocationG(loc)
         async function fetchCarDetails() {
             try {
-                const response = await fetch(`https://longdrivecarz.in/site/cars-info?location=${locationG}`);
+                const response = await fetch(`https://api.longdrivecarz.in/site/cars-info?location=${locationG}`);
                 const items = await response.json();
                 const cars = items?.data?.results;
                 setCarData(cars);
