@@ -126,7 +126,21 @@ export default function Place({ cars, canonicalUrl }) {
                     `,
                         }}
                     ></script>
-
+                   
+                   <script
+                        async
+                        src="https://www.googletagmanager.com/gtag/js?id=G-8RGJTJSJCW">
+                    </script>
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-8RGJTJSJCW');
+                    `,
+                        }}
+                    ></script>
 
             </Head>
             {loading && <Loading />}
