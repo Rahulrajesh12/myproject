@@ -19,7 +19,7 @@ function exploreselfdrivecars({ canonicalUrl }) {
         <meta property="og:description" content="Starting at just ₹1488/day, rent a Self-drive car like the Dzire ₹1680/day or Ertiga ₹2496/day.You can also check Real Car Images on the Long Drive Cars App." />
         <link rel="canonical" href={canonicalUrl} />
       </Head>
-      <Layout phoneno={'9666-677-405'}>
+      <Layout locname={'hyderabad'} phoneno={'9666-677-405'}>
         <ExploreCars loc={'hyderabad'} phoneno={"9666677405"} />
       </Layout>
     </div>

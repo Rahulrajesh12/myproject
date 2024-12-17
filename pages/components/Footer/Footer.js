@@ -72,10 +72,10 @@ function Footer({ locname }) {
                             <div>
                                 <p className='text-left mb-1 pt-3 lg:pt-0 text-xl font-bold pb-1'>Useful Links</p>
                                 <div className='flex flex-col gap-1 '>
-                                    <Link href={`${locname}/privacy-policy.html`} target='_blank'>
+                                    <Link href={`${locname?`/${locname}/`:''}privacy-policy.html`} target='_blank'>
                                         <p className='hover:text-blue-500 cursor-pointer'>Terms & Conditions</p>
                                     </Link>
-                                    <Link href={`${locname}/privacy-policy.html#cancel_refund_policy`} target='_blank'>
+                                    <Link href={`privacy-policy.html#cancel_refund_policy`} target='_blank'>
                                         <p className='hover:text-blue-500 cursor-pointer'>Refund & Cancelation Policy</p>
                                     </Link>
                                 </div>
