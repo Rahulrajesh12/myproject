@@ -75,13 +75,13 @@ export default function Place({ cars, canonicalUrl }) {
 
     return (
         <div>
-            <Head>
-                <title> No Deposit & Unlimited km - Self-Drive Car Rentals In Hyderabad</title>
-                <meta name="description" content="Self-drive cars start at 62/hr, We offer Long Drive Cars for the best prices with unlimited km , Book clDzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta property="og:title" content=" No Deposit & Unlimited km - Self-Drive Car Rentals In Hyderabad" />
-                <meta property="og:description" content="Self-drive cars start at 62/hr, We offer Long Drive Cars for the best prices with unlimited km , Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
-                <link rel="canonical" href={canonicalUrl} />
+             <Head>
+        <title> Check Real Car Images and Book Self-drive cars with No deposit</title>
+        <meta name="description" content="Starting at just ₹1488/day, rent a Self-drive car like the Dzire ₹1680/day or Ertiga ₹2496/day.You can also check Real Car Images on the Long Drive Cars App." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content=" Check Real Car Images and Book Self-drive cars with No deposit" />
+        <meta property="og:description" content="Starting at just ₹1488/day, rent a Self-drive car like the Dzire ₹1680/day or Ertiga ₹2496/day.You can also check Real Car Images on the Long Drive Cars App." />
+       
                 <script
                         async
                         src="https://www.googletagmanager.com/gtag/js?id=AW-16731119855"

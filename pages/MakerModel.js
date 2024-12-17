@@ -57,13 +57,12 @@ const CarDetails = ({ city, phoneno }) => {
   return (
     <div className='bg-white text-black'>
       <Head>
-        <title>No Deposit & Unlimited km - Self-Drive Car Rentals In {city}</title>
-        <meta name="description" content="Self-drive cars start at 62/hr, We offer Self Drive Cars for the best prices with unlimited km, Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
+      <title> Check Real Car Images and Book Self-drive cars with No deposit</title>
+        <meta name="description" content="Starting at just ₹1488/day, rent a Self-drive car like the Dzire ₹1680/day or Ertiga ₹2496/day.You can also check Real Car Images on the Long Drive Cars App." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="No Deposit & Unlimited km - Self-Drive Car Rentals In {city}" />
-        <meta property="og:description" content="Self-drive cars start at 62/hr, We offer Self Drive Cars for the best prices with unlimited km, Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
-
-      </Head>
+        <meta property="og:title" content=" Check Real Car Images and Book Self-drive cars with No deposit" />
+        <meta property="og:description" content="Starting at just ₹1488/day, rent a Self-drive car like the Dzire ₹1680/day or Ertiga ₹2496/day.You can also check Real Car Images on the Long Drive Cars App." />
+            </Head>
       <div className='xl:mx-16  mx-4'>
         <div className='flex flex-col mt-[10.2rem] md:mt-20 lg:mt-2 md:flex-row p-2 border-2  lg:pl-20 border-purple-500 lg:rounded  rounded-md'>
           {loading && <div>Loading...</div>}

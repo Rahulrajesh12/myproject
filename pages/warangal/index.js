@@ -38,11 +38,11 @@ export default function Place({cars,canonicalUrl}) {
         <div>
             <Layout locname={'warangal'} phoneno={"9000-777-665"}>
                 <Head>
-                    <title> No Deposit & Unlimited km - Self-Drive Car Rentals In Warangal</title>
-                    <meta name="description" content="Self-drive cars start at 62/hr, We offer Long Drive Cars for the best prices with unlimited km , Book clDzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
+                    <title> No Deposit & Unlimited km - Rent a car under 5 kms with Self-drive car rental services</title>
+                    <meta name="description" content="Plan your trips with Lowest Price Self-Drive car rentals starting at just ₹1488/day. So book Dzire for ₹1680/day or Ertiga at ₹2496/day now with Unlimited kms at No Deposit." />
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
-                    <meta property="og:title" content=" No Deposit & Unlimited km - Self-Drive Car Rentals In Warangal" />
-                    <meta property="og:description" content="Self-drive cars start at 62/hr, We offer Long Drive Cars for the best prices with unlimited km , Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
+                    <meta property="og:title" content=" No Deposit & Unlimited km - Rent a car under 5 kms with Self-drive car rental services" />
+                    <meta property="og:description" content="Plan your trips with Lowest Price Self-Drive car rentals starting at just ₹1488/day. So book Dzire for ₹1680/day or Ertiga at ₹2496/day now with Unlimited kms at No Deposit." />
                     <script
                         async
                         src="https://www.googletagmanager.com/gtag/js?id=AW-16647839094"

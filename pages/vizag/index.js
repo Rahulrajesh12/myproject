@@ -40,12 +40,12 @@ export default function Place({cars,canonicalUrl}) {
         <div>
             <Layout locname={'vizag'} phoneno={"96666-99583"}>
                 <Head>
-                    <title> No Deposit & Unlimited km - Self-Drive Car Rentals In vizag</title>
-                    <meta name="description" content="Self-drive cars start at 62/hr, We offer Long Drive Cars for the best prices with unlimited km , Book clDzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
+                    <title> No Deposit & Unlimited km - Lowest priced Self-drive car rental for Sedans in Vizag</title>
+                    <meta name="description" content="Rent a 5 Seater- Dzire for ₹1680/day with Unlimited Kms for a stress-free travel. With prices starting at ₹1488/day, Choose Your Own Hours with self-drive car rentals." />
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
-                    <meta property="og:title" content=" No Deposit & Unlimited km - Self-Drive Car Rentals In vizag" />
-                    <meta property="og:description" content="Self-drive cars start at 62/hr, We offer Long Drive Cars for the best prices with unlimited km , Book Dzire @ ₹83/hr, Baleno @ ₹91/hr, Ertiga @ ₹124/hr, Swift @ ₹83/hr, Thar @ ₹208/hr." />
-                    
+                    <meta property="og:title" content=" No Deposit & Unlimited km - Lowest priced Self-drive car rental for Sedans in Vizag" />
+                    <meta property="og:description"  content="Rent a 5 Seater- Dzire for ₹1680/day with Unlimited Kms for a stress-free travel. With prices starting at ₹1488/day, Choose Your Own Hours with self-drive car rentals." />
+              
                     <script
                         async
                         src="https://www.googletagmanager.com/gtag/js?id=AW-16647839094"

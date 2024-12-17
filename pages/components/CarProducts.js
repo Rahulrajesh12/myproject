@@ -192,7 +192,7 @@ function CarProducts({ data, branch, phoneno, count }) {
                     className="scale-75 mxs:scale-[0.6] lg:scale-90 relative lg:w-80   "
                   />
                   <div className="w-full px-2 py-1 lg:px-2 lg:py-2">
-                    <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center lg:hover:scale-105   capitalize'>On Booking off</p>
+                    <p className='text-black xl:text-xl lg:text-xl text-xl font-bold text-center lg:hover:scale-105   capitalize'>On Booking</p>
                     <div className="w-full px-2 py-1 lg:px-2 lg:py-2 ">
                       <div className="place-items-center lg:py-1 lg:hover:scale-105 p-2 ">
                         <div className="w-full bg-[#660066] text-white border border-white lg:w-[265px] lg:text-[11px] text-xs ">
