@@ -10,7 +10,6 @@ import { TbManualGearbox } from "react-icons/tb";
 import Slider from 'react-slick';
 import disc from '../images/discoutn.webp'
 import disc1 from '../images/cashback.webp'
-import disc1 from '../images/cashback.webp'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
