@@ -402,6 +402,7 @@ export default function ExploreCars({ loc, phoneno }) {
                                                 width={1000}
                                                 alt='Long Drive Cars app'
                                                 className="scale-75 mxs:scale-[0.6] lg:scale-90 relative lg:w-80 lg:pr-14  "
+                                                className="scale-75 mxs:scale-[0.6] lg:scale-90 relative lg:w-80 lg:pr-14  "
                                             />
 
                                             <div className="w-full px-2 py-1 lg:px-2 lg:py-2 lg:pr-12 ">

@@ -34,9 +34,10 @@ const CarDetails = ({ city, phoneno }) => {
         const response = await fetch(`https://api.longdrivecarz.in/site/cars-info?location=${city}`);
         const items = await response.json();
         const cars = items?.data?.results;
-        const car = cars?.find(i => i?.maker_model.toLowerCase() == mdyfmaker_model);
+        const car = cars?.find(i => i?.maker_model.toLowerCase() === mdyfmaker_model);
         setCarItem(car);
       } catch (error) {
+        console.error(error);
       } finally {
         setLoading(false);
       }
@@ -46,12 +47,11 @@ const CarDetails = ({ city, phoneno }) => {
       fetchCarDetails();
     }
   }, [maker_model]);
+
   const replaceText = (str) => {
-    if (str?.includes("cdn"))
-      return str;
-    else {
-      return str?.replace('https://ldcars.blr1.', 'https://ldcars.blr1.cdn.');
-    }
+    return str?.includes("cdn")
+      ? str
+      : str?.replace('https://ldcars.blr1.', 'https://ldcars.blr1.cdn.');
   };
 
   return (
@@ -74,29 +74,46 @@ const CarDetails = ({ city, phoneno }) => {
                 speed={500}
                 slidesToShow={1}
                 slidesToScroll={1}
-                centerMode={true}
-                centerPadding={0}
-                focusOnSelect={true}
                 arrows={false}
                 autoplay={true}
-                pauseOnFocus={true}
-                pauseOnHover={true}
                 className="relative bottom-[4.5rem] lg:rounded-md"
               >
                 <div>
-                  <Image className={'lg:h-[655px] h-[450px] lg:w-[525px]  rounded-md'} width={1000} height={1000} alt="Long Drive Cars app" src={replaceText(caritem?.car_image_front_view)}></Image>
-                </div>
-                <div onClick={() => {
-                }}>
-
-                  <Image alt="Long Drive Cars app" className='lg:h-[655px] h-[450px] lg:w-[525px]  rounded-md' width={1000} height={1000} src={replaceText(caritem?.car_image_back_inner)}></Image>
-
-                </div>
-                <div>
-                  <Image alt="Long Drive Cars app" className='lg:h-[655px] h-[450px] lg:w-[525px] rounded-md' width={1000} height={1000} src={replaceText(caritem?.car_image_reading_view)}></Image>
+                  <Image
+                    src={replaceText(caritem?.car_image_front_view)}
+                    alt="Front View"
+                    width={525}
+                    height={634}
+                    className="lg:w-[525px] lg:h-[634px] h-[450px] rounded-md"
+                    priority
+                  />
                 </div>
                 <div>
-                  <Image alt="Long Drive Cars app" className='lg:h-[655px] h-[450px] lg:w-[525px]  rounded-md' width={1000} height={1000} src={replaceText(caritem?.car_image_back_view)}></Image>
+                  <Image
+                    src={replaceText(caritem?.car_image_back_inner)}
+                    alt="Back Inner View"
+                    width={525}
+                    height={634}
+                    className="lg:w-[525px] lg:h-[634px] h-[450px] rounded-md"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src={replaceText(caritem?.car_image_reading_view)}
+                    alt="Reading View"
+                    width={525}
+                    height={634}
+                    className="lg:w-[525px] lg:h-[634px] h-[450px] rounded-md"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src={replaceText(caritem?.car_image_back_view)}
+                    alt="Back View"
+                    width={525}
+                    height={634}
+                    className="lg:w-[525px] lg:h-[634px] h-[450px] rounded-md"
+                  />
                 </div>
               </Slider>
             </div>
@@ -202,5 +219,3 @@ const CarDetails = ({ city, phoneno }) => {
 };
 
 export default CarDetails;
-
-
