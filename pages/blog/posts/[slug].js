@@ -17,7 +17,8 @@ import { MdExpandMore } from "react-icons/md";
 import Loading from '@/pages/components/Loading';
 import Head from 'next/head';
 import { IoMdVolumeHigh, IoMdVolumeOff } from "react-icons/io";
-function SinglePost({ canonicalUrl }) {
+
+function SinglePost({ canonicalUrl, title, description, content }) {
   const router = useRouter();
   const { slug } = router.query;
   const [postDisplay, setPostDisplay] = useState(null);
@@ -30,83 +31,112 @@ function SinglePost({ canonicalUrl }) {
   const [availableVoices, setAvailableVoices] = useState([]);
   const [femaleVoice, setFemaleVoice] = useState(null);
 
+  
+  // Check if SpeechSynthesis is supported
+  const isSpeechSynthesisAvailable = typeof window !== "undefined" && window.speechSynthesis;
 
-useEffect(() => {
-  const fetchVoices = () => {
-    const voices = window.speechSynthesis.getVoices();
-    console.log("Available voices:", voices);
-    setAvailableVoices(voices);
+  // Fetch and log available voices
+  useEffect(() => {
+    if (!isSpeechSynthesisAvailable) {
+      console.warn("Speech synthesis is not supported on this device.");
+      return;
+    }
 
-    const female = voices.find((voice) =>
-      voice.name.toLowerCase().includes("female") ||
-      voice.name.toLowerCase().includes("samantha") ||
-      voice.name.toLowerCase().includes("zira")
-    );
-    setFemaleVoice(female || voices[0]); 
-  };
+    const fetchVoices = () => {
+      const voices = window.speechSynthesis.getVoices();
+      console.log("Available voices:", voices); // Debugging: log all voices
+      setAvailableVoices(voices);
 
-  if (window.speechSynthesis) {
+      // Try to find a female voice
+      const female = voices.find((voice) =>
+        voice.name.toLowerCase().includes("female") ||
+        voice.name.toLowerCase().includes("samantha") ||
+        voice.name.toLowerCase().includes("zira") // Example names
+      );
+      setFemaleVoice(female || voices[0]); // Fallback to the first voice
+    };
+
+    // Initial voice load
     fetchVoices();
+
+    // Listen for when voices are loaded asynchronously
     window.speechSynthesis.onvoiceschanged = fetchVoices;
-  }
-}, []);
 
-const cleanTextForSpeech = (text) => {
-  if (!text) return "";
-  return text.replace(/<\/?[^>]+(>|$)/g, "").replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").replace(/\s+/g, " ").trim();
-};
+    // Delay speech synthesis until voices are loaded
+    const checkVoicesInterval = setInterval(() => {
+      const voices = window.speechSynthesis.getVoices();
+      if (voices.length > 0) {
+        clearInterval(checkVoicesInterval); // Stop checking once voices are loaded
+      }
+    }, 100);
 
-const readAloud = (title, description, content) => {
-  const cleanTitle = cleanTextForSpeech(title);
-  const cleanDescription = cleanTextForSpeech(description);
-  const cleanContent = cleanTextForSpeech(content);
-  const textToRead = `${cleanTitle}. ${cleanDescription}. ${cleanContent}`.trim();
+    return () => clearInterval(checkVoicesInterval); // Clean up the interval on component unmount
+  }, []);
 
-  if (!textToRead) {
-    console.warn("No text available for reading.");
-    return;
-  }
-
-  if (speechInstance) {
-    window.speechSynthesis.cancel();
-  }
-
-  if (!window.speechSynthesis) {
-    alert("Speech synthesis is not supported on this device.");
-    return;
-  }
-
-  const speech = new SpeechSynthesisUtterance(textToRead);
-  if (femaleVoice) {
-    speech.voice = femaleVoice;
-  } else {
-    console.warn("Female voice not found, using default voice.");
-    speech.voice = window.speechSynthesis.getVoices()[0];
-  }
-
-  speech.lang = "en-US";
-  speech.pitch = 1;
-  speech.rate = 1;
-  speech.volume = 1;
-
-  window.speechSynthesis.speak(speech);
-
-  setSpeechInstance(speech);
-  setIsReading(true);
-
-  speech.onend = () => {
-    setIsReading(false);
-    setSpeechInstance(null);
+  // Clean and prepare text for speech
+  const cleanTextForSpeech = (text) => {
+    if (!text) return "";
+    return text
+      .replace(/<\/?[^>]+(>|$)/g, "") // Remove HTML tags
+      .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "") // Remove special characters
+      .replace(/\s+/g, " ") // Normalize spaces
+      .trim();
   };
-};
 
-const stopReading = () => {
-  if (speechInstance) {
-    window.speechSynthesis.cancel();
-    setIsReading(false);
+  // Read aloud function
+  const readAloud = (title, description, content) => {
+    const cleanTitle = cleanTextForSpeech(title);
+    const cleanDescription = cleanTextForSpeech(description);
+    const cleanContent = cleanTextForSpeech(content);
+    const textToRead = `${cleanTitle}. ${cleanDescription}. ${cleanContent}`.trim();
+
+    if (!textToRead) {
+      console.warn("No text available for reading.");
+      return;
+    }
+
+    if (speechInstance) {
+      window.speechSynthesis.cancel(); // Stop existing speech
+    }
+
+    const speech = new SpeechSynthesisUtterance(textToRead);
+
+    // Ensure we have a voice available before proceeding
+    if (femaleVoice) {
+      speech.voice = femaleVoice; // Set female voice
+    } else {
+      console.warn("Female voice not found, using default voice.");
+      speech.voice = window.speechSynthesis.getVoices()[0]; // Fallback to default voice
+    }
+
+    speech.lang = "en-US";
+    speech.pitch = 1;
+    speech.rate = 1;
+    speech.volume = 1;
+
+    // Speak the text aloud
+    window.speechSynthesis.speak(speech);
+
+    setSpeechInstance(speech);
+    setIsReading(true);
+
+    speech.onend = () => {
+      setIsReading(false);
+      setSpeechInstance(null);
+    };
+  };
+
+  // Stop reading
+  const stopReading = () => {
+    if (speechInstance) {
+      window.speechSynthesis.cancel();
+      setIsReading(false);
+    }
+  };
+   // Only render the button if speech synthesis is available
+   if (!isSpeechSynthesisAvailable) {
+    return <div>Speech synthesis is not supported on your device.</div>;
   }
-};
-
 
   // Fetch and log available voices
   // useEffect(() => {
