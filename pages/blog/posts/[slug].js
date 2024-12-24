@@ -29,42 +29,29 @@ function SinglePost({ canonicalUrl }) {
   const [speechInstance, setSpeechInstance] = useState(null);
   const [isReading, setIsReading] = useState(false);
 
-  const fetchVoices = async () => {
-    let voices = [];
-    let attempts = 0;
+  const fetchVoices = () => {
+    const voices = window.speechSynthesis.getVoices();
+    if (voices.length) {
+      setAvailableVoices(voices);
 
-    // Retry mechanism for fetching voices
-    while (!voices.length && attempts < 10) {
-      voices = window.speechSynthesis.getVoices();
-      if (voices.length) {
-        break;
-      }
-      attempts++;
-      await new Promise((resolve) => setTimeout(resolve, 500)); // Wait for voices to load
+      // Find a suitable female voice
+      const female = voices.find((voice) =>
+        voice.name.toLowerCase().includes("female") ||
+        voice.name.toLowerCase().includes("samantha") ||
+        voice.name.toLowerCase().includes("zira")
+      );
+      setFemaleVoice(female || voices[0]); // Fallback to the first voice
     }
-
-    if (!voices.length) {
-      console.warn("No voices found.");
-      return [];
-    }
-
-    setAvailableVoices(voices);
-
-    // Find a suitable female voice
-    const female = voices.find((voice) =>
-      voice.name.toLowerCase().includes("female") ||
-      voice.name.toLowerCase().includes("samantha") ||
-      voice.name.toLowerCase().includes("zira")
-    );
-    setFemaleVoice(female || voices[0]); // Fallback to the first voice
   };
 
   useEffect(() => {
     if (window.speechSynthesis) {
       fetchVoices();
 
-      // Ensure voices are reloaded when they change
-      window.speechSynthesis.onvoiceschanged = fetchVoices;
+      // Some devices (like Android) load voices asynchronously
+      if (window.speechSynthesis.onvoiceschanged !== undefined) {
+        window.speechSynthesis.onvoiceschanged = fetchVoices;
+      }
     } else {
       console.error("speechSynthesis is not supported on this device.");
     }
@@ -123,8 +110,8 @@ function SinglePost({ canonicalUrl }) {
       window.speechSynthesis.cancel();
       setIsReading(false);
     }
-  };
-
+  }
+  
   // const [isReading, setIsReading] = useState(false); // Default state: mute
   // const [speechInstance, setSpeechInstance] = useState(null);
   // const [availableVoices, setAvailableVoices] = useState([]);
