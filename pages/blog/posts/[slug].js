@@ -113,61 +113,85 @@ function SinglePost({ canonicalUrl,title, description, content }) {
 
 
   // // Clean and prepare the text to be read aloud
-  const cleanTextForSpeech = (text) => {
-    if (!text) return ""; // Handle null or undefined text
-    let cleanText = text.replace(/<\/?[^>]+(>|$)/g, ""); // Remove HTML tags
-    cleanText = cleanText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, ""); // Remove special characters
-    cleanText = cleanText.replace(/\s+/g, " ").trim(); // Normalize whitespace
-    return cleanText;
-  };
+  // const cleanTextForSpeech = (text) => {
+  //   if (!text) return ""; // Handle null or undefined text
+  //   let cleanText = text.replace(/<\/?[^>]+(>|$)/g, ""); // Remove HTML tags
+  //   cleanText = cleanText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, ""); // Remove special characters
+  //   cleanText = cleanText.replace(/\s+/g, " ").trim(); // Normalize whitespace
+  //   return cleanText;
+  // };
 
-  // Read aloud function
-    const readAloud = (title,description, content) => {
-        const cleanTitle = cleanTextForSpeech(title);
-        const cleanDescription = cleanTextForSpeech(description);
-        const cleanContent = cleanTextForSpeech(content);
-        const textToRead = `${cleanTitle}. ${cleanDescription} .${cleanContent}`.trim();
+  // // Read aloud function
+  //   const readAloud = (title,description, content) => {
+  //       const cleanTitle = cleanTextForSpeech(title);
+  //       const cleanDescription = cleanTextForSpeech(description);
+  //       const cleanContent = cleanTextForSpeech(content);
+  //       const textToRead = `${cleanTitle}. ${cleanDescription} .${cleanContent}`.trim();
     
 
-    // Stop any existing speech
-    if (speechInstance) {
-      window.speechSynthesis.cancel();
-    }
+  //   // Stop any existing speech
+  //   if (speechInstance) {
+  //     window.speechSynthesis.cancel();
+  //   }
 
-    // Check if there's any text to read
-    if (!textToRead) {
-      console.warn("Text is empty after cleaning");
+  //   // Check if there's any text to read
+  //   if (!textToRead) {
+  //     console.warn("Text is empty after cleaning");
+  //     return;
+  //   }
+
+  //   // Create a new speech instance
+  //   const speech = new SpeechSynthesisUtterance(textToRead);
+  //   speech.lang = "en-US";
+  //   speech.pitch = 1;
+  //   speech.rate = 1;
+  //   speech.volume = 1;
+
+  //   // Start speaking
+  //   window.speechSynthesis.speak(speech);
+
+  //   // Track the speech instance
+  //   setSpeechInstance(speech);
+  //   setIsReading(true);
+
+  //   // Handle speech end
+  //   speech.onend = () => {
+  //     setIsReading(false); // Reset state
+  //     setSpeechInstance(null); // Clear instance
+  //   };
+  // };
+
+  // // Stop reading function
+  // const stopReading = () => {
+  //   if (speechInstance) {
+  //     window.speechSynthesis.cancel(); // Stop ongoing speech
+  //     setIsReading(false); // Reset state
+  //   }
+  // };
+
+
+  const readAloud = (title, description, content) => {
+    if (!('speechSynthesis' in window)) {
+      alert('Text-to-Speech is not supported on this device/browser.');
       return;
     }
 
-    // Create a new speech instance
-    const speech = new SpeechSynthesisUtterance(textToRead);
-    speech.lang = "en-US";
-    speech.pitch = 1;
-    speech.rate = 1;
-    speech.volume = 1;
-
-    // Start speaking
-    window.speechSynthesis.speak(speech);
-
-    // Track the speech instance
-    setSpeechInstance(speech);
-    setIsReading(true);
-
-    // Handle speech end
-    speech.onend = () => {
-      setIsReading(false); // Reset state
-      setSpeechInstance(null); // Clear instance
+    const utterance = new SpeechSynthesisUtterance(`${title} ${description} ${content}`);
+    utterance.onstart = () => setIsReading(true);
+    utterance.onend = () => setIsReading(false);
+    utterance.onerror = (e) => {
+      console.error('Speech synthesis error:', e);
+      setIsReading(false);
     };
+
+    speechSynthesis.speak(utterance);
   };
 
-  // Stop reading function
   const stopReading = () => {
-    if (speechInstance) {
-      window.speechSynthesis.cancel(); // Stop ongoing speech
-      setIsReading(false); // Reset state
-    }
+    speechSynthesis.cancel();
+    setIsReading(false);
   };
+
   // States for likes and comments
   const [likesCount, setLikesCount] = useState(0);
   const [comments, setComments] = useState([]);
