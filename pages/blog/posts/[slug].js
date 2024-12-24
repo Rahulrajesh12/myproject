@@ -7,7 +7,6 @@ import { GrLike } from "react-icons/gr";
 import { FaRegComment } from "react-icons/fa";
 import Image from 'next/image';
 import Link from "next/link";
-import Footer from '../blogcomponents/Footer';
 import { BiCategory } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { IoTimeOutline } from "react-icons/io5";
@@ -17,7 +16,7 @@ import { MdExpandMore } from "react-icons/md";
 import Loading from '@/pages/components/Loading';
 import Head from 'next/head';
 import { IoMdVolumeHigh, IoMdVolumeOff } from "react-icons/io";
-function SinglePost({ canonicalUrl,title, description, content }) {
+function SinglePost({ canonicalUrl }) {
   const router = useRouter();
   const { slug } = router.query;
   const [postDisplay, setPostDisplay] = useState(null);
@@ -25,22 +24,122 @@ function SinglePost({ canonicalUrl,title, description, content }) {
   const [cat, setCat] = useState('');
   const [commentShow, setCommentShow] = useState(false);
 
-  const [isReading, setIsReading] = useState(false); // Default state: mute
-  const [speechInstance, setSpeechInstance] = useState(null);
   const [availableVoices, setAvailableVoices] = useState([]);
   const [femaleVoice, setFemaleVoice] = useState(null);
+  const [speechInstance, setSpeechInstance] = useState(null);
+  const [isReading, setIsReading] = useState(false);
+
+  const fetchVoices = async () => {
+    let voices = [];
+    let attempts = 0;
+
+    // Retry mechanism for fetching voices
+    while (!voices.length && attempts < 10) {
+      voices = window.speechSynthesis.getVoices();
+      if (voices.length) {
+        break;
+      }
+      attempts++;
+      await new Promise((resolve) => setTimeout(resolve, 500)); // Wait for voices to load
+    }
+
+    if (!voices.length) {
+      console.warn("No voices found.");
+      return [];
+    }
+
+    setAvailableVoices(voices);
+
+    // Find a suitable female voice
+    const female = voices.find((voice) =>
+      voice.name.toLowerCase().includes("female") ||
+      voice.name.toLowerCase().includes("samantha") ||
+      voice.name.toLowerCase().includes("zira")
+    );
+    setFemaleVoice(female || voices[0]); // Fallback to the first voice
+  };
+
+  useEffect(() => {
+    if (window.speechSynthesis) {
+      fetchVoices();
+
+      // Ensure voices are reloaded when they change
+      window.speechSynthesis.onvoiceschanged = fetchVoices;
+    } else {
+      console.error("speechSynthesis is not supported on this device.");
+    }
+  }, []);
+
+  const cleanTextForSpeech = (text) => {
+    if (!text) return "";
+    return text
+      .replace(/<\/?[^>]+(>|$)/g, "") // Remove HTML tags
+      .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "") // Remove special characters
+      .replace(/\s+/g, " ") // Normalize spaces
+      .trim();
+  };
+
+  const readAloud = (title, description, content) => {
+    const cleanTitle = cleanTextForSpeech(title);
+    const cleanDescription = cleanTextForSpeech(description);
+    const cleanContent = cleanTextForSpeech(content);
+    const textToRead = `${cleanTitle}. ${cleanDescription}. ${cleanContent}`.trim();
+
+    if (!textToRead) {
+      console.warn("No text available for reading.");
+      return;
+    }
+
+    // Cancel ongoing speech if any
+    if (speechInstance) {
+      window.speechSynthesis.cancel();
+    }
+
+    const speech = new SpeechSynthesisUtterance(textToRead);
+    if (femaleVoice) {
+      speech.voice = femaleVoice; // Set the preferred voice
+    } else {
+      console.warn("Preferred voice not found. Using default.");
+    }
+
+    speech.lang = "en-US";
+    speech.pitch = 1;
+    speech.rate = 1;
+    speech.volume = 1;
+
+    window.speechSynthesis.speak(speech);
+
+    setSpeechInstance(speech);
+    setIsReading(true);
+
+    speech.onend = () => {
+      setIsReading(false);
+      setSpeechInstance(null);
+    };
+  };
+
+  const stopReading = () => {
+    if (speechInstance) {
+      window.speechSynthesis.cancel();
+      setIsReading(false);
+    }
+  };
+
+  // const [isReading, setIsReading] = useState(false); // Default state: mute
+  // const [speechInstance, setSpeechInstance] = useState(null);
+  // const [availableVoices, setAvailableVoices] = useState([]);
+  // const [femaleVoice, setFemaleVoice] = useState(null);
 
   // // Fetch and log available voices
   // useEffect(() => {
   //   const fetchVoices = () => {
   //     const voices = window.speechSynthesis.getVoices();
-  //     console.log("Available voices:", voices); // Debugging: log all voices
   //     setAvailableVoices(voices);
 
   //     // Try to find a female voice
   //     const female = voices.find((voice) =>
   //       voice.name.toLowerCase().includes("female") ||
-  //       voice.name.toLowerCase().includes("samantha") || 
+  //       voice.name.toLowerCase().includes("samantha") ||
   //       voice.name.toLowerCase().includes("zira") // Example names
   //     );
   //     setFemaleVoice(female || voices[0]); // Fallback to the first voice
@@ -65,7 +164,7 @@ function SinglePost({ canonicalUrl,title, description, content }) {
   // };
 
   // // Read aloud function
-  // const readAloud = (title,description, content) => {
+  // const readAloud = (title, description, content) => {
   //   const cleanTitle = cleanTextForSpeech(title);
   //   const cleanDescription = cleanTextForSpeech(description);
   //   const cleanContent = cleanTextForSpeech(content);
@@ -108,9 +207,6 @@ function SinglePost({ canonicalUrl,title, description, content }) {
   //     setIsReading(false);
   //   }
   // };
-  
-
-
 
   // // Clean and prepare the text to be read aloud
   // const cleanTextForSpeech = (text) => {
@@ -122,12 +218,16 @@ function SinglePost({ canonicalUrl,title, description, content }) {
   // };
 
   // // Read aloud function
-  //   const readAloud = (title,description, content) => {
-  //       const cleanTitle = cleanTextForSpeech(title);
-  //       const cleanDescription = cleanTextForSpeech(description);
-  //       const cleanContent = cleanTextForSpeech(content);
-  //       const textToRead = `${cleanTitle}. ${cleanDescription} .${cleanContent}`.trim();
-    
+  // const readAloud = (title, content) => {
+  //   if (!title && !content) {
+  //     console.warn("No text available for reading");
+  //     return;
+  //   }
+
+  //   const cleanTitle = cleanTextForSpeech(title);
+  //   const cleanContent = cleanTextForSpeech(content);
+
+  //   const textToRead = `${cleanTitle}. ${cleanContent}`.trim();
 
   //   // Stop any existing speech
   //   if (speechInstance) {
@@ -161,37 +261,13 @@ function SinglePost({ canonicalUrl,title, description, content }) {
   //   };
   // };
 
-  // // Stop reading function
+  // Stop reading function
   // const stopReading = () => {
   //   if (speechInstance) {
   //     window.speechSynthesis.cancel(); // Stop ongoing speech
   //     setIsReading(false); // Reset state
   //   }
   // };
-
-
-  const readAloud = (title, description, content) => {
-    if (!('speechSynthesis' in window)) {
-      alert('Text-to-Speech is not supported on this device/browser.');
-      return;
-    }
-
-    const utterance = new SpeechSynthesisUtterance(`${title} ${description} ${content}`);
-    utterance.onstart = () => setIsReading(true);
-    utterance.onend = () => setIsReading(false);
-    utterance.onerror = (e) => {
-      console.error('Speech synthesis error:', e);
-      setIsReading(false);
-    };
-
-    speechSynthesis.speak(utterance);
-  };
-
-  const stopReading = () => {
-    speechSynthesis.cancel();
-    setIsReading(false);
-  };
-
   // States for likes and comments
   const [likesCount, setLikesCount] = useState(0);
   const [comments, setComments] = useState([]);
@@ -204,25 +280,25 @@ function SinglePost({ canonicalUrl,title, description, content }) {
   const [loading, setLoading] = useState(true);
 
   // Handle route change and display loading indicator
-  useEffect(() => {
-    const handleRouteChange = () => {
-      setLoading(true);  // Start loader on route change
-    };
+  // useEffect(() => {
+  //   const handleRouteChange = () => {
+  //     setLoading(true);  // Start loader on route change
+  //   };
 
-    const handleRouteComplete = () => {
-      setLoading(false);  // Stop loader after page load
-    };
+  //   const handleRouteComplete = () => {
+  //     setLoading(false);  // Stop loader after page load
+  //   };
 
-    router.events.on('routeChangeStart', handleRouteChange);
-    router.events.on('routeChangeComplete', handleRouteComplete);
-    router.events.on('routeChangeError', handleRouteComplete);
+  //   router.events.on('routeChangeStart', handleRouteChange);
+  //   router.events.on('routeChangeComplete', handleRouteComplete);
+  //   router.events.on('routeChangeError', handleRouteComplete);
 
-    return () => {
-      router.events.off('routeChangeStart', handleRouteChange);
-      router.events.off('routeChangeComplete', handleRouteComplete);
-      router.events.off('routeChangeError', handleRouteComplete);
-    };
-  }, [router.events]);
+  //   return () => {
+  //     router.events.off('routeChangeStart', handleRouteChange);
+  //     router.events.off('routeChangeComplete', handleRouteComplete);
+  //     router.events.off('routeChangeError', handleRouteComplete);
+  //   };
+  // }, [router.events]);
 
   // Fetch the post data and related posts based on the slug
   useEffect(() => {
@@ -366,53 +442,57 @@ function SinglePost({ canonicalUrl,title, description, content }) {
           </Head>
           <div className='flex flex-col lg:px-0 py-2 lg:py-2'>
             <div className='xl:mx-96 lg:mx-56 mx-6 lg:px-0'>
-              <p className='lg:text-[40px] lg:leading-tight text-xl font-extrabold lg:py-4 py-2 helvetica-font tracking-tight'>{postDisplay?.title}</p>
-              <p className='helvetica-font text-[#6B6B6B] text-sm lg:text-xl lg:pb-6 py-2 lg:py-4'>{postDisplay?.description}</p>
+              <p className='lg:text-[40px] lg:leading-tight text-2xl font-extrabold lg:py-4 py-2 helvetica-font tracking-tight'>{postDisplay?.title}</p>
+              <p className='helvetica-font text-[#6B6B6B] text-base lg:text-xl lg:pb-6 py-2 lg:py-4'>{postDisplay?.description}</p>
             </div>
             <div className='xl:mx-24 lg:mx-16 px-1 lg:px-0 py-3 lg:py-6'>
               <Image
                 className="w-full rounded-sm"
                 src={postDisplay?.coverimages}
+                alt={postDisplay?.cialt}
                 width={1000}
                 height={1000}
               />
             </div>
-            <div className="flex lg:gap-6 gap-4 py-3 text-sm lg:text-lg xl:mx-96 lg:mx-56 mxs: mx-6">
-              <p>{postDisplay?.timetake} min read</p>
-              {/* <p>{StaticData(postDisplay?.time.seconds)}</p> */}
-              <p className="flex items-center gap-1">
-                <BiCategory className="text-blue-400" />
-                <span>
-                  {Array.isArray(postDisplay?.categoryname)
-                    ? postDisplay.categoryname.join(", ")
-                    : postDisplay?.categoryname}
-                </span>
-              </p>
+            <div className=''>
+              <div className="flex items-center lg:gap-6 gap-4 py-3 text-xs mxs:text-sm lg:text-lg xl:mx-96 lg:mx-56 mxs: mx-6 ">
+                <p>{postDisplay?.timetake} min read</p>
+                {/* <p>{StaticData(postDisplay?.time.seconds)}</p> */}
+                <p className="flex items-center gap-1">
+                  <BiCategory className="text-blue-400" />
+                  <span>
+                    {Array.isArray(postDisplay?.categoryname)
+                      ? postDisplay.categoryname.join(", ")
+                      : postDisplay?.categoryname}
+                  </span>
+                </p>
+                <button
+                  className="text-blue-600 flex items-center justify-center border-2 rounded-md"
+                  onClick={() => {
+                    if (isReading) {
+                      stopReading(); // Stop reading
+                    } else {
+                      readAloud(postDisplay?.title, postDisplay?.description, postDisplay?.content); // Start reading
+                    }
+                  }}
+                >
+                <span className='p-1'>Play As Audio</span>
+                  {isReading ? (
+                    <IoMdVolumeHigh size={20} className="lg:size-6" />
+                  ) : (
+                    <IoMdVolumeOff size={20} className="lg:size-6" />
+                  )}
+                </button>
+              </div>
 
-              <button
-                className="text-blue-600 flex items-center justify-center"
-                onClick={() => {
-                  if (isReading) {
-                    stopReading(); // Stop reading
-                  } else {
-                    readAloud(postDisplay?.title,postDisplay?.description, postDisplay?.content); // Start reading
-                  }
-                }}
-              >
-                {isReading ? (
-                  <IoMdVolumeHigh size={20} className="lg:size-6" />
-                ) : (
-                  <IoMdVolumeOff size={20} className="lg:size-6" />
-                )}
-              </button>
+              {/* Rest of your component */}
+              <ul className="py-2 flex  items-center justify-start gap-x-8 text-xs lg:text-base xl:mx-96 lg:mx-56 mx-6 ">
+                <li className="flex items-center gap-5"><span>{<p>{StaticData(postDisplay?.time.seconds)}</p>}</span>
+                  <p>{postDisplay?.date.slice(0,12)}</p>
+                </li>
+              </ul>
             </div>
 
-            {/* Rest of your component */}
-            <ul className="py-2 flex  items-center justify-start gap-x-8 text-xs lg:text-base xl:mx-96 lg:mx-56 mx-6">
-              <li className="flex items-center gap-5"><span>{<p>{StaticData(postDisplay?.time.seconds)}</p>}</span>
-                <p>{postDisplay?.date}</p>
-              </li>
-            </ul>
             <div
               className="text-[#242424] lg:text-justify text-base lg:text-[20px] leading-8 lg:leading-9 lg:tracking-wide pt-4 pb-4 px-1 lg:px-0  rounded-lg georgia-font xl:mx-96 lg:mx-56 mx-6"
               dangerouslySetInnerHTML={{ __html: postDisplay?.content }}
@@ -473,7 +553,7 @@ function SinglePost({ canonicalUrl,title, description, content }) {
               </div>
             )}
 
-            <div className="pt-4 xl:mx-96 lg:mx-56 mx-6 px-4 lg:px-0">
+            <div className="pt-4 xl:mx-96 lg:mx-56 mx-6 lg:px-0">
               <p className="text-xl font-semibold">Related Posts</p>
               <div className=" lg:grid-cols-2 grid grid-cols-2 lg:gap-x-8 lg:gap-y-10  gap-7 pt-6  lg:pt-6">
                 {/* {data.length > 0 ? data.map((post, i) => ( */}
@@ -484,24 +564,24 @@ function SinglePost({ canonicalUrl,title, description, content }) {
                         <Image
                           className="rounded-md lg:w-[400px] lg:h-[200px] w-32 h-20 "
                           src={post?.coverimages?.length ? post?.coverimages : tempimg}
-                          alt={post?.coverimages}
+                          alt={post?.cialt}
                           width={445}
                           height={230}
                           priority={i === 0 ? true : false}
                         />
                       )}
                     </Link>
-                    <p className="mb-2 hover:text-orange-400 font-bold lg:text-lg text-xs text-left pt-4 h-16">
+                    <p className="mb-2 hover:text-orange-400 font-bold lg:text-lg text-[10px] mxs:text-xs text-left pt-4 h-16 lg:h-20">
                       <Link href={`/blog/posts/${post.slug.toLowerCase().replace(/ /g, "-")}`} className="block hover:text-primary">
                         {post?.title && post?.title.slice(0, 50)}
                       </Link>
                     </p>
 
-                    <p className="text-left text-xs lg:text:lg h-14 lg:block hidden pt-2">
+                    <p className="text-left text-xs  h-16 lg:block hidden pt-2">
                       {post?.description && post?.description.slice(0, 150)}...
                     </p>
-                    <p className="text-left text-xs lg:text:lg h-14 block lg:hidden">
-                      {post?.description && post?.description.slice(0, 40)}...
+                    <p className="text-left text-[10px] mxs:text-xs  h-14 block lg:hidden">
+                      {post?.description && post?.description.slice(0, 50)}...
                     </p>
 
                     <ul className=" pt-2 flex flex-wrap items-center space-x-4 text-xs">
