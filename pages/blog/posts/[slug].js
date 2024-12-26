@@ -92,7 +92,7 @@ function SinglePost({ canonicalUrl }) {
     const speech = new SpeechSynthesisUtterance(textToRead);
     speech.lang = "en-US";
     speech.pitch = 1;
-    speech.rate = 1;
+    speech.rate = 0.5;
     speech.volume = 1;
 
     // Start speaking
