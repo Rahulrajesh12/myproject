@@ -24,98 +24,152 @@ function SinglePost({ canonicalUrl }) {
   const [cat, setCat] = useState('');
   const [commentShow, setCommentShow] = useState(false);
 
-  const [isReading, setIsReading] = useState(false); // Default state: mute
-  const [speechInstance, setSpeechInstance] = useState(null);
-  const [availableVoices, setAvailableVoices] = useState([]);
-  const [femaleVoice, setFemaleVoice] = useState(null);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [utterance, setUtterance] = useState(null);
 
   useEffect(() => {
-    const fetchVoices = () => {
-      const voices = window.speechSynthesis.getVoices();
-      setAvailableVoices(voices);
-  
-      // Log available voices to understand what's available on Android devices
-      console.log('Available voices:', voices);
-  
-      // Try to find a female voice based on Android device voice names
-      const female = voices.find((voice) =>
-        voice.name.toLowerCase().includes("female") ||
-        voice.name.toLowerCase().includes("google") || // Google voices are common on Android
-        voice.name.toLowerCase().includes("english") // Example: Look for English voices
-      );
-  
-      setFemaleVoice(female || voices[0]); // Fallback to the first voice
+    return () => { // Cleanup on unmount (Crucial!)
+      if (utterance) {
+        window.speechSynthesis.cancel();
+      }
     };
-  
-    if (window.speechSynthesis) {
-      fetchVoices();
-  
-      // Listen for when voices are loaded asynchronously
-      window.speechSynthesis.onvoiceschanged = fetchVoices;
-    }
   }, []);
-  
-  // // Clean and prepare the text to be read aloud
-  const cleanTextForSpeech = (text) => {
-    if (!text) return ""; // Handle null or undefined text
-    let cleanText = text.replace(/<\/?[^>]+(>|$)/g, ""); // Remove HTML tags
-    cleanText = cleanText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, ""); // Remove special characters
-    cleanText = cleanText.replace(/\s+/g, " ").trim(); // Normalize whitespace
-    return cleanText;
+
+  const cleanText = (text) => {
+    if (!text) return '';
+    // 1. Remove HTML tags:
+    let cleanedText = text.replace(/<[^>]*>/g, '');
+    // 2. Decode HTML entities:
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = cleanedText;
+    cleanedText = tempDiv.textContent || tempDiv.innerText || '';
+    // 3. Remove extra whitespace and trim:
+    cleanedText = cleanedText.replace(/\s+/g, ' ').trim();
+    return cleanedText;
   };
 
-  // Read aloud function
-  const readAloud = (title, description, content) => {
-    if (!title && !content) {
-      console.warn("No text available for reading");
+  const speakText = () => {
+    if (!postDisplay || !postDisplay.content) {
+      console.warn("No content available to read.");
       return;
     }
 
-    const cleanTitle = cleanTextForSpeech(title);
-    const cleandescription = cleanTextForSpeech(description);
-    const cleanContent = cleanTextForSpeech(content);
+    const title = cleanText(postDisplay.title);
+    const description = cleanText(postDisplay.description);
+    const content = cleanText(postDisplay.content);
 
-    const textToRead = `${cleanTitle}.${cleandescription}. ${cleanContent}`.trim();
+    const textToSpeak = `${title}. ${description}. ${content}`;
 
-    // Stop any existing speech
-    if (speechInstance) {
+    if (isSpeaking) {
       window.speechSynthesis.cancel();
-    }
-
-    // Check if there's any text to read
-    if (!textToRead) {
-      console.warn("Text is empty after cleaning");
+      setIsSpeaking(false);
       return;
     }
 
-    // Create a new speech instance
-    const speech = new SpeechSynthesisUtterance(textToRead);
-    speech.lang = "en-US";
-    speech.pitch = 1;
-    speech.rate = 0.5;
-    speech.volume = 1;
-
-    // Start speaking
-    window.speechSynthesis.speak(speech);
-
-    // Track the speech instance
-    setSpeechInstance(speech);
-    setIsReading(true);
-
-    // Handle speech end
-    speech.onend = () => {
-      setIsReading(false); // Reset state
-      setSpeechInstance(null); // Clear instance
+    const newUtterance = new SpeechSynthesisUtterance(textToSpeak);
+    newUtterance.onstart = () => setIsSpeaking(true);
+    newUtterance.onend = () => setIsSpeaking(false);
+    newUtterance.onerror = (event) => {
+      console.error("Speech synthesis error:", event);
+      setIsSpeaking(false);
     };
+    newUtterance.rate = 0.8
+    setUtterance(newUtterance);
+    window.speechSynthesis.speak(newUtterance);
   };
 
-  // Stop reading function
-  const stopReading = () => {
-    if (speechInstance) {
-      window.speechSynthesis.cancel(); // Stop ongoing speech
-      setIsReading(false); // Reset state
-    }
-  };
+  // const [isReading, setIsReading] = useState(false); // Default state: mute
+  // const [speechInstance, setSpeechInstance] = useState(null);
+  // const [availableVoices, setAvailableVoices] = useState([]);
+  // const [femaleVoice, setFemaleVoice] = useState(null);
+
+  // useEffect(() => {
+  //   const fetchVoices = () => {
+  //     const voices = window.speechSynthesis.getVoices();
+  //     setAvailableVoices(voices);
+
+  //     // Log available voices to understand what's available on Android devices
+  //     console.log('Available voices:', voices);
+
+  //     // Try to find a female voice based on Android device voice names
+  //     const female = voices.find((voice) =>
+  //       voice.name.toLowerCase().includes("female") ||
+  //       voice.name.toLowerCase().includes("google") || // Google voices are common on Android
+  //       voice.name.toLowerCase().includes("english") // Example: Look for English voices
+  //     );
+
+  //     setFemaleVoice(female || voices[0]); // Fallback to the first voice
+  //   };
+
+  //   if (window.speechSynthesis) {
+  //     fetchVoices();
+
+  //     // Listen for when voices are loaded asynchronously
+  //     window.speechSynthesis.onvoiceschanged = fetchVoices;
+  //   }
+  // }, []);
+
+  // // // Clean and prepare the text to be read aloud
+  // const cleanTextForSpeech = (text) => {
+  //   if (!text) return ""; // Handle null or undefined text
+  //   let cleanText = text.replace(/<\/?[^>]+(>|$)/g, ""); // Remove HTML tags
+  //   cleanText = cleanText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, ""); // Remove special characters
+  //   cleanText = cleanText.replace(/\s+/g, " ").trim(); // Normalize whitespace
+  //   return cleanText;
+  // };
+
+  // // Read aloud function
+  // const readAloud = (title, description, content) => {
+  //   if (!title && !content) {
+  //     console.warn("No text available for reading");
+  //     return;
+  //   }
+
+  //   const cleanTitle = cleanTextForSpeech(title);
+  //   const cleandescription = cleanTextForSpeech(description);
+  //   const cleanContent = cleanTextForSpeech(content);
+
+  //   const textToRead = `${cleanTitle}.${cleandescription}. ${cleanContent}`.trim();
+
+  //   // Stop any existing speech
+  //   if (speechInstance) {
+  //     window.speechSynthesis.cancel();
+  //   }
+
+  //   // Check if there's any text to read
+  //   if (!textToRead) {
+  //     console.warn("Text is empty after cleaning");
+  //     return;
+  //   }
+
+  //   // Create a new speech instance
+  //   const speech = new SpeechSynthesisUtterance(textToRead);
+  //   speech.lang = "en-US";
+  //   speech.pitch = 1;
+  //   speech.rate = 0.5;
+  //   speech.volume = 1;
+
+  //   // Start speaking
+  //   window.speechSynthesis.speak(speech);
+
+  //   // Track the speech instance
+  //   setSpeechInstance(speech);
+  //   setIsReading(true);
+
+  //   // Handle speech end
+  //   speech.onend = () => {
+  //     setIsReading(false); // Reset state
+  //     setSpeechInstance(null); // Clear instance
+  //   };
+  // };
+
+  // // Stop reading function
+  // const stopReading = () => {
+  //   if (speechInstance) {
+  //     window.speechSynthesis.cancel(); // Stop ongoing speech
+  //     setIsReading(false); // Reset state
+  //   }
+  // };
   // States for likes and comments
   const [likesCount, setLikesCount] = useState(0);
   const [comments, setComments] = useState([]);
@@ -314,7 +368,7 @@ function SinglePost({ canonicalUrl }) {
                       : postDisplay?.categoryname}
                   </span>
                 </p>
-                <button
+                {/* <button
                   className="text-blue-600 flex items-center justify-center border-2 rounded-md"
                   onClick={() => {
                     if (isReading) {
@@ -330,13 +384,25 @@ function SinglePost({ canonicalUrl }) {
                   ) : (
                     <IoMdVolumeOff size={20} className="lg:size-6" />
                   )}
+                </button> */}
+                <button
+                  onClick={speakText}
+                  disabled={!postDisplay || !postDisplay.content}
+                  className="text-blue-600 flex items-center justify-center border-2 rounded-md"
+                >
+                  <span className="p-1">{isSpeaking ? 'Stop Reading' : 'Read Aloud'}</span>
+                  {isSpeaking ? (
+                    <IoMdVolumeHigh size={20} className="lg:size-6" />
+                  ) : (
+                    <IoMdVolumeOff size={20} className="lg:size-6" />
+                  )}
                 </button>
               </div>
 
               {/* Rest of your component */}
               <ul className="py-2 flex  items-center justify-start gap-x-8 text-xs lg:text-base xl:mx-96 lg:mx-56 mx-6 ">
                 <li className="flex items-center gap-5"><span>{<p>{StaticData(postDisplay?.time.seconds)}</p>}</span>
-                  <p>{postDisplay?.date.slice(0,12)}</p>
+                  <p>{postDisplay?.date.slice(0, 12)}</p>
                 </li>
               </ul>
             </div>
