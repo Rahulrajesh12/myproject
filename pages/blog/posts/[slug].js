@@ -26,9 +26,32 @@ function SinglePost({ canonicalUrl }) {
 
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [utterance, setUtterance] = useState(null);
+  const [voice, setVoice] = useState(null);
 
   useEffect(() => {
-    return () => { // Cleanup on unmount (Crucial!)
+    const getVoices = () => {
+      const voices = window.speechSynthesis.getVoices();
+
+      // Priority 1: Exact match for a common English voice name
+      let selectedVoice = voices.find(v => 
+        v.name.toLowerCase().includes('google') || // Common on Android
+        v.name.toLowerCase().includes('microsoft') || // Common on Windows
+        v.name.toLowerCase().includes('english us') ||
+        v.name.toLowerCase().includes('en-us')
+      );
+
+      if (!selectedVoice) {
+        // Priority 2: Match language code (for iOS and other cases)
+        selectedVoice = voices.find(v => v.lang === 'en-US' || v.lang.startsWith('en'));
+      }
+
+      setVoice(selectedVoice || null);
+    };
+
+    getVoices(); // Call it once on mount
+    window.speechSynthesis.onvoiceschanged = getVoices; // And when voices change
+
+    return () => {
       if (utterance) {
         window.speechSynthesis.cancel();
       }
@@ -37,17 +60,13 @@ function SinglePost({ canonicalUrl }) {
 
   const cleanText = (text) => {
     if (!text) return '';
-    // 1. Remove HTML tags:
     let cleanedText = text.replace(/<[^>]*>/g, '');
-    // 2. Decode HTML entities:
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = cleanedText;
     cleanedText = tempDiv.textContent || tempDiv.innerText || '';
-    // 3. Remove extra whitespace and trim:
     cleanedText = cleanedText.replace(/\s+/g, ' ').trim();
     return cleanedText;
   };
-
   const speakText = () => {
     if (!postDisplay || !postDisplay.content) {
       console.warn("No content available to read.");
@@ -58,6 +77,7 @@ function SinglePost({ canonicalUrl }) {
     const description = cleanText(postDisplay.description);
     const content = cleanText(postDisplay.content);
 
+    // ***THIS LINE WAS MOVED***
     const textToSpeak = `${title}. ${description}. ${content}`;
 
     if (isSpeaking) {
@@ -66,17 +86,77 @@ function SinglePost({ canonicalUrl }) {
       return;
     }
 
-    const newUtterance = new SpeechSynthesisUtterance(textToSpeak);
+    const newUtterance = new SpeechSynthesisUtterance(textToSpeak); //textToSpeak is now defined
     newUtterance.onstart = () => setIsSpeaking(true);
     newUtterance.onend = () => setIsSpeaking(false);
     newUtterance.onerror = (event) => {
       console.error("Speech synthesis error:", event);
       setIsSpeaking(false);
     };
-    newUtterance.rate = 0.8
-    setUtterance(newUtterance);
+    newUtterance.rate = 0.8;
+
+    if (voice) {
+      newUtterance.voice = voice;
+    } else {
+      console.log("No suitable voice found on this device.");
+    }
+
     window.speechSynthesis.speak(newUtterance);
+    setUtterance(newUtterance);
   };
+  
+
+
+  // useEffect(() => {
+  //   return () => { // Cleanup on unmount (Crucial!)
+  //     if (utterance) {
+  //       window.speechSynthesis.cancel();
+  //     }
+  //   };
+  // }, []);
+
+  // const cleanText = (text) => {
+  //   if (!text) return '';
+  //   // 1. Remove HTML tags:
+  //   let cleanedText = text.replace(/<[^>]*>/g, '');
+  //   // 2. Decode HTML entities:
+  //   const tempDiv = document.createElement('div');
+  //   tempDiv.innerHTML = cleanedText;
+  //   cleanedText = tempDiv.textContent || tempDiv.innerText || '';
+  //   // 3. Remove extra whitespace and trim:
+  //   cleanedText = cleanedText.replace(/\s+/g, ' ').trim();
+  //   return cleanedText;
+  // };
+
+  // const speakText = () => {
+  //   if (!postDisplay || !postDisplay.content) {
+  //     console.warn("No content available to read.");
+  //     return;
+  //   }
+
+  //   const title = cleanText(postDisplay.title);
+  //   const description = cleanText(postDisplay.description);
+  //   const content = cleanText(postDisplay.content);
+
+  //   const textToSpeak = `${title}. ${description}. ${content}`;
+
+  //   if (isSpeaking) {
+  //     window.speechSynthesis.cancel();
+  //     setIsSpeaking(false);
+  //     return;
+  //   }
+
+  //   const newUtterance = new SpeechSynthesisUtterance(textToSpeak);
+  //   newUtterance.onstart = () => setIsSpeaking(true);
+  //   newUtterance.onend = () => setIsSpeaking(false);
+  //   newUtterance.onerror = (event) => {
+  //     console.error("Speech synthesis error:", event);
+  //     setIsSpeaking(false);
+  //   };
+  //   newUtterance.rate = 0.8
+  //   setUtterance(newUtterance);
+  //   window.speechSynthesis.speak(newUtterance);
+  // };
 
   // const [isReading, setIsReading] = useState(false); // Default state: mute
   // const [speechInstance, setSpeechInstance] = useState(null);
